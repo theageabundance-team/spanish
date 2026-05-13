@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FPGZMZW88T"></script>
@@ -18,7 +18,7 @@
   <meta name="apple-mobile-web-app-title" content="Age of Abundance">
   <link rel="apple-touch-icon" href="images/Copy of Whisk_566d7d5bf10336b9f184205567b5715eeg.png">
   <meta name="theme-color" content="#0d0d12">
-  <title>Daily Focus | Age of Abundance</title>
+  <title>Enfoque Diario | La Era de la Abundancia</title>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
   <style>
     :root{--bg:#0a0a0f;--bg2:#0f0f18;--card:#13131f;--acc:#c9a84c;--acc-light:#e8c96d;--acc-dim:rgba(201,168,76,0.1);--acc-border:rgba(201,168,76,0.25);--text:#f0ece0;--text-dim:#9a9080;--text-muted:#5a5248;}
@@ -82,26 +82,26 @@
 </head>
 <body>
   <header class="banner">
-    <a href="index.html" class="back-btn" onclick="navigateTo(event,'index.html')">← Back to Home</a>
-    <div class="badge-wrap"><span style="font-size:18px;">🎯</span><div><div class="badge-title">Today's Practice</div><div class="badge-sub">Daily Focus</div></div></div>
+    <a href="index.html" class="back-btn" onclick="navigateTo(event,'index.html')">← Volver al Inicio</a>
+    <div class="badge-wrap"><span style="font-size:18px;">🎯</span><div><div class="badge-title">Práctica de Hoy</div><div class="badge-sub">Enfoque Diario</div></div></div>
   </header>
   <section class="hero">
     <div class="hero-glow"></div>
     <div class="day-pill" id="dayPill"></div>
-    <h1 class="hero-title">Daily Focus</h1>
-    <p class="hero-sub">Your divine intention for today</p>
+    <h1 class="hero-title">Enfoque Diario</h1>
+    <p class="hero-sub">Tu intención divina para hoy</p>
     <div class="hero-divider"></div>
     <p class="hero-date" id="heroDate"></p>
   </section>
   <div class="content-wrap">
     <div class="focus-card" style="animation-delay:0.1s">
-      <div class="card-eyebrow">🎯 Today's Theme</div>
+      <div class="card-eyebrow">🎯 El Tema de Hoy</div>
       <div class="card-theme" id="focusTheme"></div>
       <div class="week-badge" id="weekBadge"></div>
       <div class="card-divider"></div>
       <div class="card-body-text" id="focusTitle"></div>
       <div class="card-desc-text" id="focusDesc"></div>
-      <button class="done-btn" id="doneBtn" onclick="markDone()">✦ Set My Focus for Today</button>
+      <button class="done-btn" id="doneBtn" onclick="markDone()">✦ Establecer Mi Enfoque de Hoy</button>
     </div>
 
   </div>
@@ -120,11 +120,11 @@
       spawnParticles();
       setTimeout(()=>{ if(allDoneToday()) showCelebration(); else renderOtherCards('daily_focus_done'); },600);
     }
-    const ALL_CARDS=[{key:'daily_focus_done',emoji:'🎯',label:'Daily Focus',url:'player-daily-focus.html'},{key:'divine_truth_done',emoji:'✝️',label:'Divine Truth',url:'player-divine-truth.html'},{key:'solomons_wisdom_done',emoji:'👑',label:"Solomon's Wisdom",url:'player-solomons-wisdom.html'},{key:'daily_decree_done',emoji:'📜',label:'Daily Decree',url:'player-daily-decree.html'}];
+    const ALL_CARDS=[{key:'daily_focus_done',emoji:'🎯',label:'Enfoque Diario',url:'player-daily-focus.html'},{key:'divine_truth_done',emoji:'✝️',label:'Divine Truth',url:'player-divine-truth.html'},{key:'solomons_wisdom_done',emoji:'👑',label:"Solomon's Wisdom",url:'player-solomons-wisdom.html'},{key:'daily_decree_done',emoji:'📜',label:'Daily Decree',url:'player-daily-decree.html'}];
     const todayStr=_sbToday();
     function isDoneToday(k){return localStorage.getItem(k)===todayStr;}
     function allDoneToday(){return ALL_CARDS.every(c=>isDoneToday(c.key));}
-    function renderOtherCards(currentKey){const others=ALL_CARDS.filter(c=>c.key!==currentKey);const s=document.createElement('div');s.className='other-cards-section';s.innerHTML=`<div class="other-cards-title">Today's Practice</div><div class="other-cards-grid">${others.map(c=>`<a class="other-card${isDoneToday(c.key)?' is-done':''}" href="${c.url}" onclick="navigateTo(event,'${c.url}')">${isDoneToday(c.key)?'<span class="other-card-check">✓</span>':''}<div class="other-card-icon">${c.emoji}</div><div class="other-card-label">${c.label}</div></a>`).join('')}</div>`;document.body.appendChild(s);}
+    function renderOtherCards(currentKey){const others=ALL_CARDS.filter(c=>c.key!==currentKey);const s=document.createElement('div');s.className='other-cards-section';s.innerHTML=`<div class="other-cards-title">Práctica de Hoy</div><div class="other-cards-grid">${others.map(c=>`<a class="other-card${isDoneToday(c.key)?' is-done':''}" href="${c.url}" onclick="navigateTo(event,'${c.url}')">${isDoneToday(c.key)?'<span class="other-card-check">✓</span>':''}<div class="other-card-icon">${c.emoji}</div><div class="other-card-label">${c.label}</div></a>`).join('')}</div>`;document.body.appendChild(s);}
     function showCelebration(){const m=document.createElement('div');m.className='celeb-overlay';m.innerHTML=`<div class="celeb-modal"><div class="celeb-stars">✦ ✦ ✦</div><div class="celeb-emoji">🙌</div><div class="celeb-title">All Done Today!</div><div class="celeb-text">You have walked in full alignment today. Your faithfulness has been registered in Heaven.</div><div class="celeb-verse">"Well done, good and faithful servant." — Matthew 25:23</div><button class="celeb-btn" onclick="navigateTo(event,'index.html')">Return Home</button></div>`;document.body.appendChild(m);setTimeout(()=>m.classList.add('visible'),50);spawnCelebParticles();}
     function spawnCelebParticles(){const colors=['#c9a84c','#e8c96d','#fff8e7','#ffffff'];for(let i=0;i<50;i++){const p=document.createElement('div');p.className='particle';const size=4+Math.random()*8,angle=Math.random()*Math.PI*2,dist=100+Math.random()*200;p.style.cssText=`width:${size}px;height:${size}px;background:${colors[Math.floor(Math.random()*colors.length)]};position:fixed;left:${window.innerWidth/2}px;top:${window.innerHeight/2}px;border-radius:50%;pointer-events:none;z-index:700;--tx:${Math.cos(angle)*dist}px;--ty:${Math.sin(angle)*dist-80}px;animation:particleFly ${0.9+Math.random()*0.7}s ease-out ${Math.random()*0.2}s forwards;`;document.body.appendChild(p);setTimeout(()=>p.remove(),1800);}}
     window.addEventListener('pageshow',function(ev){if(ev.persisted){document.body.classList.remove('page-fade-out');document.body.style.opacity='';}}); function navigateTo(e,url){e.preventDefault();document.body.classList.add('page-fade-out');setTimeout(()=>window.location.href=url,350);}

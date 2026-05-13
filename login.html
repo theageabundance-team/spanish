@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FPGZMZW88T"></script>
@@ -14,10 +14,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="Age of Abundance">
+  <meta name="apple-mobile-web-app-title" content="La Era de la Abundancia">
   <link rel="apple-touch-icon" href="images/Copy of Whisk_566d7d5bf10336b9f184205567b5715eeg.png">
   <meta name="theme-color" content="#0d0d12">
-  <title>Enter — The Age of Abundance</title>
+  <title>Entrar — La Era de la Abundancia</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
@@ -377,15 +377,15 @@
     <!-- LOGO -->
     <div class="login-logo">
       <span class="login-crown">👑</span>
-      <span class="login-brand">The Age of Abundance</span>
-      <span class="login-tagline">Your sacred space awaits</span>
+      <span class="login-brand">La Era de la Abundancia</span>
+      <span class="login-tagline">Tu espacio sagrado te espera</span>
     </div>
 
     <!-- PANEL -->
     <div class="login-panel">
-      <div class="panel-eyebrow">Sacred Access</div>
-      <div class="panel-title">Enter Your Kingdom</div>
-      <p class="panel-subtitle">Use the name and email from your registration to access your content.</p>
+      <div class="panel-eyebrow">Acceso Sagrado</div>
+      <div class="panel-title">Entra a Tu Reino</div>
+      <p class="panel-subtitle">Usa el nombre y correo de tu registro para acceder a tu contenido.</p>
 
       <div class="form-divider">
         <span class="form-divider-symbol">✦</span>
@@ -393,52 +393,52 @@
 
       <!-- FIELDS -->
       <div class="field">
-        <label class="field-label" for="input-name">Your Name</label>
+        <label class="field-label" for="input-name">Tu Nombre</label>
         <div class="field-wrap">
           <input
             class="field-input"
             id="input-name"
             type="text"
-            placeholder="Enter your full name"
+            placeholder="Ingresa tu nombre completo"
             autocomplete="name"
             autocapitalize="words"
           />
           <span class="field-icon">✦</span>
         </div>
-        <div class="field-error" id="error-name">Please enter your name.</div>
+        <div class="field-error" id="error-name">Por favor ingresa tu nombre.</div>
       </div>
 
       <div class="field">
-        <label class="field-label" for="input-email">Email Address</label>
+        <label class="field-label" for="input-email">Correo Electrónico</label>
         <div class="field-wrap">
           <input
             class="field-input"
             id="input-email"
             type="email"
-            placeholder="Your email"
+            placeholder="Tu correo"
             autocomplete="email"
           />
           <span class="field-icon">✉</span>
         </div>
-        <div class="field-error" id="error-email">Please enter a valid email.</div>
+        <div class="field-error" id="error-email">Por favor ingresa un correo válido.</div>
       </div>
 
       <button class="btn-enter" id="btn-enter" onclick="handleEnter()">
         <span class="btn-enter-text">
-          Enter the Kingdom
+          Entrar al Reino
           <span class="btn-enter-arrow">→</span>
         </span>
       </button>
 
       <p class="login-notice">
-        Having trouble? <a href="mailto:support@abundancetime.com">Contact support</a>
+        ¿Tienes problemas? <a href="mailto:support@abundancetime.com">Contactar soporte</a>
       </p>
     </div>
 
     <!-- VERSE -->
     <div class="login-verse">
-      <div class="login-verse-text">"Seek first His Kingdom and His righteousness,<br>and all these things will be given to you."</div>
-      <span class="login-verse-ref">Matthew 6:33</span>
+      <div class="login-verse-text">"Buscad primeramente el reino de Dios y su justicia,<br>y todas estas cosas os serán añadidas."</div>
+      <span class="login-verse-ref">Mateo 6:33</span>
     </div>
 
   </div>
@@ -447,8 +447,8 @@
 <!-- SUCCESS OVERLAY -->
 <div class="success-overlay" id="success-overlay">
   <span class="success-crown">👑</span>
-  <div class="success-title" id="success-title">Welcome, —</div>
-  <div class="success-text">Your sacred space is ready. Entering now...</div>
+  <div class="success-title" id="success-title">Bienvenido/a, —</div>
+  <div class="success-text">Tu espacio sagrado está listo. Entrando ahora...</div>
   <div class="success-bar-wrap">
     <div class="success-bar" id="success-bar"></div>
   </div>
@@ -512,7 +512,7 @@ function handleEnter() {
 
   // Loading state
   btn.classList.add('loading');
-  btn.querySelector('.btn-enter-text').innerHTML = '✦ &nbsp; Entering...';
+  btn.querySelector('.btn-enter-text').innerHTML = '✦ &nbsp; Entrando...';
 
   // Clear any residual data from a previous session before logging in
   localStorage.clear();
@@ -524,7 +524,7 @@ function handleEnter() {
     // Show success overlay after short delay
     setTimeout(() => {
       const firstName = name.split(' ')[0];
-      document.getElementById('success-title').textContent = `Welcome, ${firstName}.`;
+      document.getElementById('success-title').textContent = `Bienvenido/a, ${firstName}.`;
       const overlay = document.getElementById('success-overlay');
       overlay.classList.add('show');
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FPGZMZW88T"></script>
@@ -18,7 +18,7 @@
   <meta name="apple-mobile-web-app-title" content="Age of Abundance">
   <link rel="apple-touch-icon" href="images/Copy of Whisk_566d7d5bf10336b9f184205567b5715eeg.png">
   <meta name="theme-color" content="#0d0d12">
-  <title>21-Day Manifestation Challenge — Abundance Time</title>
+  <title>Desafío de Manifestación de 21 Días — Abundance Time</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -231,7 +231,7 @@
       border-color: var(--purple-mid);
       box-shadow: 0 0 0 2px rgba(139,92,246,0.15), 0 6px 24px rgba(109,40,217,0.15);
     }
-    .day-card.completed {
+    .day-card.completado {
       border-color: rgba(5,150,105,0.3);
       background: #f9fffc;
     }
@@ -261,8 +261,8 @@
     .day-icon-wrap .day-n { font-size: 0.6rem; letter-spacing: 0.08em; color: var(--text-dim); margin-top: 1px; }
     .day-card.today .day-icon-wrap { background: var(--purple); border-color: var(--purple-mid); }
     .day-card.today .day-icon-wrap .day-n { color: rgba(255,255,255,0.7); }
-    .day-card.completed .day-icon-wrap { background: var(--green-bg); border-color: rgba(5,150,105,0.3); }
-    .day-card.completed .day-icon-wrap .day-n { color: var(--green); }
+    .day-card.completado .day-icon-wrap { background: var(--green-bg); border-color: rgba(5,150,105,0.3); }
+    .day-card.completado .day-icon-wrap .day-n { color: var(--green); }
     .day-card.open .day-icon-wrap { background: var(--dark); border-color: var(--purple-mid); }
     .day-card.open .day-icon-wrap .day-n { color: rgba(196,181,253,0.7); }
 
@@ -272,7 +272,7 @@
       text-transform: uppercase; color: var(--purple-mid); margin-bottom: 3px;
     }
     .day-card.locked .day-label { color: var(--text-dim); }
-    .day-card.completed .day-label { color: var(--green); }
+    .day-card.completado .day-label { color: var(--green); }
     .day-title {
       font-family: 'Cinzel', serif; font-size: 0.95rem; font-weight: 600;
       color: var(--text); line-height: 1.3;
@@ -364,7 +364,7 @@
       letter-spacing: 0.02em;
     }
 
-    .btn-complete {
+    .btn-completado {
       margin-top: 20px; display: inline-flex; align-items: center; gap: 10px;
       padding: 13px 26px; border-radius: 10px;
       background: var(--purple); border: none; color: #fff;
@@ -372,9 +372,9 @@
       letter-spacing: 0.08em; cursor: pointer; transition: all 0.2s;
       box-shadow: 0 4px 14px rgba(109,40,217,0.3);
     }
-    .btn-complete:hover { background: var(--purple-mid); transform: translateY(-1px); box-shadow: 0 8px 20px rgba(109,40,217,0.35); }
-    .btn-complete.done { background: var(--green); box-shadow: none; cursor: default; }
-    .btn-complete.done:hover { transform: none; }
+    .btn-completado:hover { background: var(--purple-mid); transform: translateY(-1px); box-shadow: 0 8px 20px rgba(109,40,217,0.35); }
+    .btn-completado.done { background: var(--green); box-shadow: none; cursor: default; }
+    .btn-completado.done:hover { transform: none; }
 
     /* ── CERTIFICATE ── */
     .cert-section {
@@ -565,29 +565,29 @@
 
 <!-- NAV -->
 <nav>
-  <a href="index.html" class="nav-back" onclick="fadeOut(event,'index.html')">← Back to Home</a>
-  <div class="nav-badge" id="nav-badge">Day 1 of 21</div>
+  <a href="index.html" class="nav-back" onclick="fadeOut(event,'index.html')">← Volver al Inicio</a>
+  <div class="nav-badge" id="nav-badge">Día 1 de 21</div>
 </nav>
 
 <!-- HERO -->
 <div class="hero">
   <div class="hero-content">
     <span class="hero-icon">🌟</span>
-    <div class="hero-eyebrow">Sacred 21-Day Journey</div>
+    <div class="hero-eyebrow">Jornada Sagrada de 21 Días</div>
     <h1 class="hero-title">The <span>Manifestation</span> Challenge</h1>
-    <p class="hero-sub">21 days of intention, prayer, surrender and faith</p>
+    <p class="hero-sub">21 días de intención, oración, entrega y fe</p>
     <div class="counter-row">
       <div class="counter-item">
         <div class="counter-num" id="num-current">1</div>
-        <div class="counter-label">Current Day</div>
+        <div class="counter-label">Día Actual</div>
       </div>
       <div class="counter-item">
         <div class="counter-num gold" id="num-done">0</div>
-        <div class="counter-label">Completed</div>
+        <div class="counter-label">Completados</div>
       </div>
       <div class="counter-item">
         <div class="counter-num" id="num-left">21</div>
-        <div class="counter-label">Remaining</div>
+        <div class="counter-label">Restantes</div>
       </div>
     </div>
   </div>
@@ -597,9 +597,9 @@
 <div class="progress-section">
   <div class="progress-inner">
     <div class="progress-labels">
-      <span>Day 1</span>
-      <span id="pct-label">0% Complete</span>
-      <span>Day 21</span>
+      <span>Día 1</span>
+      <span id="pct-label">0% Completado</span>
+      <span>Día 21</span>
     </div>
     <div class="progress-bar">
       <div class="progress-fill" id="progress-fill" style="width:0%"></div>
@@ -615,9 +615,9 @@
     <div class="week-header">
       <div class="week-icon-wrap">🕊️</div>
       <div class="week-info">
-        <div class="week-badge">Week 1 · Days 1–7</div>
-        <div class="week-title">Preparing the Temple</div>
-        <div class="week-sub">Cleansing &amp; Surrender</div>
+        <div class="week-badge">Semana 1 · Días 1–7</div>
+        <div class="week-title">Preparando el Templo</div>
+        <div class="week-sub">Limpieza y Entrega</div>
       </div>
       <div class="week-count" id="wcount-1">0 / 7</div>
     </div>
@@ -629,9 +629,9 @@
     <div class="week-header">
       <div class="week-icon-wrap">🌱</div>
       <div class="week-info">
-        <div class="week-badge">Week 2 · Days 8–14</div>
-        <div class="week-title">Planting the Seed</div>
-        <div class="week-sub">Reprogramming &amp; Alignment</div>
+        <div class="week-badge">Semana 2 · Días 8–14</div>
+        <div class="week-title">Plantando la Semilla</div>
+        <div class="week-sub">Reprogramación y Alineación</div>
       </div>
       <div class="week-count" id="wcount-2">0 / 7</div>
     </div>
@@ -643,9 +643,9 @@
     <div class="week-header">
       <div class="week-icon-wrap">🌾</div>
       <div class="week-info">
-        <div class="week-badge">Week 3 · Days 15–21</div>
-        <div class="week-title">Walking in the Harvest</div>
-        <div class="week-sub">Action &amp; Surrender</div>
+        <div class="week-badge">Semana 3 · Días 15–21</div>
+        <div class="week-title">Caminando en la Cosecha</div>
+        <div class="week-sub">Acción y Entrega</div>
       </div>
       <div class="week-count" id="wcount-3">0 / 7</div>
     </div>
@@ -659,21 +659,21 @@
       <div class="cert-bg-dots"></div>
       <div class="cert-inner">
         <div class="cert-seal-top">✦</div>
-        <div class="cert-eyebrow">Certificate of Covenant · Abundance Time</div>
+        <div class="cert-eyebrow">Certificado de Pacto · Abundance Time</div>
         <div class="cert-border-top">
           <div class="cert-border-line"></div>
           <div class="cert-border-sym">✦ ✦ ✦</div>
           <div class="cert-border-line"></div>
         </div>
-        <div class="cert-this">This certificate is awarded to</div>
-        <input class="cert-name-input" id="cert-name" type="text" placeholder="Your name" maxlength="40" autocomplete="off"/>
+        <div class="cert-this">Este certificado es otorgado a</div>
+        <input class="cert-name-input" id="cert-name" type="text" placeholder="Your name" maxlength="40" autocompletado="off"/>
         <div class="cert-title">I Am a New Creation</div>
-        <div class="cert-subtitle">21-Day Manifestation Challenge · Completed</div>
+        <div class="cert-subtitle">Desafío de Manifestación de 21 Días · Completados</div>
         <p class="cert-body">
-          I have walked 21 days in faith, surrender and intention. I have cleansed what was old, planted what is new, and stepped into the harvest God prepared for me. I am not the same person I was on Day 1. I am ready. I am renewed. I receive.
+          He caminado 21 días en fe, entrega e intención. He limpiado lo que era viejo, plantado lo que es nuevo, y entrado en la cosecha que Dios preparó para mí. No soy la misma persona que era el Día 1. Estoy listo. Estoy renovado. Recibo.
         </p>
         <div class="cert-verse">
-          "Therefore, if anyone is in Christ, the new creation has come: The old has gone, the new is here!" — 2 Corinthians 5:17
+          "De modo que si alguno está en Cristo, nueva criatura es: las cosas viejas pasaron; he aquí todas son hechas nuevas." — 2 Corinthians 5:17
         </div>
         <div class="cert-date" id="cert-date"></div>
         <div class="cert-seal-bottom">
@@ -682,7 +682,7 @@
           <div class="cert-seal-line"></div>
         </div>
         <a href="journey.html" class="btn-cert-cta" onclick="fadeOut(event,'journey.html')">
-          ✦ &nbsp; View My Gift on the Journey
+          ✦ &nbsp; Ver Mi Regalo en la Jornada
         </a>
       </div>
     </div>
@@ -695,12 +695,12 @@
   <div class="gift-modal">
     <div class="gift-sparks"><span></span><span></span><span></span><span></span><span></span></div>
     <span class="gift-emoji">🌟</span>
-    <div class="gift-eyebrow">Your Gift Has Been Unlocked</div>
-    <div class="gift-title">Gift of the Manifested Life</div>
-    <p class="gift-text">You walked 21 days in faith. You cleansed, you declared, you surrendered, you received. The life you once only dreamed of is no longer a dream — it is your reality. Walk in it.</p>
-    <div class="gift-verse">"Delight yourself in the Lord, and he will give you the desires of your heart." — Psalm 37:4</div>
+    <div class="gift-eyebrow">Tu Regalo Ha Sido Desbloqueado</div>
+    <div class="gift-title">Regalo de la Vida Manifestada</div>
+    <p class="gift-text">Caminaste 21 días en fe. Limpiaste, declaraste, entregaste, recibiste. La vida que una vez solo soñaste ya no es un sueño — es tu realidad. Camina en ella.</p>
+    <div class="gift-verse">"Deléitate asimismo en el Señor, y él te concederá las peticiones de tu corazón." — Salmos 37:4</div>
     <div class="gift-btns">
-      <button class="btn-gift-cta" onclick="showCertificate()">✦ &nbsp; Receive Your Certificate</button>
+      <button class="btn-gift-cta" onclick="showCertificate()">✦ &nbsp; Recibir Tu Certificado</button>
       <button class="btn-gift-stay" onclick="closeGiftModal()">I'll do it later</button>
     </div>
   </div>
@@ -710,7 +710,7 @@
 <script>
 const MODULE_ID = 'manifestation-21';
 const SK = '21day_start';
-const CK = '21day_completed';
+const CK = '21day_completado';
 const NK = '21day_notes';
 
 // Day icons per theme
@@ -753,7 +753,7 @@ const DAYS = [
    affirm:"From my mouth comes only what is good and uplifting. I choose to speak the language of the Kingdom."},
   {day:7,week:1,title:"Rest in the Lord — The Sabbath",
    insight:"You have worked hard on your inner cleansing. Now it is time to release control. Manifesting is not about forcing — it is about trusting. Today you rest in the sovereignty of God.",
-   ritual:"Take a moment of complete silence. Simply feel the presence of God. Imagine yourself resting in His arms, where there is no anxiety — only peace.",
+   ritual:"Take a moment of completado silence. Simply feel the presence of God. Imagine yourself resting in His arms, where there is no anxiety — only peace.",
    journal:"What does it mean for me to truly rest in the Lord? Do I trust that He is working behind the scenes while I sleep?",
    affirm:"I surrender, I trust, I accept and I give thanks. The Lord is my shepherd — I shall not want."},
   {day:8,week:2,title:"The Power of the Word — Decrees of Faith",
@@ -812,7 +812,7 @@ const DAYS = [
    journal:"How can I be the answer to someone's prayer today?",
    affirm:"I am a channel of blessings. The more I bless others, the more I am blessed by the inexhaustible source."},
   {day:19,week:3,title:"Persistence and Faith in the Desert",
-   insight:"Sometimes God's silence is where the miracle gains consistency. When it seems like nothing is changing, that is when the roots are growing. Do not give up on Day 19. The wall falls on the seventh day, not the first.",
+   insight:"Sometimes God's silence is where the miracle gains consistency. When it seems like nothing is changing, that is when the roots are growing. Do not give up on Día 19. The wall falls on the seventh day, not the first.",
    ritual:"If you have a little oil, apply it to your feet and pray: Father, steady my steps so that I do not waver. I will keep walking until my promise appears.",
    journal:"Even if I see nothing changing outside, what has already changed inside me in these 19 days?",
    affirm:"My faith is unshakable. I remain firm in the promise because the One who promised is faithful."},
@@ -821,8 +821,8 @@ const DAYS = [
    ritual:"Make a Faith Call or an Intention Email. Reach out to something related to your dream as if it were already real. Request a quote, schedule a visit, or make a financial plan for the money that is coming.",
    journal:"What is the boat I need to leave today in order to walk on water with God?",
    affirm:"I leap in faith, for I know the Father's arms sustain me. The impossible is becoming real."},
-  {day:21,week:3,title:"Day 21 — Celebration and the Altar of Gratitude",
-   insight:"You have completed the cycle. The number 21 represents completion and the new habit. Today we ask for nothing. Today we simply celebrate the victory in the spirit, knowing that the physical manifestation is only a matter of time.",
+  {day:21,week:3,title:"Día 21 — Celebration and the Altar of Gratitude",
+   insight:"You have completado the cycle. The number 21 represents completion and the new habit. Today we ask for nothing. Today we simply celebrate the victory in the spirit, knowing that the physical manifestation is only a matter of time.",
    ritual:"Prepare a special meal, light a candle, put on worship music and celebrate as if your desire had just knocked on your door. This is your Altar of Gratitude.",
    journal:"Write a thank-you letter to God describing how it felt to receive the blessing. Detail your joy and how you will use it for His glory.",
    affirm:"It is done. It is sealed in heaven and manifested on earth. Amen."}
@@ -879,7 +879,7 @@ function buildCard(d, cur, comp) {
   const isOpen   = openDay === d.day;
 
   let cls = 'day-card';
-  if (isDone)        cls += ' completed';
+  if (isDone)        cls += ' completado';
   else if (isToday)  cls += ' today';
   else if (isLocked) cls += ' locked';
   else               cls += ' unlocked';
@@ -917,9 +917,9 @@ function buildCard(d, cur, comp) {
         <div class="section-label affirm">🙏 Affirmation &amp; Prayer</div>
         <div class="affirmation-box">${d.affirm}</div>
       </div>
-      <button class="btn-complete ${isDone ? 'done' : ''}" onclick="markDone(${d.day})" ${isDone ? 'disabled' : ''}>
+      <button class="btn-completado ${isDone ? 'done' : ''}" onclick="markDone(${d.day})" ${isDone ? 'disabled' : ''}>
         <span>${isDone ? '✓' : '◯'}</span>
-        <span>${isDone ? 'Day Completed' : 'Mark Day as Complete'}</span>
+        <span>${isDone ? 'Day Completados' : 'Mark Day as Complete'}</span>
       </button>
     </div>`;
 
@@ -931,7 +931,7 @@ function buildCard(d, cur, comp) {
           <div class="day-n">${isDone ? 'done' : 'day ' + d.day}</div>
         </div>
         <div class="day-meta">
-          <div class="day-label">${isDone ? 'Completed' : isToday ? 'Today' : isLocked ? 'Locked' : 'Day ' + d.day}</div>
+          <div class="day-label">${isDone ? 'Completados' : isToday ? 'Today' : isLocked ? 'Locked' : 'Day ' + d.day}</div>
           <div class="day-title">${d.title}</div>
         </div>
         <div class="day-right">${rightHTML}${chevron}</div>
@@ -983,7 +983,7 @@ function showCertificate() {
   const inp = document.getElementById('cert-name');
   if (inp && name) inp.value = name.split(' ')[0];
   const dateEl = document.getElementById('cert-date');
-  if (dateEl) dateEl.textContent = 'Completed on ' + new Date().toLocaleDateString('en-US', { year:'numeric', month:'long', day:'numeric' });
+  if (dateEl) dateEl.textContent = 'Completados on ' + new Date().toLocaleDateString('en-US', { year:'numeric', month:'long', day:'numeric' });
   setTimeout(() => sect.scrollIntoView({ behavior:'smooth', block:'center' }), 300);
 }
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FPGZMZW88T"></script>
@@ -18,7 +18,7 @@
   <meta name="apple-mobile-web-app-title" content="Age of Abundance">
   <link rel="apple-touch-icon" href="images/Copy of Whisk_566d7d5bf10336b9f184205567b5715eeg.png">
   <meta name="theme-color" content="#0d0d12">
-  <title>Journal — Abundance Time</title>
+  <title>Diario — Abundance Time</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
@@ -290,12 +290,12 @@
 <div class="tooltip-overlay" id="tooltip-overlay" onclick="closeTooltip(event)">
   <div class="tooltip-box">
     <div class="tooltip-icon">📖</div>
-    <div class="tooltip-title">Why Write Every Day?</div>
+    <div class="tooltip-title">¿Por Qué Escribir Cada Día?</div>
     <div class="tooltip-text">
-      Writing every day creates a living record of your transformation.<br><br>
-      On Day 21, you will read what you wrote on Day 3 — and see exactly how far God has brought you. <em>That</em> is your testimony.
+      Escribir cada día crea un registro vivo de tu transformación.<br><br>
+      En el Día 21, leerás lo que escribiste en el Día 3 — y verás exactamente hasta dónde Dios te ha traído. <em>Eso</em> es tu testimonio.
     </div>
-    <button class="tooltip-close" onclick="closeTooltip()">I understand ✦</button>
+    <button class="tooltip-close" onclick="closeTooltip()">Entiendo ✦</button>
   </div>
 </div>
 
@@ -305,9 +305,9 @@
     <span class="nav-logo-text">Abundance Time</span>
   </a>
   <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html">Inicio</a></li>
     <li><a href="#">My Products</a></li>
-    <li><a href="journey.html">Journey</a></li>
+    <li><a href="journey.html">Jornada</a></li>
     <li><a href="journal.html" class="active">Journal</a></li>
     <li><a href="#">Support</a></li>
   </ul>
@@ -334,9 +334,9 @@
 <div class="page">
 
   <div class="journal-hero fade-in">
-    <div class="journal-eyebrow">Your Sacred Space</div>
-    <h1 class="journal-title" id="journal-title">My Journal</h1>
-    <p class="journal-subtitle" id="journal-subtitle">Write what God is doing in you. Your words are sacred testimony.</p>
+    <div class="journal-eyebrow">Tu Espacio Sagrado</div>
+    <h1 class="journal-title" id="journal-title">Mi Diario</h1>
+    <p class="journal-subtitle" id="journal-subtitle">Escribe lo que Dios está haciendo en ti. Tus palabras son testimonio sagrado.</p>
     <div class="deco-rule">
       <div class="deco-rule-line"></div>
       <div class="deco-rule-symbol">✦ ✦ ✦</div>
@@ -347,22 +347,22 @@
   <div class="stats-row fade-in delay-1">
     <div class="stat-card">
       <div class="stat-number" id="stat-entries">0</div>
-      <div class="stat-label">Days Written</div>
+      <div class="stat-label">Días Escritos</div>
     </div>
     <div class="stat-card">
       <div class="stat-number" id="stat-streak">5</div>
-      <div class="stat-label">Days in a Row</div>
+      <div class="stat-label">Días Seguidos</div>
       <button class="info-btn" onclick="openTooltip()" title="Why write every day?">?</button>
     </div>
     <div class="stat-card">
       <div class="stat-number sapphire" id="stat-journey">7</div>
-      <div class="stat-label">Journey Days</div>
+      <div class="stat-label">Días de Jornada</div>
     </div>
   </div>
 
   <div class="section-block fade-in delay-2">
-    <div class="section-eyebrow">Today's Reflection</div>
-    <div class="section-title">Write Today</div>
+    <div class="section-eyebrow">Reflexión de Hoy</div>
+    <div class="section-title">Escribir Hoy</div>
   </div>
   <div class="section-divider"></div>
 
@@ -370,36 +370,36 @@
     <div class="today-card">
       <div class="today-header">
         <div class="today-date" id="today-date-label"></div>
-        <div class="today-badge" id="today-day-badge">Day 7 · The Sacred Week</div>
+        <div class="today-badge" id="today-day-badge">Día 7 · La Semana Sagrada</div>
       </div>
 
       <div class="prompt-box">
-        <div class="prompt-label">✦ If you don't know where to start…</div>
-        <div class="prompt-text" id="daily-prompt">"Seven is the number of divine completion. What has God completed in you this week?"</div>
+        <div class="prompt-label">✦ Si no sabes por dónde empezar…</div>
+        <div class="prompt-text" id="daily-prompt">"Siete es el número de la plenitud divina. ¿Qué ha completado Dios en ti esta semana?"</div>
       </div>
-      <div class="prompt-hint">Or simply write whatever is on your heart today.</div>
+      <div class="prompt-hint">O simplemente escribe lo que hay en tu corazón hoy.</div>
 
       <textarea class="journal-textarea" id="journal-input"
         placeholder="What is God doing in you today? Write freely…"
         oninput="updateCharCount()"></textarea>
-      <div class="char-count" id="char-count">0 words</div>
+      <div class="char-count" id="char-count">0 palabras</div>
 
       <div class="mood-row">
-        <span class="mood-label">Feeling</span>
-        <button class="mood-btn" onclick="selectMood(this,'🙏 Grateful')">🙏 Grateful</button>
-        <button class="mood-btn" onclick="selectMood(this,'🕊 Peaceful')">🕊 Peaceful</button>
-        <button class="mood-btn" onclick="selectMood(this,'✨ Hopeful')">✨ Hopeful</button>
+        <span class="mood-label">Sentimiento</span>
+        <button class="mood-btn" onclick="selectMood(this,'🙏 Agradecido')">🙏 Agradecido</button>
+        <button class="mood-btn" onclick="selectMood(this,'🕊 En Paz')">🕊 En Paz</button>
+        <button class="mood-btn" onclick="selectMood(this,'✨ Esperanzado')">✨ Esperanzado</button>
         <button class="mood-btn" onclick="selectMood(this,'🔍 Seeking')">🔍 Seeking</button>
-        <button class="mood-btn" onclick="selectMood(this,'☀️ Joyful')">☀️ Joyful</button>
+        <button class="mood-btn" onclick="selectMood(this,'☀️ Alegre')">☀️ Alegre</button>
       </div>
 
       <button class="btn-save" id="save-btn" onclick="saveEntry()">✦ Save Today's Writing</button>
-      <div class="save-confirm" id="save-confirm">✦ Your words have been saved. Come back tomorrow.</div>
+      <div class="save-confirm" id="save-confirm">✦ Tus palabras han sido guardadas. Regresa mañana.</div>
     </div>
   </div>
 
   <div class="section-block fade-in delay-3" style="margin-top:48px;">
-    <div class="section-eyebrow">Your Sacred Record</div>
+    <div class="section-eyebrow">Tu Registro Sagrado</div>
     <div class="section-title">Past Writings</div>
   </div>
   <div class="section-divider"></div>
@@ -409,8 +409,8 @@
 
 <nav class="bottom-nav">
   <div class="bottom-nav-inner">
-    <a href="index.html" class="bottom-nav-item"><span class="nav-icon">🏠</span><span>Home</span></a>
-    <a href="journey.html" class="bottom-nav-item"><span class="nav-icon">✨</span><span>Journey</span></a>
+    <a href="index.html" class="bottom-nav-item"><span class="nav-icon">🏠</span><span>Inicio</span></a>
+    <a href="journey.html" class="bottom-nav-item"><span class="nav-icon">✨</span><span>Jornada</span></a>
     <a href="journal.html" class="bottom-nav-item active"><span class="nav-icon">📖</span><span>Journal</span></a>
   </div>
 </nav>
@@ -443,7 +443,7 @@ const savedName = localStorage.getItem('abundance_name');
 if (savedName) applyName(savedName);
 const MILESTONES = [
   { day:3,  name:'First Steps of Faith',  prompt:'"You took the first step. What moved you to begin this journey?"' },
-  { day:7,  name:'The Sacred Week',       prompt:'"Seven is the number of divine completion. What has God completed in you this week?"' },
+  { day:7,  name:'The Sacred Week',       prompt:'"Siete es el número de la plenitud divina. ¿Qué ha completado Dios en ti esta semana?"' },
   { day:15, name:'Through the Middle',    prompt:'"You are past the halfway point. What has surprised you most about this path?"' },
   { day:21, name:'The New Creation',      prompt:'"Twenty-one days. Look back at who you were on Day 1. Who are you now?"' },
   { day:40, name:'The Desert Overcomer',  prompt:'"Forty days. What has God spoken to you in the silence that you will never forget?"' },
