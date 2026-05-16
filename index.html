@@ -873,18 +873,6 @@
     </div>
   </div>
 
-  <!-- Slide 2: Guardian Angel -->
-  <div class="hero-slide" id="slide-1">
-    <div class="hero-bg" style="background-image:url('images/newguardiann.jpeg');"></div>
-    <div style="position:absolute;inset:0;background:rgba(0,0,0,0.20);"></div>
-    <div class="hero-fade"></div>
-    <div class="hero-content">
-      <div class="hero-btns">
-        <a class="btn btn-primary" href="https://quizangel.vercel.app/" target="_blank" rel="noopener">✦ Descubrir Ahora</a>
-      </div>
-    </div>
-  </div>
-
   <!-- Arrows -->
   <div class="hero-arrow left" onclick="changeSlide(-1)">‹</div>
   <div class="hero-arrow right" onclick="changeSlide(1)">›</div>
@@ -892,7 +880,6 @@
   <!-- Dots -->
   <div class="hero-dots">
     <div class="hero-dot active" onclick="goToSlide(0)"></div>
-    <div class="hero-dot" onclick="goToSlide(1)"></div>
   </div>
 </div>
 
@@ -1225,29 +1212,7 @@ function expandCardHTML(p,i){
   </div>`;
 }
 
-const guardianAngelCard = `<div class="product-card" onclick="window.open('https://quizangel.vercel.app/','_blank')" style="cursor:pointer;">
-  <div class="card-img-wrap">
-    <img src="images/newguardiann.jpeg" alt="Descubre Tu Ángel Guardián" loading="lazy"/>
-    <div class="card-badges">
-      <span class="badge badge-gold" style="font-size:0.68rem;padding:3px 9px;">✦ Exclusivo</span>
-    </div>
-  </div>
-  <div class="card-body">
-    <span class="cat-pill cat-spirituality">Espiritualidad</span>
-    <div class="card-title">Descubre Tu Ángel Guardián</div>
-    <div class="card-desc">Descubre qué ángel te cuida y qué mensaje divino lleva para tu vida.</div>
-    <div class="card-meta">
-      <span class="stars">★ 5.0</span>
-      <span>(2.4k)</span>
-      <span>🕐 5min</span>
-    </div>
-    <div class="card-actions">
-      <a class="card-btn card-btn-access" href="https://quizangel.vercel.app/" target="_blank" rel="noopener" onclick="event.stopPropagation()">▶ Acceder</a>
-      <button class="card-btn card-btn-details" onclick="event.stopPropagation();openGuardianAngelModal()">⊙ Ver Detalles</button>
-    </div>
-  </div>
-</div>`;
-document.getElementById('track-my').innerHTML = guardianAngelCard + DATA.my.map((p,i)=>cardHTML(p,'my',i)).join('');
+document.getElementById('track-my').innerHTML = DATA.my.map((p,i)=>cardHTML(p,'my',i)).join('');
 document.getElementById('track-expand').innerHTML = EXPAND_DATA.map((p,i)=>expandCardHTML(p,i)).join('');
 
 function scrollRow(key,dir){
@@ -1272,16 +1237,7 @@ function toggleFav(id){
   b.textContent=b.classList.contains('active')?'♥':'♡';
 }
 
-function openGuardianAngelModal(){
-  const mc=document.getElementById('m-cat');
-  mc.textContent='Espiritualidad'; mc.className='cat-pill cat-spirituality';
-  document.getElementById('m-title').textContent='Descubre Tu Ángel Guardián';
-  document.getElementById('m-rating').textContent='5.0';
-  document.getElementById('m-duration').textContent='🕐 5min';
-  document.getElementById('m-desc').textContent='Descubre qué ángel te cuida y qué mensaje divino lleva para tu vida.';
-  document.getElementById('modal-overlay').classList.add('open');
-  document.body.style.overflow='hidden';
-}
+
 function openModal(idx,key){
   const p=DATA[key][idx]; if(!p)return;
   const mc=document.getElementById('m-cat');
