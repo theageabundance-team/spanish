@@ -874,13 +874,8 @@
   </div>
 
   <!-- Arrows -->
-  <div class="hero-arrow left" onclick="changeSlide(-1)">‹</div>
-  <div class="hero-arrow right" onclick="changeSlide(1)">›</div>
 
   <!-- Dots -->
-  <div class="hero-dots">
-    <div class="hero-dot active" onclick="goToSlide(0)"></div>
-  </div>
 </div>
 
 <!-- DIVINE SCRIPT BANNER -->
@@ -1256,18 +1251,6 @@ function closeModal(){
 function closeModalOutside(e){ if(e.target.id==='modal-overlay')closeModal(); }
 document.addEventListener('keydown',e=>{ if(e.key==='Escape')closeModal(); });
 
-// HERO
-let cur=0,total=2,auto;
-function goToSlide(n){
-  document.getElementById('slide-'+cur).classList.remove('active');
-  document.querySelectorAll('.hero-dot')[cur].classList.remove('active');
-  cur=(n+total)%total;
-  document.getElementById('slide-'+cur).classList.add('active');
-  document.querySelectorAll('.hero-dot')[cur].classList.add('active');
-  clearInterval(auto); auto=setInterval(()=>goToSlide(cur+1),6000);
-}
-function changeSlide(d){goToSlide(cur+d);}
-auto=setInterval(()=>goToSlide(cur+1),6000);
 
 // ── SWIPE GESTURE ──
 document.querySelectorAll('.cards-viewport').forEach(viewport => {
