@@ -686,14 +686,14 @@ const LESSONS = [
     title: '¡San Miguel descenderá del cielo como fuego para defenderte!',
     eyebrow: 'Lección 1 de 2 · Espiritualidad',
     desc: 'Accede a poderosas oraciones e invocaciones al Arcángel Miguel para protección divina y guía.',
-    videoHTML: `<vturb-smartplayer id="vid-6a08ab25dca0bf66780c8176" style="display:block;margin:0 auto;width:100%;"></vturb-smartplayer>`
+    playerId: 'vid-6a08ab25dca0bf66780c8176'
   },
   {
     id: 'powerful-prayers-2',
     title: '¡ADIÓS POBREZA! San Miguel CORTA la Ruina y Abre Caminos de Dinero',
     eyebrow: 'Lección 2 de 2 · Espiritualidad',
     desc: 'Accede a poderosas oraciones e invocaciones al Arcángel Miguel para protección divina y guía.',
-    videoHTML: `<vturb-smartplayer id="vid-6a08ab379db6343a2a42dea1" style="display:block;margin:0 auto;width:100%;"></vturb-smartplayer>`
+    playerId: 'vid-6a08ab379db6343a2a42dea1'
   }
 ];
 
@@ -747,8 +747,13 @@ function renderLesson(idx) {
   saveModuleProgress(MODULE_ID, idx, completadoSoFar);
   const lesson = LESSONS[idx];
 
-  // Video
-  document.getElementById('video-container').innerHTML = lesson.videoHTML;
+  // Video — usar createElement para o web component inicializar corretamente
+  const container = document.getElementById('video-container');
+  container.innerHTML = '';
+  const player = document.createElement('vturb-smartplayer');
+  player.id = lesson.playerId;
+  player.style.cssText = 'display:block;margin:0 auto;width:100%;';
+  container.appendChild(player);
 
   // Header
   document.getElementById('lesson-eyebrow').textContent = lesson.eyebrow;
