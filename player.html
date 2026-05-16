@@ -584,10 +584,7 @@
   <div class="main-content">
 
     <!-- VIDEO -->
-    <div class="video-wrap fade-in" id="video-container">
-      <div id="player-slot-0" style="display:none;width:100%;"><vturb-smartplayer id="vid-6a08ab25dca0bf66780c8176" style="display:block;margin:0 auto;width:100%;"></vturb-smartplayer></div>
-      <div id="player-slot-1" style="display:none;width:100%;"><vturb-smartplayer id="vid-6a08ab379db6343a2a42dea1" style="display:block;margin:0 auto;width:100%;"></vturb-smartplayer></div>
-    </div>
+    <div class="video-wrap fade-in" id="video-container"></div>
 
     <!-- CONTENT -->
     <div class="content-area">
@@ -688,13 +685,15 @@ const LESSONS = [
     id: 'powerful-prayers-1',
     title: '¡San Miguel descenderá del cielo como fuego para defenderte!',
     eyebrow: 'Lección 1 de 2 · Espiritualidad',
-    desc: 'Accede a poderosas oraciones e invocaciones al Arcángel Miguel para protección divina y guía.'
+    desc: 'Accede a poderosas oraciones e invocaciones al Arcángel Miguel para protección divina y guía.',
+    videoHTML: `<vturb-smartplayer id="vid-6a08ab25dca0bf66780c8176" style="display:block;margin:0 auto;width:100%;"></vturb-smartplayer>`
   },
   {
     id: 'powerful-prayers-2',
     title: '¡ADIÓS POBREZA! San Miguel CORTA la Ruina y Abre Caminos de Dinero',
     eyebrow: 'Lección 2 de 2 · Espiritualidad',
-    desc: 'Accede a poderosas oraciones e invocaciones al Arcángel Miguel para protección divina y guía.'
+    desc: 'Accede a poderosas oraciones e invocaciones al Arcángel Miguel para protección divina y guía.',
+    videoHTML: `<vturb-smartplayer id="vid-6a08ab379db6343a2a42dea1" style="display:block;margin:0 auto;width:100%;"></vturb-smartplayer>`
   }
 ];
 
@@ -748,11 +747,8 @@ function renderLesson(idx) {
   saveModuleProgress(MODULE_ID, idx, completadoSoFar);
   const lesson = LESSONS[idx];
 
-  // Video — show/hide slots so web components don't need to reinitialize
-  LESSONS.forEach((_, i) => {
-    const slot = document.getElementById('player-slot-' + i);
-    if (slot) slot.style.display = (i === idx) ? 'block' : 'none';
-  });
+  // Video
+  document.getElementById('video-container').innerHTML = lesson.videoHTML;
 
   // Header
   document.getElementById('lesson-eyebrow').textContent = lesson.eyebrow;
