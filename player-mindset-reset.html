@@ -411,6 +411,132 @@
     }
     .btn-gift-stay:hover { color: var(--text); border-color: var(--gold); }
 
+    /* ── RICH TEXT CONTENT ── */
+    .video-wrap { background: transparent !important; }
+    .text-lesson { padding: 0; }
+
+    .verse-block {
+      background: linear-gradient(135deg, rgba(201,168,76,0.07), rgba(201,168,76,0.03));
+      border-left: 3px solid var(--gold); border-radius: 0 12px 12px 0;
+      padding: 22px 26px; margin: 28px 0;
+    }
+    .verse-text {
+      font-family: 'Crimson Pro', Georgia, serif; font-size: 1.25rem; font-style: italic;
+      color: var(--gold-pale); line-height: 1.75; margin-bottom: 8px;
+    }
+    .verse-ref {
+      font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.14em;
+      color: var(--gold); opacity: 0.7; text-transform: uppercase;
+    }
+
+    .lesson-intro {
+      font-size: 1.18rem; color: var(--text-mid); line-height: 1.85; margin-bottom: 24px;
+    }
+    .lesson-body { font-size: 1.08rem; color: var(--text-mid); line-height: 1.85; }
+    .lesson-body p { margin-bottom: 18px; }
+    .lesson-body strong { color: var(--text); font-weight: 600; }
+
+    .lesson-section-title {
+      font-family: 'Cinzel', serif; font-size: 0.78rem; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--gold); opacity: 0.75;
+      margin: 32px 0 14px;
+    }
+
+    .exercise-card {
+      background: var(--bg3); border: 1px solid var(--border-strong);
+      border-radius: 14px; padding: 26px 28px; margin: 28px 0;
+    }
+    .exercise-title {
+      font-family: 'Cinzel', serif; font-size: 0.9rem; font-weight: 700;
+      color: var(--gold-pale); letter-spacing: 0.06em; margin-bottom: 6px;
+    }
+    .exercise-subtitle {
+      font-size: 0.95rem; color: var(--text-dim); margin-bottom: 20px; line-height: 1.6;
+    }
+    .exercise-question {
+      margin-bottom: 16px;
+    }
+    .exercise-question label {
+      display: block; font-family: 'Cinzel', serif; font-size: 0.7rem;
+      letter-spacing: 0.1em; color: var(--gold); opacity: 0.8; margin-bottom: 7px;
+    }
+    .exercise-input {
+      width: 100%; background: rgba(255,255,255,0.03); border: 1px solid var(--border);
+      border-radius: 9px; padding: 13px 16px; color: var(--text);
+      font-family: 'Crimson Pro', Georgia, serif; font-size: 1.05rem; line-height: 1.6;
+      resize: none; outline: none; transition: border-color 0.2s; min-height: 72px;
+    }
+    .exercise-input:focus { border-color: var(--border-strong); }
+    .exercise-input::placeholder { color: var(--text-dim); font-style: italic; }
+    .btn-exercise {
+      margin-top: 14px; padding: 11px 24px; border-radius: 9px;
+      background: rgba(201,168,76,0.1); border: 1px solid var(--border-strong);
+      color: var(--gold); font-family: 'Cinzel', serif; font-size: 0.72rem;
+      letter-spacing: 0.08em; cursor: pointer; transition: all 0.2s;
+    }
+    .btn-exercise:hover { background: rgba(201,168,76,0.2); }
+
+    .declaration-list { display: flex; flex-direction: column; gap: 12px; margin-top: 16px; }
+    .declaration-item {
+      background: rgba(201,168,76,0.05); border: 1px solid rgba(201,168,76,0.15);
+      border-radius: 10px; padding: 16px 18px; cursor: pointer; transition: all 0.2s;
+      display: flex; align-items: flex-start; gap: 14px;
+    }
+    .declaration-item:hover { background: rgba(201,168,76,0.1); border-color: rgba(201,168,76,0.3); }
+    .declaration-item.spoken { background: rgba(46,180,100,0.08); border-color: rgba(46,180,100,0.3); }
+    .decl-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 2px; }
+    .decl-text { font-size: 1.05rem; color: var(--text-mid); line-height: 1.65; flex: 1; }
+    .decl-verse { font-family: 'Cinzel', serif; font-size: 0.63rem; letter-spacing: 0.1em; color: var(--gold); opacity: 0.6; margin-top: 5px; }
+    .decl-check { margin-left: auto; color: #4ecb80; font-size: 1.1rem; opacity: 0; transition: opacity 0.2s; flex-shrink: 0; }
+    .declaration-item.spoken .decl-check { opacity: 1; }
+
+    .viz-guide {
+      background: linear-gradient(160deg, rgba(201,168,76,0.05), rgba(30,20,60,0.3));
+      border: 1px solid var(--border-strong); border-radius: 14px;
+      padding: 28px; margin: 24px 0;
+    }
+    .viz-step {
+      display: flex; gap: 16px; margin-bottom: 22px; align-items: flex-start;
+    }
+    .viz-num {
+      width: 32px; height: 32px; border-radius: 50%; flex-shrink: 0;
+      background: rgba(201,168,76,0.15); border: 1px solid rgba(201,168,76,0.3);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Cinzel', serif; font-size: 0.72rem; color: var(--gold);
+    }
+    .viz-step-text { font-size: 1.05rem; color: var(--text-mid); line-height: 1.7; }
+    .viz-step-text strong { color: var(--text); }
+
+    .beliefs-table { width: 100%; border-collapse: collapse; margin-top: 14px; }
+    .beliefs-table th {
+      font-family: 'Cinzel', serif; font-size: 0.63rem; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--gold); opacity: 0.7;
+      padding: 10px 14px; border-bottom: 1px solid var(--border); text-align: left;
+    }
+    .beliefs-table td {
+      padding: 10px 14px; border-bottom: 1px solid rgba(255,255,255,0.04);
+      vertical-align: top;
+    }
+    .beliefs-table td textarea {
+      width: 100%; background: transparent; border: none; color: var(--text-mid);
+      font-family: 'Crimson Pro', Georgia, serif; font-size: 1rem; line-height: 1.6;
+      resize: none; outline: none; min-height: 50px;
+    }
+    .beliefs-table td textarea::placeholder { color: var(--text-dim); font-style: italic; }
+
+    .neuro-stat {
+      display: flex; gap: 20px; flex-wrap: wrap; margin: 20px 0;
+    }
+    .neuro-item {
+      flex: 1; min-width: 140px; background: var(--bg3); border: 1px solid var(--border);
+      border-radius: 12px; padding: 18px 16px; text-align: center;
+    }
+    .neuro-num {
+      font-family: 'Cinzel', serif; font-size: 1.6rem; font-weight: 700;
+      color: var(--gold); display: block; margin-bottom: 6px;
+    }
+    .neuro-label { font-size: 0.9rem; color: var(--text-dim); line-height: 1.45; }
+
     .sidebar-toggle {
       display: none; position: fixed; bottom: 24px; right: 20px; z-index: 150;
       width: 48px; height: 48px; border-radius: 50%;
@@ -514,7 +640,7 @@
       <div class="tab-content" id="tab-notes">
         <div class="about-label">Tus Notas Personales</div>
         <textarea class="notes-textarea" id="notes-input" placeholder="Write your reflections, revelations, and insights here..."></textarea>
-        <button class="btn-save-notes" onclick="saveNotes()">✦ Guardar Notas</button>
+        <button class="btn-save-notes" onclick="saveNotes()">✦ Guardar mis notas</button>
       </div>
 
       <!-- TAB: COMMENTS -->
@@ -581,38 +707,246 @@
 const LESSONS = [
   {
     id: 'mindset-1',
-    title: 'What is Mindset',
-    eyebrow: 'Lesson 1 of 5 · Mindset',
-    desc: 'Discover the true meaning of mindset and how your mental framework shapes every area of your life — your relationships, finances, health, and spiritual walk.',
-    videoHTML: `<div class="yt-wrap"><iframe src="https://www.youtube.com/embed/TNX1FO5WdIc?rel=0&modestbranding=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`
+    title: '¿Qué es la Mentalidad?',
+    eyebrow: 'Lección 1 de 5 · Fórmula de Reinicio Mental',
+    desc: 'Descubre el verdadero significado de la mentalidad y cómo tu marco mental moldea cada área de tu vida — tus relaciones, finanzas, salud y camino espiritual.',
+    videoHTML: `<div class="text-lesson" style="padding:36px 40px 0; max-width:860px;">
+      <div class="verse-block">
+        <div class="verse-text">"Porque cual es su pensamiento en su corazón, tal es él."</div>
+        <div class="verse-ref">Proverbios 23:7</div>
+      </div>
+      <p class="lesson-intro">La mentalidad no es simplemente "pensar positivo". Es el sistema operativo invisible que determina cómo percibes el mundo, cómo respondes a los desafíos y qué resultados produces en tu vida — en lo espiritual, en lo económico y en tus relaciones.</p>
+      <div class="lesson-body">
+        <div class="lesson-section-title">¿Qué es la mentalidad?</div>
+        <p>Tu mentalidad es el conjunto de creencias, suposiciones y patrones de pensamiento que has acumulado a lo largo de tu vida. Es el lente a través del cual interpretas todo lo que te sucede. Si ese lente está distorsionado por el miedo, la escasez o la duda, tu realidad reflejará exactamente eso.</p>
+        <p>Dios nos diseñó con una mente extraordinaria — capaz de renovarse, de crecer, de transformarse. <strong>El problema no es que tu mente no pueda cambiar. El problema es que nadie te enseñó cómo cambiarla.</strong></p>
+        <div class="lesson-section-title">Mentalidad fija vs. mentalidad de crecimiento</div>
+        <p>La <strong>mentalidad fija</strong> cree que tus habilidades, tu inteligencia y tu destino están predeterminados. Dice: "Siempre fui así. Nunca voy a cambiar." La <strong>mentalidad de crecimiento</strong>, en cambio, entiende que todo lo que eres hoy puede evolucionar a través del esfuerzo, la fe y la renovación.</p>
+        <p>Y la Biblia no deja duda sobre cuál de las dos refleja la verdad de Dios: <em>"No os conforméis a este siglo, sino transformaos por medio de la renovación de vuestro entendimiento."</em> (Romanos 12:2). La transformación no es opcional — es el llamado.</p>
+        <div class="lesson-section-title">La mente como campo de batalla espiritual</div>
+        <p>El apóstol Pablo describe la guerra espiritual como algo que ocurre principalmente en la mente: argumentos, fortalezas mentales, pensamientos que se exaltan contra el conocimiento de Dios. <strong>El enemigo no necesita destruir tu vida. Solo necesita controlar lo que piensas sobre ella.</strong></p>
+        <p>Esta fórmula te devuelve el control. Empezamos aquí — con entender qué es la mentalidad — porque no puedes reformar lo que no comprendes.</p>
+      </div>
+      <div class="exercise-card">
+        <div class="exercise-title">✦ Ejercicio de Reflexión</div>
+        <div class="exercise-subtitle">Tómate un momento de honestidad contigo mismo. Responde con lo que realmente sientes, no con lo que crees que "deberías" sentir.</div>
+        <div class="exercise-question">
+          <label>1. ¿En qué área de tu vida sientes que estás "atascado" y no puedes avanzar?</label>
+          <textarea class="exercise-input" placeholder="Escribe aquí tu respuesta..." oninput="saveExercise('m1q1',this.value)"></textarea>
+        </div>
+        <div class="exercise-question">
+          <label>2. ¿Qué te dices a ti mismo cuando enfrentas ese obstáculo? ¿Cuál es la primera voz que aparece?</label>
+          <textarea class="exercise-input" placeholder="Escribe aquí tu respuesta..." oninput="saveExercise('m1q2',this.value)"></textarea>
+        </div>
+        <div class="exercise-question">
+          <label>3. Si Dios te dijera hoy que esa área de tu vida va a cambiar completamente, ¿lo creerías? ¿Por qué sí o por qué no?</label>
+          <textarea class="exercise-input" placeholder="Escribe aquí tu respuesta..." oninput="saveExercise('m1q3',this.value)"></textarea>
+        </div>
+        <button class="btn-exercise" onclick="saveExerciseFeedback(this)">✦ Guardar mis reflexiones</button>
+      </div>
+    </div>`
   },
   {
     id: 'mindset-2',
-    title: 'How Limiting Beliefs Are Formed',
-    eyebrow: 'Lesson 2 of 5 · Mindset',
-    desc: 'Understand the root of the beliefs that have been holding you back — where they come from, how they were planted, and why they feel so real.',
-    videoHTML: `<div class="yt-wrap"><iframe src="https://www.youtube.com/embed/riCuvs_DAPo?rel=0&modestbranding=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`
+    title: 'El Origen de las Creencias Limitantes',
+    eyebrow: 'Lección 2 de 5 · Fórmula de Reinicio Mental',
+    desc: 'Comprende la raíz de las creencias que te han estado frenando — de dónde vienen, cómo fueron plantadas y por qué se sienten tan reales.',
+    videoHTML: `<div class="text-lesson" style="padding:36px 40px 0; max-width:860px;">
+      <div class="verse-block">
+        <div class="verse-text">"El ladrón no viene sino para hurtar y matar y destruir; yo he venido para que tengan vida, y para que la tengan en abundancia."</div>
+        <div class="verse-ref">Juan 10:10</div>
+      </div>
+      <p class="lesson-intro">Antes de poder cambiar lo que crees, necesitas entender de dónde vienen esas creencias. Las creencias limitantes no nacen en el vacío — tienen raíces profundas, y muchas de ellas fueron plantadas sin tu permiso.</p>
+      <div class="lesson-body">
+        <div class="lesson-section-title">¿De dónde vienen las creencias limitantes?</div>
+        <p>Las creencias limitantes se forman principalmente en tres fuentes: <strong>las experiencias de la infancia</strong>, donde absorbemos mensajes de nuestros padres, maestros y entorno; <strong>las palabras habladas sobre nosotros</strong>, que se graban en nuestra mente subconsciente con un poder sorprendente; y <strong>los traumas y fracasos</strong>, que el enemigo usa para construir fortalezas mentales.</p>
+        <p>Un niño que creció escuchando "el dinero no alcanza", "no somos de esa clase de gente", o "tú nunca lograrás nada" — lleva esas palabras como programación en su subconsciente, y ese programa seguirá corriendo hasta que sea reemplazado por la verdad de Dios.</p>
+        <div class="lesson-section-title">El papel del enemigo</div>
+        <p>Pablo nos enseña que debemos "derribar argumentos y toda altivez que se levanta contra el conocimiento de Dios" (2 Corintios 10:5). <strong>Las creencias limitantes son exactamente eso: argumentos</strong> — mentiras estratégicamente plantadas para hacerte creer que Dios no puede, que tú no puedes, que tu situación no puede cambiar.</p>
+        <p>El enemigo no necesita que cometas un pecado grave para detenerte. Solo necesita que creas la mentira correcta sobre ti mismo.</p>
+        <div class="lesson-section-title">La mente subconsciente y su poder</div>
+        <p>Los científicos estiman que entre el 90% y el 95% de nuestras decisiones diarias son controladas por el subconsciente. Esto significa que puedes querer conscientemente abundancia y paz, pero si tu subconsciente está programado con escasez y miedo, <strong>el subconsciente siempre gana</strong> — hasta que lo renovamos deliberadamente.</p>
+      </div>
+      <div class="exercise-card">
+        <div class="exercise-title">✦ Mapa de Creencias Limitantes</div>
+        <div class="exercise-subtitle">Para cada área, escribe la creencia limitante que llevas contigo y luego identifica de dónde crees que vino.</div>
+        <table class="beliefs-table">
+          <thead>
+            <tr>
+              <th>Área de Vida</th>
+              <th>La creencia que llevo</th>
+              <th>¿De dónde vino?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td style="color:var(--text-dim);font-size:0.95rem;">💰 Dinero</td><td><textarea class="exercise-input" style="min-height:44px;" placeholder="Ej: nunca me alcanza..." oninput="saveExercise('m2din',this.value)"></textarea></td><td><textarea class="exercise-input" style="min-height:44px;" placeholder="Ej: mi madre siempre decía..." oninput="saveExercise('m2din2',this.value)"></textarea></td></tr>
+            <tr><td style="color:var(--text-dim);font-size:0.95rem;">💑 Relaciones</td><td><textarea class="exercise-input" style="min-height:44px;" placeholder="Ej: no merezco amor..." oninput="saveExercise('m2rel',this.value)"></textarea></td><td><textarea class="exercise-input" style="min-height:44px;" placeholder="Ej: una experiencia pasada..." oninput="saveExercise('m2rel2',this.value)"></textarea></td></tr>
+            <tr><td style="color:var(--text-dim);font-size:0.95rem;">🌱 Propósito</td><td><textarea class="exercise-input" style="min-height:44px;" placeholder="Ej: no soy suficiente..." oninput="saveExercise('m2pro',this.value)"></textarea></td><td><textarea class="exercise-input" style="min-height:44px;" placeholder="Ej: un fracaso anterior..." oninput="saveExercise('m2pro2',this.value)"></textarea></td></tr>
+          </tbody>
+        </table>
+        <button class="btn-exercise" onclick="saveExerciseFeedback(this)">✦ Guardar mi mapa</button>
+      </div>
+    </div>`
   },
   {
     id: 'mindset-3',
-    title: 'Neuroplasticity — The Science of Mental Change',
-    eyebrow: 'Lesson 3 of 5 · Mindset',
-    desc: 'Science confirms what Scripture declared: your mind can be renewed. Learn how neuroplasticity gives you the power to literally rewire your brain for abundance.',
-    videoHTML: `<div class="yt-wrap"><iframe src="https://www.youtube.com/embed/5uuZt842Qmk?rel=0&modestbranding=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`
+    title: 'Neuroplasticidad — La Ciencia Confirma la Escritura',
+    eyebrow: 'Lección 3 de 5 · Fórmula de Reinicio Mental',
+    desc: 'La ciencia confirma lo que la Escritura ya había declarado: tu mente puede ser renovada. Aprende cómo la neuroplasticidad te da el poder de literalmente recablear tu cerebro para la abundancia.',
+    videoHTML: `<div class="text-lesson" style="padding:36px 40px 0; max-width:860px;">
+      <div class="verse-block">
+        <div class="verse-text">"No os conforméis a este siglo, sino transformaos por medio de la renovación de vuestro entendimiento, para que comprobéis cuál sea la buena voluntad de Dios, agradable y perfecta."</div>
+        <div class="verse-ref">Romanos 12:2</div>
+      </div>
+      <p class="lesson-intro">Durante siglos, los científicos creyeron que el cerebro adulto era fijo e inmutable. Hoy, la neurociencia moderna ha derribado esa idea con una sola palabra: <strong>neuroplasticidad</strong>. Y Dios lo había dicho hace más de dos mil años.</p>
+      <div class="lesson-body">
+        <div class="lesson-section-title">¿Qué es la neuroplasticidad?</div>
+        <p>La neuroplasticidad es la capacidad del cerebro de reorganizarse, formar nuevas conexiones neuronales y cambiar su estructura en respuesta a experiencias, pensamientos y aprendizaje. En términos simples: <strong>tu cerebro no está fijo. Puede cambiar. Tú puedes cambiarlo.</strong></p>
+        <div class="neuro-stat">
+          <div class="neuro-item"><span class="neuro-num">86B</span><span class="neuro-label">neuronas en el cerebro humano</span></div>
+          <div class="neuro-item"><span class="neuro-num">21</span><span class="neuro-label">días para comenzar a formar un nuevo camino neural</span></div>
+          <div class="neuro-item"><span class="neuro-num">66</span><span class="neuro-label">días promedio para automatizar un nuevo hábito mental</span></div>
+        </div>
+        <div class="lesson-section-title">Cómo se forman nuevas conexiones neuronales</div>
+        <p>Cada vez que tienes un pensamiento repetido, las neuronas correspondientes se conectan más fuertemente entre sí. Los neurocientíficos lo llaman "neuronas que disparan juntas, se conectan juntas". Esto significa que cada vez que repites una declaración de fe, cada vez que meditas en la Palabra, cada vez que afirmas la verdad de Dios sobre tu vida — <strong>literalmente estás construyendo nuevos caminos en tu cerebro.</strong></p>
+        <p>Por eso Josué 1:8 dice: "Este libro de la ley no se apartará de tu boca, sino que lo meditarás de día y de noche." Dios sabía que la repetición de Su verdad no solo cambia tu espíritu — cambia tu biología.</p>
+        <div class="lesson-section-title">Repetición + Emoción = Transformación</div>
+        <p>Los estudios muestran que cuando combinamos repetición con emoción genuina, el cambio neural se acelera dramáticamente. <strong>La fe con sentimiento activa el cerebro a un nivel profundo.</strong> No es casualidad que la adoración, la oración apasionada y la gratitud intensa sean prácticas bíblicas — son también las herramientas más poderosas de reprogramación mental.</p>
+      </div>
+      <div class="exercise-card">
+        <div class="exercise-title">✦ El Desafío de los 21 Días</div>
+        <div class="exercise-subtitle">Elige UNA creencia que quieres instalar en tu mente. Escríbela en primera persona, presente, como si ya fuera tu realidad. Comprométete a declararla cada mañana por 21 días.</div>
+        <div class="exercise-question">
+          <label>Mi nueva creencia (escríbela en primera persona)</label>
+          <textarea class="exercise-input" placeholder='Ej: "Soy prosperado en todo lo que emprendo, porque Dios está conmigo."' oninput="saveExercise('m3belief',this.value)"></textarea>
+        </div>
+        <div class="exercise-question">
+          <label>¿Por qué esta creencia es verdad según la Palabra de Dios?</label>
+          <textarea class="exercise-input" placeholder="Escribe el versículo o principio bíblico que la respalda..." oninput="saveExercise('m3verse',this.value)"></textarea>
+        </div>
+        <div class="exercise-question">
+          <label>¿Cómo te sentirás cuando esta creencia sea completamente tuya?</label>
+          <textarea class="exercise-input" placeholder="Describe la emoción, el nivel de paz, la confianza que sentirás..." oninput="saveExercise('m3emotion',this.value)"></textarea>
+        </div>
+        <button class="btn-exercise" onclick="saveExerciseFeedback(this)">✦ Activar mi desafío de 21 días</button>
+      </div>
+    </div>`
   },
   {
     id: 'mindset-4',
-    title: 'Replacing Beliefs with New Positive Truths',
-    eyebrow: 'Lesson 4 of 5 · Mindset',
-    desc: 'It is not enough to remove the old — you must replace it with truth. Learn the practical method for installing new empowering beliefs that align with God\'s Word.',
-    videoHTML: `<div class="yt-wrap"><iframe src="https://www.youtube.com/embed/9QabbLzBMjo?rel=0&modestbranding=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`
+    title: 'Reemplazar con la Verdad de Dios',
+    eyebrow: 'Lección 4 de 5 · Fórmula de Reinicio Mental',
+    desc: 'No es suficiente identificar las creencias limitantes — debes reemplazarlas activamente con la verdad de Dios. Aprende el método práctico y las 7 declaraciones que cambiarán tu mentalidad.',
+    videoHTML: `<div class="text-lesson" style="padding:36px 40px 0; max-width:860px;">
+      <div class="verse-block">
+        <div class="verse-text">"Destruyendo argumentos y toda altivez que se levanta contra el conocimiento de Dios, y llevando cautivo todo pensamiento a la obediencia a Cristo."</div>
+        <div class="verse-ref">2 Corintios 10:5</div>
+      </div>
+      <p class="lesson-intro">No es suficiente identificar las creencias limitantes — debes reemplazarlas activamente. La mente no tolera el vacío: si sacas una creencia vieja sin poner algo en su lugar, el viejo patrón regresará con más fuerza.</p>
+      <div class="lesson-body">
+        <div class="lesson-section-title">El proceso de los tres pasos</div>
+        <p><strong>Paso 1 — Identificar:</strong> Cuando un pensamiento limitante aparezca, nómbralo. "Esta es una mentira del enemigo. Esta creencia no viene de Dios." El simple acto de nombrarlo quita gran parte de su poder.</p>
+        <p><strong>Paso 2 — Rechazar:</strong> Pablo dice "llevar cautivo todo pensamiento". Esto es un acto activo y voluntario — no esperamos pasivamente que los malos pensamientos desaparezcan. Los tomamos cautivos, los examinamos y los rechazamos conscientemente.</p>
+        <p><strong>Paso 3 — Reemplazar:</strong> Inmediatamente después del rechazo, declara la verdad de Dios. No solo en tu mente — <strong>dila en voz alta.</strong> La Biblia dice que la fe viene por el oír (Romanos 10:17). Tus propias palabras tienen poder sobre tu mente.</p>
+        <div class="lesson-section-title">El poder de hablar en voz alta</div>
+        <p>Hablar la Palabra de Dios en voz alta no es un ritual mágico — es una práctica con base científica y espiritual. Cuando hablas, activas múltiples áreas del cerebro simultáneamente: el área motora, el área auditiva y el área de procesamiento del lenguaje. <strong>Tu cerebro recibe el mensaje con tres veces más intensidad cuando lo pronuncias que cuando solo lo piensas.</strong></p>
+      </div>
+      <div class="exercise-card">
+        <div class="exercise-title">✦ Tus 7 Declaraciones Diarias</div>
+        <div class="exercise-subtitle">Toca cada declaración para marcarla como proclamada. Declara estas verdades en voz alta cada mañana. Están fundamentadas en la Palabra de Dios.</div>
+        <div class="declaration-list" id="decl-list-4">
+          <div class="declaration-item" onclick="toggleDecl(this,'d4-1')">
+            <div class="decl-icon">🗣️</div>
+            <div style="flex:1"><div class="decl-text">Soy creado a imagen y semejanza de Dios. Tengo Su naturaleza, Su capacidad y Su poder viviendo en mí.</div><div class="decl-verse">Génesis 1:27 · 2 Pedro 1:4</div></div>
+            <div class="decl-check">✓</div>
+          </div>
+          <div class="declaration-item" onclick="toggleDecl(this,'d4-2')">
+            <div class="decl-icon">🗣️</div>
+            <div style="flex:1"><div class="decl-text">Mi mente está siendo renovada cada día. Los viejos patrones no tienen poder sobre mí. Tengo la mente de Cristo.</div><div class="decl-verse">Romanos 12:2 · 1 Corintios 2:16</div></div>
+            <div class="decl-check">✓</div>
+          </div>
+          <div class="declaration-item" onclick="toggleDecl(this,'d4-3')">
+            <div class="decl-icon">🗣️</div>
+            <div style="flex:1"><div class="decl-text">Soy más que vencedor en todo lo que enfrento. La victoria ya fue ganada por Cristo, y yo camino en esa victoria.</div><div class="decl-verse">Romanos 8:37 · 1 Juan 5:4</div></div>
+            <div class="decl-check">✓</div>
+          </div>
+          <div class="declaration-item" onclick="toggleDecl(this,'d4-4')">
+            <div class="decl-icon">🗣️</div>
+            <div style="flex:1"><div class="decl-text">Dios suple todas mis necesidades conforme a Sus riquezas en gloria. La escasez no es mi identidad ni mi destino.</div><div class="decl-verse">Filipenses 4:19 · 3 Juan 1:2</div></div>
+            <div class="decl-check">✓</div>
+          </div>
+          <div class="declaration-item" onclick="toggleDecl(this,'d4-5')">
+            <div class="decl-icon">🗣️</div>
+            <div style="flex:1"><div class="decl-text">Soy amado con amor eterno e incondicional. Mi valor no depende de mi desempeño, sino de quién soy en Cristo.</div><div class="decl-verse">Jeremías 31:3 · Romanos 8:38-39</div></div>
+            <div class="decl-check">✓</div>
+          </div>
+          <div class="declaration-item" onclick="toggleDecl(this,'d4-6')">
+            <div class="decl-icon">🗣️</div>
+            <div style="flex:1"><div class="decl-text">Tengo un propósito eterno y divino. Fui formado con dones únicos que el mundo necesita y que Dios usará.</div><div class="decl-verse">Jeremías 29:11 · Efesios 2:10</div></div>
+            <div class="decl-check">✓</div>
+          </div>
+          <div class="declaration-item" onclick="toggleDecl(this,'d4-7')">
+            <div class="decl-icon">🗣️</div>
+            <div style="flex:1"><div class="decl-text">Todo lo puedo en Cristo que me fortalece. No hay obstáculo demasiado grande, no hay sueño demasiado alto.</div><div class="decl-verse">Filipenses 4:13 · Marcos 9:23</div></div>
+            <div class="decl-check">✓</div>
+          </div>
+        </div>
+      </div>
+    </div>`
   },
   {
     id: 'mindset-5',
-    title: 'The Role of Creative Visualization',
-    eyebrow: 'Lesson 5 of 5 · Mindset',
-    desc: 'See it before you have it. Creative visualization is a sacred practice that activates faith, aligns your subconscious, and accelerates the manifestation of your divine destiny.',
-    videoHTML: `<div class="yt-wrap"><iframe src="https://www.youtube.com/embed/0tJe_-DEy_A?rel=0&modestbranding=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`
+    title: 'Visualización y Fe — Ver Antes de Tener',
+    eyebrow: 'Lección 5 de 5 · Fórmula de Reinicio Mental',
+    desc: 'Ve lo que no existe aún. La visualización creativa es una práctica sagrada que activa la fe, alinea tu subconsciente y acelera la manifestación de tu destino divino.',
+    videoHTML: `<div class="text-lesson" style="padding:36px 40px 0; max-width:860px;">
+      <div class="verse-block">
+        <div class="verse-text">"Es, pues, la fe la certeza de lo que se espera, la convicción de lo que no se ve."</div>
+        <div class="verse-ref">Hebreos 11:1</div>
+      </div>
+      <p class="lesson-intro">La fe no es solo creer en algo que no puedes ver — es verlo con los ojos del espíritu antes de que se manifieste en lo natural. Esta es la práctica de los patriarcas, de los profetas y de todos los que han caminado en la plenitud de las promesas de Dios.</p>
+      <div class="lesson-body">
+        <div class="lesson-section-title">La visualización en la Biblia</div>
+        <p>Cuando Dios le dijo a Abraham que mirara las estrellas y contara su descendencia (Génesis 15:5), no era solo una promesa — era un ejercicio de visualización guiado por el Espíritu. Cuando Dios le dijo a Josué que "meditara" en Su Palabra, la palabra hebrea original implica una imaginación activa, no solo lectura pasiva.</p>
+        <p><strong>La visión precede a la realidad.</strong> José vio su destino en un sueño mucho antes de que se cumpliera. Gedeón se vio a sí mismo como un guerrero antes de actuar como uno. David venció a Goliat en su corazón antes de lanzar la piedra.</p>
+        <div class="lesson-section-title">¿Qué es y qué NO es la visualización creativa?</div>
+        <p>La visualización creativa bíblica no es brujería, no es manifestación new age ni tampoco es solo "wishful thinking". Es <strong>la práctica de contemplar con fe las promesas de Dios como si ya fueran tu realidad</strong>, activando así tu fe, alineando tu mente subconsciente y posicionando tu corazón para recibir.</p>
+        <p>La diferencia entre la visualización bíblica y la secular es el centro: en la bíblica, el centro es Dios y Su voluntad. Tú no estás creando tu propia realidad — estás alineándote con lo que Dios ya preparó para ti.</p>
+        <div class="lesson-section-title">Cómo la visualización activa la fe</div>
+        <p>Cuando visualizas con emoción genuina y fe, tu cerebro experimenta esa realidad como si ya existiera. Las mismas neuronas que se activarían si estuvieras viviendo esa experiencia se activan cuando la visualizas vívidamente. Esto crea una resonancia entre tu mente, tu corazón y el reino espiritual — y donde hay resonancia, hay atracción.</p>
+      </div>
+      <div class="exercise-card">
+        <div class="exercise-title">✦ Ejercicio de Visualización Guiada</div>
+        <div class="exercise-subtitle">Busca un lugar tranquilo. Cierra los ojos por un momento después de leer cada paso. Permítete realmente sentir cada escena.</div>
+        <div class="viz-guide">
+          <div class="viz-step">
+            <div class="viz-num">1</div>
+            <div class="viz-step-text"><strong>Respira y entra en quietud.</strong> Inhala profundamente tres veces. Suelta cualquier tensión. Recuerda que entras al espacio de la presencia de Dios — un lugar seguro, un lugar de posibilidades ilimitadas.</div>
+          </div>
+          <div class="viz-step">
+            <div class="viz-num">2</div>
+            <div class="viz-step-text"><strong>Ve tu vida renovada.</strong> Imagina que ya pasaron 12 meses y tu mente fue completamente transformada. Ya no hay viejos miedos, ya no hay creencias limitantes. ¿Cómo te ves? ¿Cómo hablas? ¿Cómo te relacionas con los demás?</div>
+          </div>
+          <div class="viz-step">
+            <div class="viz-num">3</div>
+            <div class="viz-step-text"><strong>Ve tu área de breakthrough.</strong> Enfócate en el área donde más quieres ver transformación. Visualiza en detalle cómo luce esa área de tu vida un año a partir de hoy — las finanzas, las relaciones, el propósito, la salud. Hazlo concreto y específico.</div>
+          </div>
+          <div class="viz-step">
+            <div class="viz-num">4</div>
+            <div class="viz-step-text"><strong>Siente la gratitud.</strong> Desde ese lugar de haber recibido, da gracias a Dios. Siente la gratitud en tu pecho. Esta emoción de gratitud anticipada es uno de los estados más poderosos para activar la fe.</div>
+          </div>
+          <div class="viz-step" style="margin-bottom:0">
+            <div class="viz-num">5</div>
+            <div class="viz-step-text"><strong>Declara en voz alta.</strong> "Señor, lo que has comenzado en mí, lo perfeccionarás. Lo que prometiste, lo cumplirás. Mi mente renovada es Tu obra en mí. Lo recibo con fe hoy."</div>
+          </div>
+        </div>
+        <div class="exercise-question" style="margin-top:20px">
+          <label>¿Qué viste durante la visualización? Escríbelo antes de que se desvanezca.</label>
+          <textarea class="exercise-input" style="min-height:100px;" placeholder="Describe lo que viste, sentiste y recibiste durante este ejercicio..." oninput="saveExercise('m5viz',this.value)"></textarea>
+        </div>
+        <button class="btn-exercise" onclick="saveExerciseFeedback(this)">✦ Guardar mi visión</button>
+      </div>
+    </div>`
   }
 ];
 
@@ -663,12 +997,12 @@ function renderLesson(idx) {
 
   const done = isCompleted(lesson.id);
   document.getElementById('completado-icon').textContent = done ? '✓' : '◯';
-  document.getElementById('completado-text').textContent = done ? 'Completed' : 'Marcar como Completo';
+  document.getElementById('completado-text').textContent = done ? 'Completado ✓' : 'Marcar como Completo';
   document.getElementById('btn-completado').className = 'btn-completado' + (done ? ' done' : '');
 
   document.getElementById('btn-prev').className = 'btn-lesson-nav' + (idx === 0 ? ' disabled' : '');
   document.getElementById('btn-next').className = 'btn-lesson-nav next' + (idx === LESSONS.length - 1 ? ' disabled' : '');
-  document.getElementById('btn-next').textContent = idx === LESSONS.length - 1 ? '✓ Last Lesson' : 'Siguiente →';
+  document.getElementById('btn-next').textContent = idx === LESSONS.length - 1 ? '✓ Última Lección' : 'Siguiente →';
 
   document.getElementById('notes-input').value = localStorage.getItem('notes_' + lesson.id) || '';
   currentRating = parseInt(localStorage.getItem('rating_' + lesson.id) || '0');
@@ -678,6 +1012,7 @@ function renderLesson(idx) {
   updateProgress();
   window.scrollTo({ top: 0, behavior: 'smooth' });
   document.getElementById('sidebar').classList.remove('open');
+  setTimeout(loadExercises, 50);
 }
 
 function renderSidebar() {
@@ -695,9 +1030,9 @@ function updateProgress() {
   const total = LESSONS.length;
   const pct = (count / total) * 100;
   document.getElementById('progress-fill').style.width = pct + '%';
-  document.getElementById('progress-label').textContent = `${count} of ${total} completado`;
+  document.getElementById('progress-label').textContent = `${count} de ${total} completado`;
   document.getElementById('gift-progress-fill').style.width = pct + '%';
-  document.getElementById('gift-progress-label').textContent = `${count} of ${total}`;
+  document.getElementById('gift-progress-label').textContent = `${count} de ${total}`;
 }
 
 function markComplete() {
@@ -708,7 +1043,7 @@ function markComplete() {
   localStorage.setItem('completado_lessons_' + MODULE_ID, JSON.stringify(done));
   saveModuleProgress(MODULE_ID, currentLesson, done);
   document.getElementById('completado-icon').textContent = '✓';
-  document.getElementById('completado-text').textContent = 'Completed';
+  document.getElementById('completado-text').textContent = 'Completado ✓';
   document.getElementById('btn-completado').className = 'btn-completado done';
   updateProgress();
   renderSidebar();
@@ -744,7 +1079,7 @@ function setRating(n) {
 }
 function renderStars() {
   document.querySelectorAll('.star-btn').forEach((s, i) => s.className = 'star-btn' + (i < currentRating ? ' active' : ''));
-  const labels = ['Toca para calificar', 'Not for me', 'It was ok', 'Good', 'Very good', 'Life-changing ✦'];
+  const labels = ['Toca para calificar', 'No era para mí', 'Estuvo bien', 'Buena', 'Muy buena', 'Me cambió la vida ✦'];
   document.getElementById('rating-label').textContent = labels[currentRating];
 }
 
@@ -766,8 +1101,8 @@ function submitComment() {
 
 function renderComments() {
   const demo = [
-    { name: 'Rachel', text: 'The neuroplasticity lesson broke something open in me. I always thought I was just wired this way. Now I know the truth — my mind can change. It already is.', rating: 5, date: 'Apr 6' },
-    { name: 'Marcus', text: 'Replacing beliefs with truth is the most practical spiritual exercise I have ever done. After lesson 4, I wrote my new beliefs on paper and read them every morning. My whole atmosphere shifted.', rating: 5, date: 'Apr 3' },
+    { name: 'Valeria', text: 'La lección de neuroplasticidad me abrió algo por dentro. Siempre pensé que era así y que no podía cambiar. Ahora sé la verdad — mi mente puede cambiar. Ya está cambiando.', rating: 5, date: '6 Apr' },
+    { name: 'Marcos', text: 'Reemplazar creencias con la verdad de Dios es el ejercicio espiritual más práctico que he hecho. Después de la lección 4, escribí mis declaraciones y las leo cada mañana. Todo mi ambiente cambió.', rating: 5, date: '3 Apr' },
   ];
   getLessonComments(LESSONS[currentLesson].id).then(function(sbComments) {
     const all = [...sbComments, ...demo];
@@ -788,12 +1123,42 @@ function renderComments() {
 function saveNotes() {
   saveLessonInteraction(LESSONS[currentLesson].id, document.getElementById('notes-input').value, undefined);
   const btn = document.querySelector('.btn-save-notes');
-  btn.textContent = '❆ Saved';
-  setTimeout(() => btn.textContent = '❆ Save Notes', 1800);
+  btn.textContent = '❆ Guardado';
+  setTimeout(() => btn.textContent = '✦ Guardar mis notas', 1800);
 }
 
 function closeGiftModal() {
   document.getElementById('gift-modal').classList.remove('show');
+}
+
+function saveExercise(key, val) {
+  localStorage.setItem('exercise_' + key, val);
+}
+
+function saveExerciseFeedback(btn) {
+  btn.textContent = '✦ Guardado';
+  setTimeout(() => btn.textContent = '✦ Guardar mis reflexiones', 2000);
+}
+
+function toggleDecl(el, key) {
+  el.classList.toggle('spoken');
+  localStorage.setItem('decl_' + key, el.classList.contains('spoken') ? '1' : '0');
+}
+
+function loadExercises() {
+  document.querySelectorAll('[oninput]').forEach(el => {
+    const match = el.getAttribute('oninput').match(/saveExercise\('([^']+)'/);
+    if (match) {
+      const saved = localStorage.getItem('exercise_' + match[1]);
+      if (saved) el.value = saved;
+    }
+  });
+  document.querySelectorAll('.declaration-item[onclick]').forEach(el => {
+    const match = el.getAttribute('onclick').match(/'([^']+)'\)/);
+    if (match && localStorage.getItem('decl_' + match[1]) === '1') {
+      el.classList.add('spoken');
+    }
+  });
 }
 
 window.addEventListener('pageshow', function(ev) {
@@ -811,6 +1176,7 @@ function toggleSidebar() {
 }
 
 renderLesson(currentLesson);
+loadExercises();
 // ── SUPABASE HYDRATE ──
 onSupabaseReady(function() {
   var lid = LESSONS[currentLesson].id;
@@ -824,7 +1190,7 @@ onSupabaseReady(function() {
     updateProgress();
     var done = (p.completadoLessons || []).includes(LESSONS[currentLesson].id);
     document.getElementById('completado-icon').textContent = done ? '\u2713' : '\u25ef';
-    document.getElementById('completado-text').textContent = done ? 'Completed' : 'Marcar como Completo';
+    document.getElementById('completado-text').textContent = done ? 'Completado \u2713' : 'Marcar como Completo';
     document.getElementById('btn-completado').className = 'btn-completado' + (done ? ' done' : '');
   });
 });
