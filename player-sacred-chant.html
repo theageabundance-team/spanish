@@ -646,10 +646,10 @@
     <p class="gift-modal-text">
       Has recorrido cada canto sagrado y oración de esta enseñanza. El escudo del Arcángel Miguel ahora te rodea. Ninguna arma forjada contra ti prosperará.
     </p>
-    <div class="gift-modal-verse">"The Lord is my rock, my fortress and my deliverer; my God is my rock, in whom I take refuge, my shield and the horn of my salvation, my stronghold." — Psalm 18:2</div>
+    <div class="gift-modal-verse">"El Señor es mi roca, mi fortaleza y mi libertador; mi Dios, mi roca en quien me refugio, mi escudo y el cuerno de mi salvación, mi baluarte." — Salmo 18:2</div>
     <div class="gift-modal-btns">
       <a href="journey.html" class="btn-gift-journey" onclick="fadeOut(event,'journey.html')">✦ Ver Mi Regalo en la Jornada</a>
-      <button class="btn-gift-stay" onclick="closeGiftModal()">Keep Exploring</button>
+      <button class="btn-gift-stay" onclick="closeGiftModal()">Seguir Explorando</button>
     </div>
   </div>
 </div>
@@ -780,7 +780,7 @@ function renderLesson(idx) {
             <div class="download-title">${lesson.downloadTitle}</div>
             <div class="download-meta">${lesson.downloadMeta}</div>
           </div>
-          <div class="download-btn">↓ Open PDF</div>
+          <div class="download-btn">↓ Abrir PDF</div>
         </a>`;
     }
   } else {
@@ -889,7 +889,7 @@ function submitComment() {
   const text = document.getElementById('comment-input').value.trim();
   if (!text) return;
   const name = savedName ? savedName.split(' ')[0] : 'Member';
-  const newC = { name, text, rating: currentRating, date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) };
+  const newC = { name, text, rating: currentRating, date: new Date().toLocaleDateString('es-ES', { month: 'short', day: 'numeric' }) };
   document.getElementById('comment-input').value = '';
   // Optimistic: prepend immediately
   const list = document.getElementById('comments-list');

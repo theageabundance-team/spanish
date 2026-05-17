@@ -667,7 +667,7 @@
         </div>
         <div class="cert-this">Este certificado es otorgado a</div>
         <input class="cert-name-input" id="cert-name" type="text" placeholder="Your name" maxlength="40" autocompletado="off"/>
-        <div class="cert-title">I Am a New Creation</div>
+        <div class="cert-title">Soy una Nueva Creación</div>
         <div class="cert-subtitle">Desafío de Manifestación de 21 Días · Completados</div>
         <p class="cert-body">
           He caminado 21 días en fe, entrega e intención. He limpiado lo que era viejo, plantado lo que es nuevo, y entrado en la cosecha que Dios preparó para mí. No soy la misma persona que era el Día 1. Estoy listo. Estoy renovado. Recibo.
@@ -900,26 +900,26 @@ function buildCard(d, cur, comp) {
   const body = isLocked ? '' : `
     <div class="day-body">
       <div class="section">
-        <div class="section-label insight">💡 The Insight</div>
+        <div class="section-label insight">💡 La Enseñanza</div>
         <div class="insight-text">${d.insight}</div>
       </div>
       <div class="section">
-        <div class="section-label ritual">🕯️ The Ritual</div>
+        <div class="section-label ritual">🕯️ El Ritual</div>
         <div class="ritual-box">${d.ritual}</div>
       </div>
       <div class="section">
-        <div class="section-label journal">✍️ Journaling Prompt</div>
+        <div class="section-label journal">✍️ Reflexión de Diario</div>
         <div class="journal-prompt">${d.journal}</div>
-        <textarea class="journal-textarea" id="note-${d.day}" placeholder="Write your answer here...">${note}</textarea>
-        <button class="btn-save" onclick="saveEntry(${d.day})">✦ Save</button>
+        <textarea class="journal-textarea" id="note-${d.day}" placeholder="Escribe tu respuesta aquí...">${note}</textarea>
+        <button class="btn-save" onclick="saveEntry(${d.day})">✦ Guardar</button>
       </div>
       <div class="section">
-        <div class="section-label affirm">🙏 Affirmation &amp; Prayer</div>
+        <div class="section-label affirm">🙏 Afirmación y Oración</div>
         <div class="affirmation-box">${d.affirm}</div>
       </div>
       <button class="btn-completado ${isDone ? 'done' : ''}" onclick="markDone(${d.day})" ${isDone ? 'disabled' : ''}>
         <span>${isDone ? '✓' : '◯'}</span>
-        <span>${isDone ? 'Day Completados' : 'Mark Day as Complete'}</span>
+        <span>${isDone ? 'Día Completado' : 'Marcar Día como Completado'}</span>
       </button>
     </div>`;
 
@@ -928,10 +928,10 @@ function buildCard(d, cur, comp) {
       <div class="day-card-header" ${onclick}>
         <div class="day-icon-wrap">
           <div class="day-emoji">${icon}</div>
-          <div class="day-n">${isDone ? 'done' : 'day ' + d.day}</div>
+          <div class="day-n">${isDone ? 'listo' : 'día ' + d.day}</div>
         </div>
         <div class="day-meta">
-          <div class="day-label">${isDone ? 'Completados' : isToday ? 'Today' : isLocked ? 'Locked' : 'Day ' + d.day}</div>
+          <div class="day-label">${isDone ? 'Completado' : isToday ? 'Hoy' : isLocked ? 'Bloqueado' : 'Día ' + d.day}</div>
           <div class="day-title">${d.title}</div>
         </div>
         <div class="day-right">${rightHTML}${chevron}</div>
@@ -956,7 +956,7 @@ function saveEntry(day) {
   if (!el) return;
   saveNote(day, el.value);
   const btn = el.nextElementSibling;
-  if (btn) { btn.textContent = '✦ Saved!'; setTimeout(() => btn.textContent = '✦ Save', 1800); }
+  if (btn) { btn.textContent = '✦ Guardado!'; setTimeout(() => btn.textContent = '✦ Guardar', 1800); }
 }
 
 function markDone(day) {
@@ -983,7 +983,7 @@ function showCertificate() {
   const inp = document.getElementById('cert-name');
   if (inp && name) inp.value = name.split(' ')[0];
   const dateEl = document.getElementById('cert-date');
-  if (dateEl) dateEl.textContent = 'Completados on ' + new Date().toLocaleDateString('en-US', { year:'numeric', month:'long', day:'numeric' });
+  if (dateEl) dateEl.textContent = 'Completado el ' + new Date().toLocaleDateString('es-ES', { year:'numeric', month:'long', day:'numeric' });
   setTimeout(() => sect.scrollIntoView({ behavior:'smooth', block:'center' }), 300);
 }
 

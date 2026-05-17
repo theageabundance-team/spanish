@@ -525,10 +525,10 @@
   </a>
   <ul class="nav-links">
     <li><a href="index.html">Inicio</a></li>
-    <li><a href="#">My Products</a></li>
+    <li><a href="#">Mis Productos</a></li>
     <li><a href="journey.html" class="active">Jornada</a></li>
     <li><a href="journal.html">Diario</a></li>
-    <li><a href="#">Support</a></li>
+    <li><a href="#">Soporte</a></li>
   </ul>
   <div class="nav-right">
     <button class="nav-icon-btn">🔍</button>
@@ -646,9 +646,9 @@
 // ── NAME ──
 function getGreeting() {
   const h = new Date().getHours();
-  if (h < 12) return 'Good morning';
-  if (h < 18) return 'Good afternoon';
-  return 'Good evening';
+  if (h < 12) return 'Buenos días';
+  if (h < 18) return 'Buenas tardes';
+  return 'Buenas noches';
 }
 
 function applyName(name) {
@@ -844,13 +844,13 @@ milestonesList.innerHTML = MILESTONES.map((m, i) => {
   } else if (s === 'current') {
     if (USER.days >= m.day) {
       badgeHtml = m.giftUrl
-        ? `<a href="${m.giftUrl}" class="btn-claim" style="text-decoration:none;">🎁 Claim Your Gift</a>`
-        : `<button class="btn-claim" onclick="claimMilestone(this)">🎁 Claim Your Gift</button>`;
+        ? `<a href="${m.giftUrl}" class="btn-claim" style="text-decoration:none;">🎁 Reclamar Tu Regalo</a>`
+        : `<button class="btn-claim" onclick="claimMilestone(this)">🎁 Reclamar Tu Regalo</button>`;
     } else {
-      badgeHtml = `<span class="milestone-badge locked">🔒 Reach day ${m.day} to unlock</span>`;
+      badgeHtml = `<span class="milestone-badge locked">🔒 Llega al día ${m.day} para desbloquear</span>`;
     }
   } else {
-    badgeHtml = `<span class="milestone-badge locked">🔒 Reach day ${m.day} to unlock</span>`;
+    badgeHtml = `<span class="milestone-badge locked">🔒 Llega al día ${m.day} para desbloquear</span>`;
   }
 
   const scrollHtml = s !== 'locked'
