@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FPGZMZW88T"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -10,900 +9,993 @@
   gtag('config', 'G-FPGZMZW88T');
 </script>
 <script>if(!localStorage.getItem("abundance_email"))window.location.replace("login.html");</script>
-  <meta charset="UTF-8"/>
-  <link rel="manifest" href="manifest.json">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="Age of Abundance">
-  <link rel="apple-touch-icon" href="images/Copy of Whisk_566d7d5bf10336b9f184205567b5715eeg.png">
-  <meta name="theme-color" content="#0d0d12">
-  <title>El Susurro de la Fe — Abundance Time</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+<meta charset="UTF-8"/>
+<link rel="manifest" href="manifest.json">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Age of Abundance">
+<link rel="apple-touch-icon" href="images/Copy of Whisk_566d7d5bf10336b9f184205567b5715eeg.png">
+<meta name="theme-color" content="#fefcf8">
+<title>El Susurro de la Fe — 30 Días</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    :root {
-      --gold:        #c9a84c;
-      --gold-light:  #e8c96a;
-      --gold-pale:   #f5e6b8;
-      --gold-dim:    #7a5f28;
-      --bg:          #0a0a0f;
-      --bg2:         #0f0f18;
-      --bg3:         #13131f;
-      --bg4:         #1a1a28;
-      --text:        #f0e8d8;
-      --text-mid:    #c8b898;
-      --text-dim:    #7a6a50;
-      --border:      rgba(201,168,76,0.12);
-      --border-strong: rgba(201,168,76,0.25);
-      --radius:      12px;
-      --sidebar-w:   300px;
-    }
+  :root {
+    --amber:        #bf8030;
+    --amber-light:  #d9a050;
+    --amber-pale:   #f5e0b8;
+    --amber-bg:     rgba(191,128,48,0.07);
+    --amber-border: rgba(191,128,48,0.22);
+    --amber-border-s: rgba(191,128,48,0.42);
 
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Crimson Pro', Georgia, serif;
-      background: var(--bg);
-      color: var(--text);
-      min-height: 100vh;
-      overflow-x: hidden;
-      font-size: 17px;
-      animation: pageFadeIn 0.5s ease forwards;
-    }
-    @keyframes pageFadeIn { from { opacity:0; } to { opacity:1; } }
-    .page-fade-out { animation: pageFadeOut 0.35s ease forwards; }
-    @keyframes pageFadeOut { to { opacity:0; transform: translateY(-8px); } }
-    body::before {
-      content: '';
-      position: fixed; inset: 0; z-index: 0; pointer-events: none;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-      opacity: 0.4;
-    }
+    --bg:           #fefcf8;
+    --bg2:          #f7f3ec;
+    --bg3:          #efe9de;
+    --bg-card:      #ffffff;
 
-    /* ── GIFT BANNER ── */
-    .gift-banner {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 300;
-      background: linear-gradient(90deg, rgba(10,10,15,0.98), rgba(20,15,5,0.98));
-      padding: 10px 1.5rem;
-      height: auto; min-height: 72px;
-      display: flex; align-items: center; justify-content: center;
-      flex-direction: column; gap: 8px;
-    }
-    .gift-banner-text {
-      font-family: 'Cinzel', serif;
-      font-size: 0.9rem; letter-spacing: 0.06em;
-      color: var(--text-mid);
-      display: flex; align-items: center; gap: 10px;
-      flex-wrap: wrap; justify-content: center;
-      text-align: center;
-    }
-    .gift-pill {
-      background: rgba(201,168,76,0.12);
-      border: 1px solid rgba(201,168,76,0.3);
-      border-radius: 999px;
-      padding: 5px 14px;
-      color: var(--gold);
-      font-size: 0.88rem; letter-spacing: 0.06em;
-      display: flex; align-items: center; gap: 6px;
-    }
-    .gift-progress-wrap {
-      width: 100%; max-width: 340px;
-      display: flex; align-items: center; gap: 10px;
-    }
-    .gift-progress-bar {
-      flex: 1; height: 5px; border-radius: 999px;
-      background: rgba(255,255,255,0.08); overflow: hidden;
-    }
-    .gift-progress-fill {
-      height: 100%;
-      background: linear-gradient(90deg, var(--gold-dim), var(--gold));
-      border-radius: 999px;
-      transition: width 0.8s ease; width: 0%;
-    }
-    .gift-progress-label {
-      font-family: 'Cinzel', serif;
-      font-size: 0.78rem; letter-spacing: 0.08em;
-      color: var(--text-dim); white-space: nowrap;
-    }
+    --text:         #18140a;
+    --text-mid:     #3a3020;
+    --text-dim:     #7a6e58;
+    --text-dimmer:  #b0a48a;
 
-    /* ── NAV ── */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
-      height: 48px;
-      display: flex; align-items: center;
-      padding: 0 1.5rem;
-      background: rgba(10,10,15,0.95);
-      backdrop-filter: blur(20px);
-    }
-    .nav-back {
-      display: flex; align-items: center; gap: 8px;
-      text-decoration: none; color: var(--text-dim);
-      font-family: 'Cinzel', serif;
-      font-size: 0.7rem; letter-spacing: 0.1em;
-      transition: color 0.2s;
-    }
-    .nav-back:hover { color: var(--gold); }
+    --line:         rgba(0,0,0,0.08);
+    --line-s:       rgba(0,0,0,0.14);
 
-    /* ── LAYOUT ── */
-    .layout {
-      display: flex;
-      padding-top: 116px;
-      min-height: 100vh;
-      position: relative; z-index: 1;
-    }
+    --green:        #2e8b57;
+    --green-bg:     rgba(46,139,87,0.08);
+    --green-border: rgba(46,139,87,0.3);
 
-    /* ── SIDEBAR ── */
-    .sidebar {
-      width: var(--sidebar-w);
-      flex-shrink: 0;
-      position: fixed;
-      top: 116px; left: 0; bottom: 0;
-      background: var(--bg2);
-      border-right: 1px solid var(--border);
-      overflow-y: auto;
-      z-index: 100;
-      transition: transform 0.3s ease;
-    }
-    .sidebar::-webkit-scrollbar { width: 4px; }
-    .sidebar::-webkit-scrollbar-thumb { background: rgba(201,168,76,0.2); border-radius: 2px; }
+    --sidebar-w:    280px;
+    --radius:       14px;
+  }
 
-    .sidebar-header {
-      padding: 20px 20px 14px;
-      border-bottom: 1px solid var(--border);
-      position: sticky; top: 0; background: var(--bg2); z-index: 1;
-    }
-    .sidebar-eyebrow {
-      font-family: 'Cinzel', serif;
-      font-size: 0.6rem; letter-spacing: 0.16em; text-transform: uppercase;
-      color: var(--gold); opacity: 0.7; margin-bottom: 6px;
-    }
-    .sidebar-course-title {
-      font-family: 'Cinzel', serif;
-      font-size: 0.85rem; font-weight: 600;
-      color: var(--text); line-height: 1.3;
-    }
+  html { scroll-behavior: smooth; }
 
-    .sidebar-progress { padding: 14px 20px; border-bottom: 1px solid var(--border); }
-    .progress-row {
-      display: flex; justify-content: space-between;
-      font-family: 'Cinzel', serif;
-      font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase;
-      color: var(--text-dim); margin-bottom: 8px;
-    }
-    .progress-bar-wrap { background: rgba(255,255,255,0.06); border-radius: 999px; height: 5px; }
-    .progress-bar-fill {
-      height: 100%;
-      background: linear-gradient(90deg, var(--gold-dim), var(--gold));
-      border-radius: 999px; transition: width 0.8s ease;
-    }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-size: 18px;
+    line-height: 1.7;
+    animation: fadeIn 0.5s ease forwards;
+  }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  .fade-out { animation: fadeOut 0.35s ease forwards; }
+  @keyframes fadeOut { to { opacity: 0; transform: translateY(-6px); } }
 
-    .module-list { padding: 8px 0; }
-    .module-item {
-      display: flex; align-items: center; gap: 14px;
-      padding: 13px 20px; cursor: pointer;
-      transition: background 0.18s;
-      border-left: 3px solid transparent;
-    }
-    .module-item:hover { background: rgba(201,168,76,0.05); }
-    .module-item.active { background: rgba(201,168,76,0.08); border-left-color: var(--gold); }
-    .module-num {
-      flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.1);
-      display: flex; align-items: center; justify-content: center;
-      font-family: 'Cinzel', serif; font-size: 0.65rem; color: var(--text-dim);
-    }
-    .module-item.active .module-num { background: rgba(201,168,76,0.2); border-color: var(--gold); color: var(--gold); }
-    .module-item.completado .module-num { background: rgba(46,180,100,0.15); border-color: rgba(46,180,100,0.4); color: #4ecb80; }
-    .module-info { flex: 1; min-width: 0; }
-    .module-name {
-      font-family: 'Cinzel', serif;
-      font-size: 0.72rem; font-weight: 600;
-      color: var(--text-mid); line-height: 1.35;
-    }
-    .module-item.active .module-name { color: var(--gold-pale); }
+  /* ── TOP BANNER ── */
+  .top-banner {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 300;
+    background: var(--text);
+    padding: 10px 1.5rem; min-height: 64px;
+    display: flex; align-items: center; justify-content: center;
+    flex-direction: column; gap: 7px;
+  }
+  .banner-text {
+    font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 500;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    display: flex; align-items: center; gap: 10px;
+    flex-wrap: wrap; justify-content: center; text-align: center;
+  }
+  .banner-pill {
+    background: rgba(191,128,48,0.22); border: 1px solid rgba(191,128,48,0.45);
+    border-radius: 999px; padding: 4px 13px; color: var(--amber-pale);
+    font-size: 0.68rem; letter-spacing: 0.08em;
+  }
+  .banner-progress-wrap { width: 100%; max-width: 300px; display: flex; align-items: center; gap: 10px; }
+  .banner-bar { flex: 1; height: 3px; border-radius: 999px; background: rgba(255,255,255,0.1); overflow: hidden; }
+  .banner-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--amber), var(--amber-light));
+    border-radius: 999px; transition: width 0.8s ease; width: 0%;
+  }
+  .banner-label {
+    font-family: 'Inter', sans-serif; font-size: 0.62rem; font-weight: 500;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: rgba(255,255,255,0.35); white-space: nowrap;
+  }
 
-    /* ── MAIN ── */
-    .main-content { margin-left: var(--sidebar-w); flex: 1; min-width: 0; }
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+    height: 50px; display: flex; align-items: center; justify-content: space-between;
+    padding: 0 1.8rem;
+    background: rgba(254,252,248,0.96);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-back {
+    display: flex; align-items: center; gap: 7px; text-decoration: none;
+    color: var(--text-dim); font-family: 'Inter', sans-serif;
+    font-size: 0.7rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-back:hover { color: var(--amber); }
+  .nav-brand {
+    font-family: 'Lora', serif; font-size: 0.95rem;
+    font-weight: 600; color: var(--text-dimmer);
+  }
 
-    /* YouTube video wrapper */
-    .video-wrap { background: #000; width: 100%; }
-    .yt-wrap {
-      position: relative; padding: 56.25% 0 0 0; width: 100%;
-    }
-    .yt-wrap iframe {
-      position: absolute; top: 0; left: 0;
-      width: 100%; height: 100%;
-      border: none;
-    }
+  /* ── LAYOUT ── */
+  .layout { display: flex; padding-top: 114px; min-height: 100vh; position: relative; z-index: 1; }
 
-    .content-area { padding: 30px 40px 80px; max-width: 860px; }
+  /* ── SIDEBAR ── */
+  .sidebar {
+    width: var(--sidebar-w); flex-shrink: 0;
+    position: fixed; top: 114px; left: 0; bottom: 0;
+    background: var(--bg2); border-right: 1px solid var(--line);
+    overflow-y: auto; z-index: 100; transition: transform 0.3s ease;
+  }
+  .sidebar::-webkit-scrollbar { width: 3px; }
+  .sidebar::-webkit-scrollbar-thumb { background: var(--amber-border); border-radius: 2px; }
 
-    .module-header { margin-bottom: 26px; }
-    .module-eyebrow {
-      font-family: 'Cinzel', serif;
-      font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase;
-      color: var(--gold); opacity: 0.7; margin-bottom: 10px;
-    }
-    .module-title {
-      font-family: 'Cinzel', serif;
-      font-size: clamp(1.3rem, 2.5vw, 1.9rem);
-      font-weight: 700; color: var(--text);
-      letter-spacing: 0.02em; line-height: 1.2; margin-bottom: 16px;
-    }
+  .sidebar-head {
+    padding: 22px 20px 14px; border-bottom: 1px solid var(--line);
+    position: sticky; top: 0; background: var(--bg2); z-index: 1;
+  }
+  .sidebar-tag {
+    font-family: 'Inter', sans-serif; font-size: 0.58rem; font-weight: 600;
+    letter-spacing: 0.2em; text-transform: uppercase; color: var(--amber); margin-bottom: 5px;
+  }
+  .sidebar-name {
+    font-family: 'Lora', serif; font-size: 1rem; font-weight: 700; color: var(--text); line-height: 1.3;
+  }
 
-    .btn-completado {
-      display: inline-flex; align-items: center; gap: 9px;
-      padding: 11px 22px; border-radius: 8px;
-      background: rgba(201,168,76,0.1);
-      border: 1px solid var(--border-strong);
-      color: var(--gold);
-      font-family: 'Cinzel', serif;
-      font-size: 0.76rem; font-weight: 600; letter-spacing: 0.08em;
-      cursor: pointer; transition: all 0.2s;
-    }
-    .btn-completado:hover { background: rgba(201,168,76,0.18); border-color: var(--gold); }
-    .btn-completado.done { background: rgba(46,180,100,0.12); border-color: rgba(46,180,100,0.35); color: #4ecb80; }
+  .sidebar-prog { padding: 12px 20px; border-bottom: 1px solid var(--line); }
+  .prog-row {
+    display: flex; justify-content: space-between;
+    font-family: 'Inter', sans-serif; font-size: 0.58rem; font-weight: 500;
+    letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-dimmer); margin-bottom: 7px;
+  }
+  .prog-track { background: rgba(0,0,0,0.07); border-radius: 999px; height: 4px; }
+  .prog-fill { height: 100%; background: linear-gradient(90deg, var(--amber), var(--amber-light)); border-radius: 999px; transition: width 0.8s ease; }
 
-    .deco-divider {
-      display: flex; align-items: center; gap: 12px; margin: 28px 0;
-    }
-    .deco-divider-line { flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--border-strong), transparent); }
-    .deco-divider-sym { font-family: 'Cinzel', serif; font-size: 0.7rem; color: var(--gold); opacity: 0.4; letter-spacing: 0.2em; }
+  .week-group { padding: 4px 0; }
+  .week-label {
+    font-family: 'Inter', sans-serif; font-size: 0.58rem; font-weight: 700;
+    letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-dimmer);
+    padding: 12px 20px 6px;
+  }
+  .week-item {
+    display: flex; align-items: center; gap: 12px;
+    padding: 11px 20px; cursor: pointer;
+    transition: background 0.15s; border-left: 3px solid transparent;
+  }
+  .week-item:hover { background: rgba(0,0,0,0.04); }
+  .week-item.active { background: var(--amber-bg); border-left-color: var(--amber); }
+  .week-item.done { opacity: 0.7; }
+  .week-dot {
+    flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%;
+    background: var(--bg3); border: 1px solid var(--line-s);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Inter', sans-serif; font-size: 0.6rem; font-weight: 700; color: var(--text-dim);
+  }
+  .week-item.active .week-dot { background: var(--amber-bg); border-color: var(--amber-border-s); color: var(--amber); }
+  .week-item.done .week-dot { background: var(--green-bg); border-color: var(--green-border); color: var(--green); }
+  .week-info {}
+  .week-item-name { font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 600; color: var(--text-mid); }
+  .week-item.active .week-item-name { color: var(--amber); }
+  .week-item-sub { font-family: 'Inter', sans-serif; font-size: 0.65rem; color: var(--text-dimmer); margin-top: 1px; }
 
-    /* Tabs */
-    .tabs { display: flex; gap: 4px; margin-bottom: 24px; }
-    .tab-btn {
-      padding: 9px 20px; border-radius: 8px;
-      background: transparent; border: 1px solid transparent;
-      color: var(--text-dim);
-      font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.08em;
-      cursor: pointer; transition: all 0.18s;
-    }
-    .tab-btn:hover { color: var(--text-mid); }
-    .tab-btn.active { background: rgba(201,168,76,0.1); border-color: var(--border-strong); color: var(--gold); }
-    .tab-content { display: none; }
-    .tab-content.active { display: block; }
+  /* ── MAIN ── */
+  .main { margin-left: var(--sidebar-w); flex: 1; min-width: 0; }
 
-    .about-label {
-      font-family: 'Cinzel', serif;
-      font-size: 0.65rem; letter-spacing: 0.16em; text-transform: uppercase;
-      color: var(--gold); opacity: 0.65; margin-bottom: 12px;
-    }
-    .about-text { font-size: 1.1rem; color: var(--text-mid); line-height: 1.8; }
+  /* Week banner */
+  .week-banner {
+    padding: 52px 52px 44px;
+    background: var(--text); position: relative; overflow: hidden;
+  }
+  .week-banner::after {
+    content: attr(data-icon);
+    position: absolute; right: 48px; top: 50%; transform: translateY(-50%);
+    font-size: 7rem; opacity: 0.07; line-height: 1; pointer-events: none;
+  }
+  .wb-tag {
+    font-family: 'Inter', sans-serif; font-size: 0.62rem; font-weight: 600;
+    letter-spacing: 0.2em; text-transform: uppercase; color: rgba(191,128,48,0.7);
+    margin-bottom: 10px;
+  }
+  .wb-title {
+    font-family: 'Lora', serif; font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+    font-weight: 700; color: #fff; line-height: 1.15; max-width: 600px; margin-bottom: 14px;
+  }
+  .wb-desc {
+    font-family: 'Inter', sans-serif; font-size: 1rem; color: rgba(255,255,255,0.5);
+    max-width: 520px; line-height: 1.7; font-weight: 300;
+  }
 
-    /* ── DOWNLOAD MATERIAL ── */
-    .download-section { margin-top: 28px; }
-    .download-card {
-      display: flex; align-items: center; gap: 16px;
-      background: rgba(201,168,76,0.06);
-      border: 1px solid var(--border-strong);
-      border-radius: 12px; padding: 18px 20px;
-      text-decoration: none; transition: all 0.2s;
-    }
-    .download-card:hover { background: rgba(201,168,76,0.12); border-color: var(--gold); }
-    .download-icon { font-size: 1.8rem; flex-shrink: 0; }
-    .download-info { flex: 1; }
-    .download-title {
-      font-family: 'Cinzel', serif;
-      font-size: 0.8rem; font-weight: 600;
-      color: var(--gold-pale); letter-spacing: 0.03em; margin-bottom: 4px;
-    }
-    .download-meta { font-size: 0.85rem; color: var(--text-dim); }
-    .download-btn {
-      padding: 8px 18px; border-radius: 7px;
-      background: rgba(201,168,76,0.15);
-      border: 1px solid var(--border-strong); color: var(--gold);
-      font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.08em;
-      cursor: pointer; white-space: nowrap; transition: all 0.2s;
-    }
-    .download-card:hover .download-btn { background: rgba(201,168,76,0.25); }
+  /* Content */
+  .content { padding: 44px 52px 90px; max-width: 860px; }
 
-    /* ── LESSON NAV ── */
-    .lesson-nav { display: flex; gap: 12px; margin-top: 24px; }
-    .btn-lesson-nav {
-      display: flex; align-items: center; gap: 8px;
-      padding: 11px 20px; border-radius: 8px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid var(--border);
-      color: var(--text-mid);
-      font-family: 'Cinzel', serif; font-size: 0.72rem; letter-spacing: 0.06em;
-      cursor: pointer; transition: all 0.2s;
-    }
-    .btn-lesson-nav:hover { background: rgba(255,255,255,0.08); border-color: var(--border-strong); }
-    .btn-lesson-nav.next { background: rgba(201,168,76,0.1); border-color: var(--border-strong); color: var(--gold); }
-    .btn-lesson-nav.next:hover { background: rgba(201,168,76,0.18); }
-    .btn-lesson-nav.disabled { opacity: 0.3; pointer-events: none; }
+  /* Week header in content */
+  .week-header { margin-bottom: 32px; }
+  .wh-eyebrow {
+    font-family: 'Inter', sans-serif; font-size: 0.62rem; font-weight: 600;
+    letter-spacing: 0.2em; text-transform: uppercase; color: var(--amber); margin-bottom: 10px;
+  }
+  .wh-title {
+    font-family: 'Lora', serif; font-size: clamp(1.5rem, 2.5vw, 2rem);
+    font-weight: 700; color: var(--text); margin-bottom: 18px; line-height: 1.2;
+  }
+  .btn-done-week {
+    display: inline-flex; align-items: center; gap: 9px; padding: 12px 24px;
+    border-radius: 8px; background: var(--amber-bg); border: 1px solid var(--amber-border-s);
+    color: var(--amber); font-family: 'Inter', sans-serif;
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+    cursor: pointer; transition: all 0.2s;
+  }
+  .btn-done-week:hover { background: rgba(191,128,48,0.14); }
+  .btn-done-week.done { background: var(--green-bg); border-color: var(--green-border); color: var(--green); }
 
-    /* ── RATING & COMMENTS ── */
-    .rating-section { margin-top: 32px; }
-    .stars-row { display: flex; align-items: center; gap: 8px; margin-bottom: 20px; }
-    .star-btn {
-      font-size: 1.8rem; background: none; border: none;
-      cursor: pointer; color: rgba(255,255,255,0.15);
-      transition: all 0.15s; line-height: 1;
-    }
-    .star-btn.active { color: var(--gold); }
-    .star-btn:hover { transform: scale(1.15); }
-    .rating-label {
-      font-family: 'Cinzel', serif;
-      font-size: 0.7rem; color: var(--text-dim); letter-spacing: 0.08em;
-      margin-left: 6px;
-    }
-    .comment-box {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid var(--border);
-      border-radius: 12px; overflow: hidden;
-    }
-    .comment-input {
-      width: 100%; min-height: 90px;
-      background: transparent; border: none;
-      padding: 16px 18px; color: var(--text);
-      font-family: 'Crimson Pro', Georgia, serif;
-      font-size: 1.05rem; line-height: 1.65;
-      resize: none; outline: none;
-    }
-    .comment-input::placeholder { color: var(--text-dim); font-style: italic; }
-    .comment-footer {
-      padding: 10px 16px; border-top: 1px solid var(--border);
-      display: flex; justify-content: flex-end;
-    }
-    .btn-comment {
-      padding: 8px 20px; border-radius: 7px;
-      background: rgba(201,168,76,0.12);
-      border: 1px solid var(--border-strong); color: var(--gold);
-      font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.08em;
-      cursor: pointer; transition: all 0.2s;
-    }
-    .btn-comment:hover { background: rgba(201,168,76,0.22); }
-    .comments-list { margin-top: 24px; display: flex; flex-direction: column; gap: 14px; }
-    .comment-card {
-      background: var(--bg3); border: 1px solid var(--border);
-      border-radius: 12px; padding: 16px 18px;
-    }
-    .comment-top { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
-    .comment-avatar {
-      width: 30px; height: 30px; border-radius: 50%;
-      background: linear-gradient(135deg, var(--gold), var(--gold-dim));
-      display: flex; align-items: center; justify-content: center;
-      font-family: 'Cinzel', serif; font-size: 0.75rem; font-weight: 700; color: #fff;
-    }
-    .comment-name { font-family: 'Cinzel', serif; font-size: 0.7rem; color: var(--text-dim); letter-spacing: 0.05em; }
-    .comment-stars { margin-left: auto; color: var(--gold); font-size: 0.75rem; }
-    .comment-text { font-size: 1rem; color: var(--text-mid); line-height: 1.65; }
+  .divider { display: flex; align-items: center; gap: 14px; margin: 30px 0; }
+  .divider-line { flex: 1; height: 1px; background: var(--line); }
+  .divider-sym { font-family: 'Lora', serif; font-size: 0.8rem; color: var(--amber); opacity: 0.4; }
 
-    /* Notes */
-    .notes-textarea {
-      width: 100%; min-height: 160px;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid var(--border); border-radius: 12px;
-      padding: 16px 18px; color: var(--text);
-      font-family: 'Crimson Pro', Georgia, serif;
-      font-size: 1.05rem; line-height: 1.7;
-      resize: vertical; outline: none; transition: border-color 0.2s;
-    }
-    .notes-textarea:focus { border-color: var(--border-strong); }
-    .notes-textarea::placeholder { color: var(--text-dim); font-style: italic; }
-    .btn-save-notes {
-      margin-top: 12px; padding: 10px 22px; border-radius: 8px;
-      background: rgba(201,168,76,0.1); border: 1px solid var(--border-strong);
-      color: var(--gold); font-family: 'Cinzel', serif;
-      font-size: 0.72rem; letter-spacing: 0.08em;
-      cursor: pointer; transition: all 0.2s;
-    }
-    .btn-save-notes:hover { background: rgba(201,168,76,0.2); }
+  /* Tabs */
+  .tabs { display: flex; border-bottom: 1.5px solid var(--line); margin-bottom: 30px; }
+  .tab-btn {
+    padding: 11px 20px; background: none; border: none;
+    color: var(--text-dimmer); font-family: 'Inter', sans-serif;
+    font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+    cursor: pointer; transition: color 0.18s;
+    border-bottom: 2px solid transparent; position: relative; bottom: -1.5px;
+  }
+  .tab-btn:hover { color: var(--text-mid); }
+  .tab-btn.active { color: var(--amber); border-bottom-color: var(--amber); }
+  .tab-pane { display: none; }
+  .tab-pane.active { display: block; }
 
-    /* ── GIFT MODAL ── */
-    .gift-modal-overlay {
-      position: fixed; inset: 0; z-index: 500;
-      background: rgba(0,0,0,0.85); backdrop-filter: blur(12px);
-      display: flex; align-items: center; justify-content: center;
-      opacity: 0; pointer-events: none; transition: opacity 0.4s ease;
-      padding: 20px;
-    }
-    .gift-modal-overlay.show { opacity: 1; pointer-events: auto; }
-    .gift-modal {
-      background: linear-gradient(160deg, var(--bg2), var(--bg4));
-      border: 1px solid rgba(201,168,76,0.3);
-      border-radius: 20px; padding: 48px 40px;
-      max-width: 480px; width: 100%; text-align: center;
-      box-shadow: 0 40px 80px rgba(0,0,0,0.6), 0 0 60px rgba(201,168,76,0.08);
-      animation: modalIn 0.5s ease;
-    }
-    @keyframes modalIn { from { transform: translateY(30px) scale(0.95); } to { transform: translateY(0) scale(1); } }
-    .gift-modal-emoji { font-size: 4rem; display: block; margin-bottom: 20px; }
-    .gift-modal-eyebrow {
-      font-family: 'Cinzel', serif; font-size: 0.65rem;
-      letter-spacing: 0.22em; text-transform: uppercase;
-      color: var(--gold); opacity: 0.7; margin-bottom: 12px;
-    }
-    .gift-modal-title {
-      font-family: 'Cinzel', serif; font-size: 1.6rem; font-weight: 700;
-      color: var(--text); margin-bottom: 18px; line-height: 1.2;
-    }
-    .gift-modal-text {
-      font-size: 1.05rem; color: var(--text-mid); line-height: 1.8; margin-bottom: 20px;
-    }
-    .gift-modal-verse {
-      font-size: 0.92rem; color: var(--text-dim); font-style: italic;
-      line-height: 1.7; margin-bottom: 32px;
-      padding: 14px 18px;
-      border-left: 2px solid rgba(201,168,76,0.3);
-      text-align: left;
-    }
-    .gift-modal-btns { display: flex; flex-direction: column; gap: 10px; }
-    .btn-gift-journey {
-      padding: 14px 28px; border-radius: 10px;
-      background: linear-gradient(135deg, var(--gold-dim), var(--gold));
-      color: #fff; font-family: 'Cinzel', serif;
-      font-size: 0.78rem; letter-spacing: 0.1em; font-weight: 600;
-      text-decoration: none; cursor: pointer; transition: all 0.2s;
-      border: none; display: block; text-align: center;
-    }
-    .btn-gift-journey:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(201,168,76,0.3); }
-    .btn-gift-stay {
-      padding: 12px 28px; border-radius: 10px;
-      background: transparent; border: 1px solid var(--border-strong);
-      color: var(--text-dim); font-family: 'Cinzel', serif;
-      font-size: 0.72rem; letter-spacing: 0.08em;
-      cursor: pointer; transition: all 0.2s;
-    }
-    .btn-gift-stay:hover { color: var(--text); border-color: var(--gold); }
+  /* ── DAY CARDS ── */
+  .section-label {
+    font-family: 'Inter', sans-serif; font-size: 0.6rem; font-weight: 600;
+    letter-spacing: 0.2em; text-transform: uppercase; color: var(--amber); margin-bottom: 16px;
+  }
+  .days-list { display: flex; flex-direction: column; gap: 12px; }
+  .day-card {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .day-card:hover { border-color: var(--amber-border); }
+  .day-card.checked { border-color: var(--green-border); background: #fafffe; }
 
-    /* ── SIDEBAR TOGGLE MOBILE ── */
-    .sidebar-toggle {
-      display: none;
-      position: fixed; bottom: 24px; right: 20px; z-index: 150;
-      width: 48px; height: 48px; border-radius: 50%;
-      background: var(--gold); border: none;
-      color: #000; font-size: 1.3rem;
-      align-items: center; justify-content: center;
-      cursor: pointer; box-shadow: 0 4px 20px rgba(201,168,76,0.4);
-    }
+  .day-head {
+    display: flex; align-items: center; gap: 16px;
+    padding: 18px 22px; cursor: pointer; user-select: none;
+  }
+  .day-num {
+    flex-shrink: 0; width: 36px; height: 36px; border-radius: 50%;
+    background: var(--bg2); border: 1px solid var(--line-s);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 700; color: var(--text-dim);
+    transition: all 0.2s;
+  }
+  .day-card.checked .day-num { background: var(--green-bg); border-color: var(--green-border); color: var(--green); }
+  .day-card.open .day-num { background: var(--amber-bg); border-color: var(--amber-border-s); color: var(--amber); }
+  .day-head-info { flex: 1; }
+  .day-title {
+    font-family: 'Lora', serif; font-size: 1.1rem; font-weight: 600;
+    color: var(--text); line-height: 1.3;
+  }
+  .day-theme {
+    font-family: 'Inter', sans-serif; font-size: 0.72rem; color: var(--text-dimmer);
+    margin-top: 3px; font-weight: 400;
+  }
+  .day-chevron {
+    color: var(--text-dimmer); font-size: 1rem; transition: transform 0.25s;
+    flex-shrink: 0;
+  }
+  .day-card.open .day-chevron { transform: rotate(180deg); }
 
-    /* ── MOBILE ── */
-    @media (max-width: 768px) {
-      .sidebar { transform: translateX(-100%); top: 0; z-index: 250; }
-      .sidebar.open { transform: translateX(0); }
-      .main-content { margin-left: 0; }
-      .content-area { padding: 20px 16px 100px; }
-      .sidebar-toggle { display: flex; }
-      nav { padding: 0 1rem; }
-      .lesson-nav { flex-direction: column; }
-      .btn-lesson-nav { width: 100%; justify-content: center; }
-      .gift-progress-wrap { max-width: 100%; }
-      .download-card { flex-wrap: wrap; }
-      .download-btn { width: 100%; text-align: center; }
-    }
-  </style>
-  <script src="sw-register.js"></script>
+  /* Expanded body */
+  .day-body {
+    display: none; padding: 0 22px 24px; border-top: 1px solid var(--line);
+  }
+  .day-card.open .day-body { display: block; }
+
+  .day-verse {
+    margin: 20px 0 22px;
+    padding: 16px 20px;
+    background: var(--amber-bg); border-left: 3px solid var(--amber-border-s);
+    border-radius: 0 10px 10px 0;
+  }
+  .day-verse-text {
+    font-family: 'Lora', serif; font-size: 1.05rem; font-style: italic;
+    color: var(--text-mid); line-height: 1.7;
+  }
+  .day-verse-ref {
+    font-family: 'Inter', sans-serif; font-size: 0.62rem; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase; color: var(--amber); margin-top: 8px;
+  }
+
+  .day-section-title {
+    font-family: 'Inter', sans-serif; font-size: 0.62rem; font-weight: 700;
+    letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-dimmer);
+    margin-bottom: 10px; margin-top: 20px;
+  }
+  .day-exercise {
+    font-family: 'Inter', sans-serif; font-size: 1rem; color: var(--text-mid); line-height: 1.8;
+  }
+  .day-exercise strong { color: var(--text); font-weight: 600; }
+
+  .day-decl {
+    margin-top: 20px; padding: 16px 20px;
+    background: var(--text); border-radius: 10px;
+  }
+  .day-decl-label {
+    font-family: 'Inter', sans-serif; font-size: 0.58rem; font-weight: 700;
+    letter-spacing: 0.18em; text-transform: uppercase; color: rgba(191,128,48,0.7);
+    margin-bottom: 8px;
+  }
+  .day-decl-text {
+    font-family: 'Lora', serif; font-size: 1.05rem; font-style: italic;
+    color: rgba(255,255,255,0.9); line-height: 1.65;
+  }
+
+  .day-check-row { display: flex; justify-content: flex-end; margin-top: 20px; }
+  .btn-check-day {
+    display: flex; align-items: center; gap: 8px; padding: 10px 20px;
+    border-radius: 8px; background: var(--amber-bg); border: 1px solid var(--amber-border-s);
+    color: var(--amber); font-family: 'Inter', sans-serif;
+    font-size: 0.7rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+    cursor: pointer; transition: all 0.2s;
+  }
+  .btn-check-day:hover { background: rgba(191,128,48,0.14); }
+  .btn-check-day.done { background: var(--green-bg); border-color: var(--green-border); color: var(--green); pointer-events: none; }
+
+  /* NOTES tab */
+  .notes-textarea {
+    width: 100%; min-height: 180px;
+    background: var(--bg-card); border: 1px solid var(--line);
+    border-radius: 12px; padding: 18px 20px; color: var(--text);
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem; line-height: 1.75; resize: vertical; outline: none;
+    transition: border-color 0.2s;
+  }
+  .notes-textarea:focus { border-color: var(--amber-border-s); }
+  .notes-textarea::placeholder { color: var(--text-dimmer); }
+  .btn-save {
+    margin-top: 12px; padding: 12px 24px; border-radius: 8px;
+    background: var(--amber-bg); border: 1px solid var(--amber-border-s);
+    color: var(--amber); font-family: 'Inter', sans-serif;
+    font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+    cursor: pointer; transition: all 0.2s;
+  }
+  .btn-save:hover { background: rgba(191,128,48,0.15); }
+
+  /* COMMUNITY tab */
+  .stars-row { display: flex; align-items: center; gap: 8px; margin-bottom: 18px; }
+  .star-btn {
+    font-size: 1.8rem; background: none; border: none; cursor: pointer;
+    color: rgba(0,0,0,0.1); transition: all 0.15s; line-height: 1;
+  }
+  .star-btn.lit { color: var(--amber); }
+  .star-btn:hover { transform: scale(1.12); }
+  .star-label {
+    font-family: 'Inter', sans-serif; font-size: 0.65rem; font-weight: 500;
+    color: var(--text-dimmer); letter-spacing: 0.08em; text-transform: uppercase; margin-left: 4px;
+  }
+  .comment-box { background: var(--bg-card); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+  .comment-input {
+    width: 100%; min-height: 90px; background: none; border: none;
+    padding: 16px 18px; color: var(--text); font-family: 'Inter', sans-serif;
+    font-size: 1rem; line-height: 1.65; resize: none; outline: none;
+  }
+  .comment-input::placeholder { color: var(--text-dimmer); }
+  .comment-footer { padding: 10px 16px; border-top: 1px solid var(--line); display: flex; justify-content: flex-end; }
+  .btn-comment {
+    padding: 9px 20px; border-radius: 7px;
+    background: var(--amber-bg); border: 1px solid var(--amber-border-s);
+    color: var(--amber); font-family: 'Inter', sans-serif;
+    font-size: 0.68rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+    cursor: pointer; transition: all 0.2s;
+  }
+  .btn-comment:hover { background: rgba(191,128,48,0.15); }
+  .comments-list { margin-top: 20px; display: flex; flex-direction: column; gap: 12px; }
+  .comment-card { background: var(--bg-card); border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; }
+  .comment-top { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+  .comment-av {
+    width: 30px; height: 30px; border-radius: 50%; background: var(--text);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Lora', serif; font-size: 0.78rem; font-weight: 700; color: var(--amber-light);
+  }
+  .comment-who { font-family: 'Inter', sans-serif; font-size: 0.65rem; font-weight: 600; color: var(--text-dim); letter-spacing: 0.04em; text-transform: uppercase; }
+  .comment-stars { margin-left: auto; color: var(--amber); font-size: 0.7rem; }
+  .comment-text { font-family: 'Inter', sans-serif; font-size: 0.98rem; color: var(--text-mid); line-height: 1.7; }
+
+  /* Week nav */
+  .week-nav { display: flex; gap: 12px; margin-top: 32px; }
+  .btn-nav {
+    display: flex; align-items: center; gap: 8px; padding: 13px 22px;
+    border-radius: 8px; background: var(--bg2); border: 1px solid var(--line);
+    color: var(--text-dim); font-family: 'Inter', sans-serif;
+    font-size: 0.7rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+    cursor: pointer; transition: all 0.2s;
+  }
+  .btn-nav:hover { background: var(--bg3); border-color: var(--line-s); }
+  .btn-nav.next { background: var(--text); border-color: var(--text); color: #fff; }
+  .btn-nav.next:hover { background: #2c2416; }
+  .btn-nav.disabled { opacity: 0.25; pointer-events: none; }
+
+  /* Gift modal */
+  .modal-overlay {
+    position: fixed; inset: 0; z-index: 500;
+    background: rgba(24,20,10,0.6); backdrop-filter: blur(10px);
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0; pointer-events: none; transition: opacity 0.4s; padding: 20px;
+  }
+  .modal-overlay.show { opacity: 1; pointer-events: auto; }
+  .modal {
+    background: var(--bg-card); border: 1px solid var(--line-s);
+    border-radius: 22px; padding: 52px 44px; max-width: 460px; width: 100%; text-align: center;
+    box-shadow: 0 40px 80px rgba(0,0,0,0.15);
+    animation: modalIn 0.5s ease;
+  }
+  @keyframes modalIn { from { transform: translateY(28px) scale(0.96); } to { transform: none; } }
+  .modal-emoji { font-size: 3.5rem; display: block; margin-bottom: 18px; }
+  .modal-tag {
+    font-family: 'Inter', sans-serif; font-size: 0.58rem; font-weight: 600;
+    letter-spacing: 0.22em; text-transform: uppercase; color: var(--amber); margin-bottom: 10px;
+  }
+  .modal-title { font-family: 'Lora', serif; font-size: 1.7rem; font-weight: 700; color: var(--text); margin-bottom: 14px; line-height: 1.2; }
+  .modal-text { font-family: 'Inter', sans-serif; font-size: 1rem; color: var(--text-mid); line-height: 1.85; margin-bottom: 18px; }
+  .modal-verse {
+    font-family: 'Lora', serif; font-size: 0.95rem; font-style: italic;
+    color: var(--text-dim); line-height: 1.75; margin-bottom: 30px;
+    padding: 14px 18px; border-left: 3px solid var(--amber-border-s);
+    background: var(--amber-bg); border-radius: 0 10px 10px 0; text-align: left;
+  }
+  .modal-btns { display: flex; flex-direction: column; gap: 10px; }
+  .btn-modal-primary {
+    padding: 14px 28px; border-radius: 10px; background: var(--text);
+    color: #fff; font-family: 'Inter', sans-serif;
+    font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+    text-decoration: none; cursor: pointer; transition: all 0.2s;
+    border: none; display: block; text-align: center;
+  }
+  .btn-modal-primary:hover { background: #2c2416; transform: translateY(-2px); }
+  .btn-modal-sec {
+    padding: 12px 28px; border-radius: 10px; background: transparent;
+    border: 1px solid var(--line-s); color: var(--text-dim);
+    font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 500;
+    letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; transition: all 0.2s;
+  }
+  .btn-modal-sec:hover { color: var(--text); border-color: var(--line-s); }
+
+  /* Mobile */
+  .sidebar-toggle {
+    display: none; position: fixed; bottom: 24px; right: 20px; z-index: 150;
+    width: 50px; height: 50px; border-radius: 50%;
+    background: var(--text); border: none; color: var(--amber-light); font-size: 1.2rem;
+    align-items: center; justify-content: center;
+    cursor: pointer; box-shadow: 0 4px 20px rgba(0,0,0,0.18);
+  }
+  @media (max-width: 768px) {
+    .sidebar { transform: translateX(-100%); top: 0; z-index: 250; }
+    .sidebar.open { transform: translateX(0); }
+    .main { margin-left: 0; }
+    .content { padding: 26px 20px 100px; }
+    .week-banner { padding: 36px 22px 30px; }
+    .week-banner::after { display: none; }
+    .sidebar-toggle { display: flex; }
+    nav { padding: 0 1rem; }
+    .week-nav { flex-direction: column; }
+    .btn-nav { width: 100%; justify-content: center; }
+  }
+</style>
+<script src="sw-register.js"></script>
 </head>
 <body>
 
-<!-- GIFT BANNER -->
-<div class="gift-banner" id="gift-banner">
-  <div class="gift-banner-text">
-    Completa todas las lecciones para recibir tu regalo espiritual
-    <span class="gift-pill">🕊️ Regalo de Fe Viva</span>
+<div class="top-banner" id="top-banner">
+  <div class="banner-text">
+    Completa las 5 semanas para desbloquear tu regalo
+    <span class="banner-pill">🕊️ Fe Viva — Desafío 30 Días</span>
   </div>
-  <div class="gift-progress-wrap">
-    <div class="gift-progress-bar">
-      <div class="gift-progress-fill" id="gift-progress-fill"></div>
-    </div>
-    <div class="gift-progress-label" id="gift-progress-label">0 de 2</div>
+  <div class="banner-progress-wrap">
+    <div class="banner-bar"><div class="banner-fill" id="banner-fill"></div></div>
+    <div class="banner-label" id="banner-label">0 de 5</div>
   </div>
 </div>
 
-<!-- NAV -->
 <nav>
-  <a href="index.html" class="nav-back" onclick="fadeOut(event, 'index.html')">← Volver al Inicio</a>
+  <a href="index.html" class="nav-back" onclick="navFade(event,'index.html')">← Volver</a>
+  <span class="nav-brand">Abundance Time</span>
 </nav>
 
-<!-- LAYOUT -->
 <div class="layout" id="layout">
 
-  <!-- SIDEBAR -->
   <aside class="sidebar" id="sidebar">
-    <div class="sidebar-header">
-      <div class="sidebar-eyebrow">Contenido del Curso</div>
-      <div class="sidebar-course-title">El Susurro de la Fe</div>
+    <div class="sidebar-head">
+      <div class="sidebar-tag">Desafío 30 Días</div>
+      <div class="sidebar-name">El Susurro de la Fe</div>
     </div>
-    <div class="sidebar-progress">
-      <div class="progress-row">
-        <span>Progreso</span>
-        <span id="progress-label">0 de 2 completado</span>
-      </div>
-      <div class="progress-bar-wrap">
-        <div class="progress-bar-fill" id="progress-fill" style="width:0%"></div>
-      </div>
+    <div class="sidebar-prog">
+      <div class="prog-row"><span>Progreso</span><span id="prog-label">0 de 5 completado</span></div>
+      <div class="prog-track"><div class="prog-fill" id="prog-fill" style="width:0%"></div></div>
     </div>
-    <div class="module-list" id="module-list"></div>
+    <div id="sidebar-weeks"></div>
   </aside>
 
-  <!-- MAIN -->
-  <main class="main-content">
-
-    <!-- VIDEO -->
-    <div class="video-wrap">
-      <div id="video-container"></div>
-    </div>
-
-    <!-- CONTENT -->
-    <div class="content-area">
-
-      <div class="module-header">
-        <div class="module-eyebrow" id="lesson-eyebrow"></div>
-        <h1 class="module-title" id="lesson-title"></h1>
-        <button class="btn-completado" id="btn-completado" onclick="markComplete()">
-          <span id="completado-icon">◯</span>
-          <span id="completado-text">Marcar como Completo</span>
+  <main class="main">
+    <div id="banner-area"></div>
+    <div class="content">
+      <div class="week-header">
+        <div class="wh-eyebrow" id="wh-eyebrow"></div>
+        <h1 class="wh-title" id="wh-title"></h1>
+        <button class="btn-done-week" id="btn-done" onclick="markWeekDone()">
+          <span id="done-icon">◯</span>
+          <span id="done-text">Marcar Semana como Completa</span>
         </button>
       </div>
 
-      <div class="deco-divider">
-        <div class="deco-divider-line"></div>
-        <div class="deco-divider-sym">✦ ✦ ✦</div>
-        <div class="deco-divider-line"></div>
-      </div>
+      <div class="divider"><div class="divider-line"></div><div class="divider-sym">✦</div><div class="divider-line"></div></div>
 
-      <!-- TABS -->
       <div class="tabs">
-        <button class="tab-btn active" onclick="switchTab('about', this)">Acerca de</button>
-        <button class="tab-btn" onclick="switchTab('notes', this)">Mis Notas</button>
-        <button class="tab-btn" onclick="switchTab('comments', this)">Community</button>
+        <button class="tab-btn active" onclick="switchTab('days',this)">Ejercicios</button>
+        <button class="tab-btn" onclick="switchTab('notes',this)">Mis Notas</button>
+        <button class="tab-btn" onclick="switchTab('community',this)">Comunidad</button>
       </div>
 
-      <!-- TAB: ABOUT -->
-      <div class="tab-content active" id="tab-about">
-        <div class="about-label">Acerca de Esta Lección</div>
-        <p class="about-text" id="lesson-desc"></p>
-        <div class="download-section" id="download-section" style="display:none;">
-          <div class="about-label" style="margin-top:28px;">Material del Curso</div>
-          <div id="download-content"></div>
-        </div>
+      <div class="tab-pane active" id="tab-days">
+        <div class="section-label" id="days-label"></div>
+        <div class="days-list" id="days-list"></div>
       </div>
 
-      <!-- TAB: NOTES -->
-      <div class="tab-content" id="tab-notes">
-        <div class="about-label">Tus Notas Personales</div>
-        <textarea class="notes-textarea" id="notes-input" placeholder="Write your reflections, revelations, and insights here..."></textarea>
-        <button class="btn-save-notes" onclick="saveNotes()">✦ Guardar Notas</button>
+      <div class="tab-pane" id="tab-notes">
+        <div class="section-label">Tus Notas Personales</div>
+        <textarea class="notes-textarea" id="notes-input" placeholder="Escribe tus reflexiones de esta semana…"></textarea>
+        <button class="btn-save" onclick="saveNotes()">✦ Guardar Notas</button>
       </div>
 
-      <!-- TAB: COMMENTS -->
-      <div class="tab-content" id="tab-comments">
-        <div class="rating-section">
-          <div class="about-label">Califica Esta Lección</div>
-          <div class="stars-row">
-            <button class="star-btn" onclick="setRating(1)">★</button>
-            <button class="star-btn" onclick="setRating(2)">★</button>
-            <button class="star-btn" onclick="setRating(3)">★</button>
-            <button class="star-btn" onclick="setRating(4)">★</button>
-            <button class="star-btn" onclick="setRating(5)">★</button>
-            <span class="rating-label" id="rating-label">Toca para calificar</span>
-          </div>
+      <div class="tab-pane" id="tab-community">
+        <div class="section-label">Califica Esta Semana</div>
+        <div class="stars-row">
+          <button class="star-btn" onclick="setRating(1)">★</button>
+          <button class="star-btn" onclick="setRating(2)">★</button>
+          <button class="star-btn" onclick="setRating(3)">★</button>
+          <button class="star-btn" onclick="setRating(4)">★</button>
+          <button class="star-btn" onclick="setRating(5)">★</button>
+          <span class="star-label" id="star-label">Toca para calificar</span>
         </div>
         <div class="comment-box">
-          <textarea class="comment-input" id="comment-input" placeholder="Share what this teaching revealed to you..."></textarea>
-          <div class="comment-footer">
-            <button class="btn-comment" onclick="submitComment()">✦ Compartir</button>
-          </div>
+          <textarea class="comment-input" id="comment-input" placeholder="Comparte lo que esta semana despertó en ti…"></textarea>
+          <div class="comment-footer"><button class="btn-comment" onclick="submitComment()">✦ Compartir</button></div>
         </div>
         <div class="comments-list" id="comments-list"></div>
       </div>
 
-      <!-- LESSON NAVIGATION -->
-      <div class="lesson-nav">
-        <button class="btn-lesson-nav" id="btn-prev" onclick="goLesson(-1)">← Anterior</button>
-        <button class="btn-lesson-nav next" id="btn-next" onclick="goLesson(1)">Siguiente →</button>
+      <div class="week-nav">
+        <button class="btn-nav" id="btn-prev" onclick="goWeek(-1)">← Anterior</button>
+        <button class="btn-nav next" id="btn-next" onclick="goWeek(1)">Siguiente →</button>
       </div>
-
     </div>
   </main>
 </div>
 
-<!-- SIDEBAR TOGGLE (MOBILE) -->
-<button class="sidebar-toggle" onclick="toggleSidebar()">☰</button>
+<button class="sidebar-toggle" onclick="document.getElementById('sidebar').classList.toggle('open')">☰</button>
 
-<!-- GIFT MODAL -->
-<div class="gift-modal-overlay" id="gift-modal">
-  <div class="gift-modal">
-    <span class="gift-modal-emoji">🕊️</span>
-    <div class="gift-modal-eyebrow">Tu Regalo Ha Sido Desbloqueado</div>
-    <div class="gift-modal-title">Regalo de Fe Viva</div>
-    <p class="gift-modal-text">
-      Has abierto tu corazón y activado la fe dentro de ti. Esto ya no es solo creencia — es una fuerza viva que mueve montañas y llama a las cosas que no son como si fueran.
-    </p>
-    <div class="gift-modal-verse">"Es, pues, la fe la certeza de lo que se espera, la convicción de lo que no se ve." — Hebreos 11:1</div>
-    <div class="gift-modal-btns">
-      <a href="journey.html" class="btn-gift-journey" onclick="fadeOut(event,'journey.html')">✦ Ver Mi Regalo en la Jornada</a>
-      <button class="btn-gift-stay" onclick="closeGiftModal()">Keep Exploring</button>
+<div class="modal-overlay" id="gift-modal">
+  <div class="modal">
+    <span class="modal-emoji">🕊️</span>
+    <div class="modal-tag">Tu Regalo Ha Sido Desbloqueado</div>
+    <div class="modal-title">30 Días de Fe Viva</div>
+    <p class="modal-text">Has completado el desafío. Lo que era una creencia ahora es una práctica. Lo que era una esperanza ahora es una certeza. Tu fe ya no es pasiva — actúa, mueve y crea.</p>
+    <div class="modal-verse">"Es, pues, la fe la certeza de lo que se espera, la convicción de lo que no se ve." — Hebreos 11:1</div>
+    <div class="modal-btns">
+      <a href="journey.html" class="btn-modal-primary" onclick="navFade(event,'journey.html')">✦ Ver Mi Regalo en la Jornada</a>
+      <button class="btn-modal-sec" onclick="document.getElementById('gift-modal').classList.remove('show')">Seguir Explorando</button>
     </div>
   </div>
 </div>
 
 <script src="supabase-client.js"></script>
 <script>
-const LESSONS = [
+/* ═══════════════════════════════════════════
+   DATOS — 30 días organizados en 5 semanas
+═══════════════════════════════════════════ */
+const WEEKS = [
   {
-    id: 'whisper-faith-1',
-    title: 'The Sacred Beginning: Opening Your Heart',
-    eyebrow: 'Lección 1 de 2 · Espiritualidad',
-    desc: 'Learn how to open your heart and awaken to divine love and spiritual connection through sacred practices and mindfulness.',
-    hasDownload: true,
-    downloadType: 'pdf',
-    downloadHref: 'pdfs/pdfmodulo3.1.pdf',
-    downloadTitle: 'Prayer as a Path of Faith',
-    downloadMeta: 'PDF · Lesson 1 material',
-    videoHTML: `<div class="yt-wrap"><iframe src="https://www.youtube.com/embed/VTTyERc0zUI?rel=0&modestbranding=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`
+    id: 'sf-s1',
+    week: 'Semana 1',
+    title: 'La Raíz de la Fe',
+    icon: '🌱',
+    desc: 'Construye los cimientos. Esta semana entenderás qué es la fe de verdad y plantarás la primera semilla consciente.',
+    days: [
+      { n:1,  title:'¿Qué Es la Fe para Ti?',       theme:'Definición personal',
+        verse:'"La fe es la certeza de lo que se espera, la convicción de lo que no se ve." — Hebreos 11:1',
+        exercise:'Toma papel y escribe, con tus propias palabras, qué significa la fe para ti hoy. No lo que aprendiste — lo que <strong>tú crees</strong>. Sin filtros, sin corrección. Luego lee lo que escribiste en voz alta.',
+        decl:'Hoy elijo creer. Mi fe es real aunque no vea el resultado aún.' },
+      { n:2,  title:'La Semilla Pequeña',            theme:'Acción mínima de fe',
+        verse:'"Si tuviéreis fe como un grano de mostaza… nada os será imposible." — Mateo 17:20',
+        exercise:'Haz hoy <strong>una acción que solo tiene sentido si crees que algo va a pasar</strong>. Puede ser pequeña: anotar una meta, preparar espacio para algo que aún no llegó, o dar un primer paso hacia un sueño postergado.',
+        decl:'No necesito fe perfecta. Solo necesito una semilla.' },
+      { n:3,  title:'El Silencio Sagrado',            theme:'Escucha interior',
+        verse:'"Estad quietos y sabed que yo soy Dios." — Salmos 46:10',
+        exercise:'Apaga todo. Siéntate en silencio durante <strong>10 minutos</strong>. No pidas nada, no pienses en tu lista. Solo observa los pensamientos que aparecen sin aferrarte a ellos. Al terminar, escribe la primera frase que llegó a tu mente.',
+        decl:'En el silencio, escucho lo que el ruido del mundo me impide oír.' },
+      { n:4,  title:'La Gratitud Como Puerta',        theme:'Apertura y abundancia',
+        verse:'"Dad gracias en todo, porque esta es la voluntad de Dios para vosotros." — 1 Tesalonicenses 5:18',
+        exercise:'Escribe <strong>10 cosas por las que estás genuinamente agradecido hoy</strong>. No las mismas de siempre — busca cosas pequeñas que normalmente ignoras: el café de la mañana, que puedes leer esto, que tus pulmones funcionan. La gratitud no es un ritual — es un cambio de lentes.',
+        decl:'Lo que ya tengo es prueba de que más está en camino.' },
+      { n:5,  title:'Habla Tu Fe en Voz Alta',        theme:'Declaración y poder de la palabra',
+        verse:'"La muerte y la vida están en poder de la lengua." — Proverbios 18:21',
+        exercise:'Escribe <strong>3 declaraciones en tiempo presente</strong> sobre algo que todavía no ves pero en lo que crees. Ejemplo: "Soy próspero y vivo en abundancia." Luego párate frente al espejo y dícelas en voz alta, <strong>tres veces cada una</strong>, mirándote a los ojos.',
+        decl:'Mis palabras tienen poder. Hablo lo que quiero ver, no lo que veo ahora.' },
+      { n:6,  title:'La Fe Frente al Miedo',          theme:'Reconocer y redirigir',
+        verse:'"Porque no nos ha dado Dios espíritu de cobardía, sino de poder, de amor y de dominio propio." — 2 Timoteo 1:7',
+        exercise:'Identifica <strong>un miedo concreto</strong> que te ha estado frenando. Escríbelo. Luego, al lado, escribe: <em>"Lo que la fe me dice sobre esto es…"</em> El miedo no desaparece ignorándolo — se transforma cuando lo miras con los ojos de la fe.',
+        decl:'El miedo es real, pero la fe es más grande. Elijo avanzar.' },
+      { n:7,  title:'Revisión de la Semana 1',        theme:'Consolidación',
+        verse:'"Examínaos a vosotros mismos si estáis en la fe." — 2 Corintios 13:5',
+        exercise:'Vuelve a leer lo que escribiste durante esta semana. ¿Qué cambió en ti? ¿Qué semilla plantaste? Escribe <strong>3 observaciones</strong>: algo que te sorprendió, algo que fue difícil, y algo que quieres seguir practicando en la Semana 2.',
+        decl:'Cada semana soy más quien estoy llamado a ser.' }
+    ]
   },
   {
-    id: 'whisper-faith-2',
-    title: 'Activating Faith Through Daily Prayer',
-    eyebrow: 'Lesson 2 of 2 · Spirituality',
-    desc: 'Master the art of daily prayer and develop a powerful spiritual practice that deepens your faith and connection to the divine.',
-    hasDownload: false,
-    videoHTML: `<div class="yt-wrap"><iframe src="https://www.youtube.com/embed/bHzV8dKXIzA?rel=0&modestbranding=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`
+    id: 'sf-s2',
+    week: 'Semana 2',
+    title: 'La Voz Que Escucha',
+    icon: '👂',
+    desc: 'La fe no solo habla — escucha. Esta semana aprendes a sintonizar con la voz interior que ya tiene las respuestas.',
+    days: [
+      { n:8,  title:'Escucha Antes de Pedir',         theme:'Oración receptiva',
+        verse:'"Habla, Señor, que tu siervo escucha." — 1 Samuel 3:9',
+        exercise:'Esta vez, cuando vayas a orar o reflexionar, empieza al revés: <strong>escucha primero 5 minutos</strong> antes de decir o pedir cualquier cosa. Luego escribe: ¿Qué llegó a tu mente en ese silencio?',
+        decl:'Antes de hablar, aprendo a escuchar.' },
+      { n:9,  title:'El Diario de lo Que Ya Tienes',  theme:'Inventario de bendiciones',
+        verse:'"¿No has sabido, no has oído que el Dios eterno es el Señor?" — Isaías 40:28',
+        exercise:'Haz una lista de <strong>todo lo que tienes hoy</strong> que en algún momento fue solo un deseo. Salud, personas, recursos, oportunidades. Este ejercicio reprograma tu cerebro para reconocer evidencia de que tus oraciones sí son escuchadas.',
+        decl:'Mis oraciones pasadas ya fueron respondidas. Confío en las de hoy.' },
+      { n:10, title:'Una Sola Oración Simple',         theme:'Profundidad sobre cantidad',
+        verse:'"Y al orar, no uséis vanas repeticiones." — Mateo 6:7',
+        exercise:'Elige <strong>una sola cosa</strong> en la que quieres creer más profundamente hoy. Escribe una oración de no más de <strong>dos frases</strong> sobre eso. La clave está en la simplicidad y la sinceridad, no en la cantidad de palabras.',
+        decl:'No necesito palabras perfectas. Solo un corazón abierto.' },
+      { n:11, title:'La Fe de Otra Persona',           theme:'Inspiración y comunidad',
+        verse:'"Así que la fe es por el oír, y el oír, por la palabra de Dios." — Romanos 10:17',
+        exercise:'Busca y lee un testimonio real de alguien cuya fe lo transformó. Puede ser en la Biblia, en internet, o en la vida de alguien que conoces. Luego escribe: <strong>¿Qué de esa historia resuena con lo que estás viviendo tú?</strong>',
+        decl:'La fe de otros me recuerda que lo que creo también es posible para mí.' },
+      { n:12, title:'Declara en Presente',             theme:'Afirmaciones con emoción',
+        verse:'"Llama las cosas que no son como si fuesen." — Romanos 4:17',
+        exercise:'Escribe <strong>5 afirmaciones sobre tu vida futura como si ya estuvieran ocurriendo</strong>. No "quiero ser próspero" sino "soy próspero y vivo con abundancia". Léelas cada mañana esta semana. El secreto: dícelas con emoción, no mecánicamente.',
+        decl:'Hablo de mi futuro en tiempo presente porque ya está en camino.' },
+      { n:13, title:'El Ayuno de Quejas',              theme:'Disciplina mental',
+        verse:'"Haced todo sin murmuraciones ni contiendas." — Filipenses 2:14',
+        exercise:'Durante todo el día de hoy, <strong>no te quejes de nada</strong>. Ni en voz alta ni en tu mente. Cada vez que sientas el impulso, sustitúyelo por una observación neutra o una frase de gratitud. Al final del día, escribe: ¿Qué notaste sobre tus pensamientos habituales?',
+        decl:'Cuido mis pensamientos porque de ellos nace mi realidad.' },
+      { n:14, title:'Carta a Tu Fe',                   theme:'Conversación interior',
+        verse:'"Fiel es el que os llama, el cual también lo hará." — 1 Tesalonicenses 5:24',
+        exercise:'Escribe una <strong>carta dirigida a tu propia fe</strong>, como si fuera una persona. Cuéntale cómo te ha ayudado, cuándo la perdiste, qué necesitas de ella ahora, y lo que te comprometes a hacer para fortalecerla. No hay respuestas incorrectas.',
+        decl:'Mi fe merece ser cuidada. Hoy la elijo con intención.' }
+    ]
+  },
+  {
+    id: 'sf-s3',
+    week: 'Semana 3',
+    title: 'La Fe en Acción',
+    icon: '⚡',
+    desc: 'La fe que no se mueve se congela. Esta semana conviertes la creencia en movimiento real y concreto.',
+    days: [
+      { n:15, title:'El Paso que Has Postergado',      theme:'Acción valiente',
+        verse:'"La fe sin obras está muerta." — Santiago 2:17',
+        exercise:'Identifica <strong>una acción concreta</strong> que sabes que debes dar pero llevas tiempo evitando por miedo o duda. Hoy la das. No mañana. Puede ser una llamada, un mensaje, inscribirte en algo, o tener una conversación difícil. La fe requiere movimiento.',
+        decl:'Hoy actúo antes de sentirme listo, porque la fe precede a la evidencia.' },
+      { n:16, title:'Da Sin Esperar Nada',             theme:'Generosidad como fe',
+        verse:'"Dad, y se os dará; medida buena, apretada, sacudida y rebosando." — Lucas 6:38',
+        exercise:'Haz hoy un <strong>acto de generosidad inesperado</strong>. Puede ser tiempo, dinero, palabras, ayuda. Lo importante es que sea algo que le cueste algo a tu ego: dar sin publicarlo, sin que se enteren, sin esperar reconocimiento. Nota cómo te sientes después.',
+        decl:'Soy un canal de abundancia. Lo que doy regresa multiplicado.' },
+      { n:17, title:'Actúa Como Si',                   theme:'Comportamiento del resultado',
+        verse:'"Todo lo que pidiereis en oración, creyendo, lo recibiréis." — Mateo 21:22',
+        exercise:'Elige <strong>una área de tu vida soñada</strong> y durante el día de hoy, actúa como si ya fuera real. Si sueñas con un negocio, habla como dueño. Si sueñas con salud, cuida tu cuerpo como alguien que ya la tiene. No es fingir — es practicar quien estás llegando a ser.',
+        decl:'Me comporto de acuerdo a mi visión, no a mi situación actual.' },
+      { n:18, title:'Rodéate de Fe',                   theme:'Ambiente y comunidad',
+        verse:'"El hierro se aguza con el hierro, y el hombre con la presencia de otro hombre." — Proverbios 27:17',
+        exercise:'Hoy, <strong>busca intencionalmente a alguien</strong> que tenga más fe que tú en algún área. Puede ser una conversación, un libro, un podcast, o un testimonio. Después escribe: ¿Qué de esa persona o historia quiero incorporar en mí?',
+        decl:'Me rodeo de fe porque el entorno moldea mis creencias.' },
+      { n:19, title:'Tu Testimonio en Proceso',        theme:'Narrativa de vida',
+        verse:'"Y ellos le han vencido por la sangre del Cordero y por la palabra del testimonio de ellos." — Apocalipsis 12:11',
+        exercise:'Escribe el <strong>testimonio que quieres poder contar en 12 meses</strong>. Escríbelo en pasado, como si ya hubiera ocurrido: "Hace un año estaba en… pero decidí creer que… y hoy puedo decir que…" Sé específico. Este ejercicio activa la fe narrativa.',
+        decl:'Mi historia no ha terminado. El mejor capítulo aún está siendo escrito.' },
+      { n:20, title:'La Fe en el Cuerpo',              theme:'Fe encarnada',
+        verse:'"¿O ignoráis que vuestro cuerpo es templo del Espíritu Santo?" — 1 Corintios 6:19',
+        exercise:'La fe también vive en el cuerpo. Hoy, <strong>mueve tu cuerpo con intención</strong>: sal a caminar, estira, respira profundo, baila si quieres. Mientras lo haces, repite en tu mente una declaración de fe. El cuerpo y la mente son un sistema — una fortalece a la otra.',
+        decl:'Honro mi cuerpo como espacio sagrado donde la fe vive.' },
+      { n:21, title:'¡Mitad del Camino!',              theme:'Celebración y renovación',
+        verse:'"No nos cansemos de hacer el bien, porque a su tiempo cosecharemos si no desmayamos." — Gálatas 6:9',
+        exercise:'Has llegado al día 21. Tómate un momento para <strong>celebrar en serio</strong>. No como trámite — como reconocimiento real. Escribe: ¿Qué cambió en ti en estas 3 semanas? ¿Qué piensas ahora que antes no pensabas? Y escoge <strong>una palabra</strong> que defina cómo entras en la segunda mitad.',
+        decl:'Cada día que elijo la fe soy más quien estoy destinado a ser.' }
+    ]
+  },
+  {
+    id: 'sf-s4',
+    week: 'Semana 4',
+    title: 'Fe Inquebrantable',
+    icon: '🏔️',
+    desc: 'La fe real se prueba. Esta semana construyes la resistencia que hace que tu fe sobreviva las tormentas.',
+    days: [
+      { n:22, title:'Cuando la Fe Vacila',             theme:'Honestidad espiritual',
+        verse:'"Señor, creo; ayuda mi incredulidad." — Marcos 9:24',
+        exercise:'Escribe honestamente sobre <strong>un momento en el que tu fe flaqueó</strong>. ¿Qué pasó? ¿Cómo te sentiste? ¿Qué aprendiste? La fe inquebrantable no significa nunca dudar — significa elegir creer a pesar de la duda.',
+        decl:'Puedo ser honesto sobre mis dudas sin que ellas me definan.' },
+      { n:23, title:'Memoriza una Promesa',            theme:'Anclaje espiritual',
+        verse:'"Tu palabra es lámpara a mis pies y lumbrera a mi camino." — Salmos 119:105',
+        exercise:'Elige <strong>una promesa o versículo</strong> que hable directamente a lo que estás creyendo. Memorízalo hoy. Escríbelo en 3 lugares distintos. Repítelo al levantarte y al acostarte. Las promesas memorizadas se convierten en anclas cuando el viento sopla.',
+        decl:'Tengo promesas que no caducan. Me aferro a ellas en los días difíciles.' },
+      { n:24, title:'Sana lo que Bloquea Tu Fe',       theme:'Liberación interior',
+        verse:'"Si el Hijo os libertare, seréis verdaderamente libres." — Juan 8:36',
+        exercise:'Con honestidad, pregúntate: <strong>¿Qué creencia limitante está bloqueando mi fe?</strong> Puede ser "no merezco esto", "nunca me pasa nada bueno", o "Dios ayuda a otros pero no a mí". Escríbela. Luego escribe exactamente lo opuesto como una verdad nueva que eliges adoptar.',
+        decl:'Suelto lo que ya no necesito cargar para que la fe pueda crecer libre.' },
+      { n:25, title:'La Fe Colectiva',                 theme:'Poder de la comunidad',
+        verse:'"Porque donde están dos o tres congregados en mi nombre, allí estoy yo en medio de ellos." — Mateo 18:20',
+        exercise:'Comparte tu desafío de fe con <strong>alguien de confianza</strong>. No para que te validen — sino para hablar tu fe en voz alta ante otro ser humano. También puedes escribir una oración en la sección Comunidad de este módulo y dejar que otros la lean.',
+        decl:'Mi fe es más fuerte cuando la comparto.' },
+      { n:26, title:'Visualiza el Día 30',             theme:'Anticipación de la victoria',
+        verse:'"Pon delante de tus ojos el camino de vida." — Proverbios 4:26',
+        exercise:'Cierra los ojos y visualiza vividamente <strong>cómo te sentirás el día que termines estos 30 días</strong>. ¿Qué habrá cambiado? ¿Cómo te verás a ti mismo? ¿Qué le dirás a alguien que empiece el desafío después de ti? Escribe lo que viste.',
+        decl:'Puedo ver el resultado antes de tenerlo. Eso es fe.' },
+      { n:27, title:'Perdona para Liberar',            theme:'Fe y reconciliación',
+        verse:'"Y cuando estéis orando, perdonad, si tenéis algo contra alguno." — Marcos 11:25',
+        exercise:'El resentimiento ocupa el espacio donde podría vivir la fe. Identifica a <strong>alguien a quien necesitas perdonar</strong> — incluyendo a ti mismo. Escribe una carta de perdón. No tienes que enviarla. El perdón no es para ellos — es para liberar tu propio corazón.',
+        decl:'Perdono para liberarme. La fe fluye mejor en un corazón libre.' },
+      { n:28, title:'Tu Fe Más Grande',                theme:'Expansión de límites',
+        verse:'"Pide a mí, y te daré por herencia las naciones, y como posesión tuya los confines de la tierra." — Salmos 2:8',
+        exercise:'¿Cuál es el sueño que todavía no te has atrevido a creer que es posible para ti? El que suena "demasiado grande". Hoy, <strong>escríbelo</strong>. No con lógica — con fe. A veces la petición más grande es la que Dios estaba esperando que finalmente hicieras.',
+        decl:'No limito lo que puedo pedir. Mi fe no tiene techo.' }
+    ]
+  },
+  {
+    id: 'sf-s5',
+    week: 'Días Finales',
+    title: 'Tu Nueva Identidad',
+    icon: '🌟',
+    desc: 'Los últimos dos días no son un cierre — son un nuevo comienzo. Consolida quién eres ahora.',
+    days: [
+      { n:29, title:'¿Quién Eres Ahora?',              theme:'Identidad transformada',
+        verse:'"De modo que si alguno está en Cristo, nueva criatura es; las cosas viejas pasaron; he aquí todas son hechas nuevas." — 2 Corintios 5:17',
+        exercise:'Vuelve al Día 1 y lee lo que escribiste sobre qué era la fe para ti. Ahora escribe de nuevo: <strong>¿Qué es la fe para ti hoy?</strong> Compara ambas versiones. También escribe: ¿Quién eras hace 29 días? ¿Quién eres hoy?',
+        decl:'He cambiado. Y lo mejor está por venir.' },
+      { n:30, title:'La Fe que Seguirá',               theme:'Compromiso de vida',
+        verse:'"Prosigo a la meta, al premio del supremo llamamiento de Dios en Cristo Jesús." — Filipenses 3:14',
+        exercise:'Escribe un <strong>contrato contigo mismo</strong> para los próximos 30 días después de este desafío. ¿Cuál de estas prácticas vas a mantener? ¿Cuál fue la que más te transformó? ¿Qué le dirías a la versión de ti que estaba en el Día 1? Fírmalo.',
+        decl:'Este desafío termina, pero mi fe continúa. Siempre elijo creer.' }
+    ]
   }
 ];
 
 const MODULE_ID = 'whisper-faith';
-const GIFT_NAME = 'Regalo de Fe Viva';
-
-let currentLesson = parseInt(localStorage.getItem('current_lesson_' + MODULE_ID) || '0');
+let currentWeek = parseInt(localStorage.getItem('cur_week_' + MODULE_ID) || '0');
 let currentRating = 0;
 
-// ── POSITION NAV BELOW BANNER ──
-function positionNav() {
-  const banner = document.getElementById('gift-banner');
-  const nav = document.querySelector('nav');
-  const layout = document.getElementById('layout');
-  const sidebar = document.getElementById('sidebar');
-  const bannerH = banner.offsetHeight;
-  nav.style.top = bannerH + 'px';
-  const totalTop = bannerH + 48;
-  layout.style.paddingTop = totalTop + 'px';
-  sidebar.style.top = totalTop + 'px';
-}
-positionNav();
-window.addEventListener('resize', positionNav);
-
+/* ── HELPERS ── */
+function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function sp(s,d){try{return s!=null?JSON.parse(s):d;}catch(e){return d;}}
+function safeR(r){var n=parseInt(r)||0;return n>0&&n<=5?n:0;}
+function ini(name){var s=String(name==null?'':name).trim();return s?s[0]:'?';}
+function isWeekDone(id){ return sp(localStorage.getItem('done_weeks_'+MODULE_ID),[]).includes(id); }
+function isDayDone(n){ return sp(localStorage.getItem('done_days_'+MODULE_ID),[]).includes(n); }
+function getDoneCount(){ const d=sp(localStorage.getItem('done_weeks_'+MODULE_ID),[]); return WEEKS.filter(w=>d.includes(w.id)).length; }
 const savedName = localStorage.getItem('abundance_name');
 
-function escHtml(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');}
-function safeParse(s,d){try{return s!=null?JSON.parse(s):d;}catch(e){return d;}}
-function safeRating(r){var n=parseInt(r)||0;return n>0&&n<=5?n:0;}
-function safeInitial(name){var s=String(name==null?'':name).trim();return s?s[0]:'?';}
-function isCompleted(id) {
-  return safeParse(localStorage.getItem('completado_lessons_' + MODULE_ID), []).includes(id);
+/* ── POSITION ── */
+function positionNav(){
+  const b=document.getElementById('top-banner'), nav=document.querySelector('nav'),
+        lay=document.getElementById('layout'), side=document.getElementById('sidebar');
+  const bh=b.offsetHeight; nav.style.top=bh+'px';
+  const tt=bh+50; lay.style.paddingTop=tt+'px'; side.style.top=tt+'px';
 }
-function getCompletedCount() {
-  const done = safeParse(localStorage.getItem('completado_lessons_' + MODULE_ID), []);
-  return LESSONS.filter(l => done.includes(l.id)).length;
-}
+positionNav(); window.addEventListener('resize',positionNav);
 
-// ── RENDER LESSON ──
-function renderLesson(idx) {
-  currentLesson = idx;
-  localStorage.setItem('current_lesson_' + MODULE_ID, idx);
-  const completadoSoFar = safeParse(localStorage.getItem('completado_lessons_' + MODULE_ID), []);
-  saveModuleProgress(MODULE_ID, idx, completadoSoFar);
-  const lesson = LESSONS[idx];
+/* ── RENDER WEEK ── */
+function renderWeek(idx){
+  currentWeek=idx;
+  localStorage.setItem('cur_week_'+MODULE_ID, idx);
+  const w=WEEKS[idx];
+  saveModuleProgress(MODULE_ID, idx, sp(localStorage.getItem('done_weeks_'+MODULE_ID),[]));
 
-  document.getElementById('video-container').innerHTML = lesson.videoHTML;
-  document.getElementById('lesson-eyebrow').textContent = lesson.eyebrow;
-  document.getElementById('lesson-title').textContent = lesson.title;
-  document.getElementById('lesson-desc').textContent = lesson.desc;
+  // Banner
+  document.getElementById('banner-area').innerHTML=`
+    <div class="week-banner" data-icon="${w.icon}">
+      <div class="wb-tag">${w.week} de 5 · El Susurro de la Fe</div>
+      <div class="wb-title">${w.title}</div>
+      <div class="wb-desc">${w.desc}</div>
+    </div>`;
 
-  // Material section
-  const dlSection = document.getElementById('download-section');
-  const dlContent = document.getElementById('download-content');
-  if (lesson.hasDownload) {
-    dlSection.style.display = 'block';
-    if (lesson.downloadType === 'pdf') {
-      dlContent.innerHTML = `
-        <a href="${lesson.downloadHref}" class="download-card" download target="_blank" rel="noopener">
-          <div class="download-icon">📄</div>
-          <div class="download-info">
-            <div class="download-title">${lesson.downloadTitle}</div>
-            <div class="download-meta">${lesson.downloadMeta}</div>
-          </div>
-          <div class="download-btn">↓ Download PDF</div>
-        </a>`;
-    } else if (lesson.downloadType === 'link') {
-      dlContent.innerHTML = `
-        <a href="${lesson.downloadHref}" class="download-card" target="_blank" rel="noopener">
-          <div class="download-icon">✨</div>
-          <div class="download-info">
-            <div class="download-title">${lesson.downloadTitle}</div>
-            <div class="download-meta">${lesson.downloadMeta}</div>
-          </div>
-          <div class="download-btn">→ Access</div>
-        </a>`;
-    }
-  } else {
-    dlSection.style.display = 'none';
-  }
+  document.getElementById('wh-eyebrow').textContent = w.week + ' · Desafío 30 Días';
+  document.getElementById('wh-title').textContent = w.title;
 
-  const done = isCompleted(lesson.id);
-  document.getElementById('completado-icon').textContent = done ? '✓' : '◯';
-  document.getElementById('completado-text').textContent = done ? 'Completed' : 'Marcar como Completo';
-  document.getElementById('btn-completado').className = 'btn-completado' + (done ? ' done' : '');
+  const done = isWeekDone(w.id);
+  document.getElementById('done-icon').textContent = done ? '✓' : '◯';
+  document.getElementById('done-text').textContent = done ? 'Semana Completada' : 'Marcar Semana como Completa';
+  document.getElementById('btn-done').className = 'btn-done-week' + (done ? ' done' : '');
 
-  document.getElementById('btn-prev').className = 'btn-lesson-nav' + (idx === 0 ? ' disabled' : '');
-  document.getElementById('btn-next').className = 'btn-lesson-nav next' + (idx === LESSONS.length - 1 ? ' disabled' : '');
-  document.getElementById('btn-next').textContent = idx === LESSONS.length - 1 ? '✓ Last Lesson' : 'Siguiente →';
+  document.getElementById('days-label').textContent =
+    `Días ${w.days[0].n} al ${w.days[w.days.length-1].n} — ${w.days.length} ejercicios`;
 
-  document.getElementById('notes-input').value = localStorage.getItem('notes_' + lesson.id) || '';
-  currentRating = parseInt(localStorage.getItem('rating_' + lesson.id) || '0');
-  renderStars();
-  renderComments();
-  renderSidebar();
-  updateProgress();
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  // Render day cards
+  document.getElementById('days-list').innerHTML = w.days.map(d => `
+    <div class="day-card ${isDayDone(d.n)?'checked':''}" id="day-card-${d.n}">
+      <div class="day-head" onclick="toggleDay(${d.n})">
+        <div class="day-num">${isDayDone(d.n)?'✓':d.n}</div>
+        <div class="day-head-info">
+          <div class="day-title">Día ${d.n} — ${d.title}</div>
+          <div class="day-theme">${d.theme}</div>
+        </div>
+        <div class="day-chevron">▾</div>
+      </div>
+      <div class="day-body">
+        <div class="day-verse">
+          <div class="day-verse-text">${d.verse}</div>
+        </div>
+        <div class="day-section-title">Ejercicio del Día</div>
+        <div class="day-exercise">${d.exercise}</div>
+        <div class="day-decl">
+          <div class="day-decl-label">✦ Declaración</div>
+          <div class="day-decl-text">"${d.decl}"</div>
+        </div>
+        <div class="day-check-row">
+          <button class="btn-check-day ${isDayDone(d.n)?'done':''}" id="chk-${d.n}" onclick="checkDay(${d.n},event)">
+            ${isDayDone(d.n)?'✓ Hecho':'◯ Marcar como Hecho'}
+          </button>
+        </div>
+      </div>
+    </div>`).join('');
+
+  document.getElementById('notes-input').value = localStorage.getItem('notes_'+w.id) || '';
+  currentRating = parseInt(localStorage.getItem('rating_'+w.id)||'0');
+  renderStars(); renderComments(); renderSidebar(); updateProgress();
+  window.scrollTo({top:0, behavior:'smooth'});
   document.getElementById('sidebar').classList.remove('open');
+
+  document.getElementById('btn-prev').className = 'btn-nav' + (idx===0?' disabled':'');
+  document.getElementById('btn-next').className = 'btn-nav next' + (idx===WEEKS.length-1?' disabled':'');
+  document.getElementById('btn-next').textContent = idx===WEEKS.length-1 ? '✓ Última Semana' : 'Siguiente →';
 }
 
-// ── SIDEBAR ──
-function renderSidebar() {
-  document.getElementById('module-list').innerHTML = LESSONS.map((l, i) => `
-    <div class="module-item ${i === currentLesson ? 'active' : ''} ${isCompleted(l.id) ? 'completado' : ''}"
-      onclick="renderLesson(${i})">
-      <div class="module-num">${isCompleted(l.id) ? '✓' : (i + 1)}</div>
-      <div class="module-info">
-        <div class="module-name">${l.title}</div>
+function toggleDay(n){
+  const card=document.getElementById('day-card-'+n);
+  card.classList.toggle('open');
+}
+
+function checkDay(n, e){
+  e.stopPropagation();
+  if(isDayDone(n)) return;
+  const done = sp(localStorage.getItem('done_days_'+MODULE_ID),[]);
+  done.push(n); localStorage.setItem('done_days_'+MODULE_ID, JSON.stringify(done));
+  const card=document.getElementById('day-card-'+n);
+  card.classList.add('checked');
+  card.querySelector('.day-num').textContent='✓';
+  const btn=document.getElementById('chk-'+n);
+  btn.textContent='✓ Hecho'; btn.classList.add('done');
+}
+
+/* ── SIDEBAR ── */
+function renderSidebar(){
+  document.getElementById('sidebar-weeks').innerHTML = WEEKS.map((w,i)=>`
+    <div class="week-group">
+      <div class="week-label">${w.week}</div>
+      <div class="week-item ${i===currentWeek?'active':''} ${isWeekDone(w.id)?'done':''}"
+        onclick="renderWeek(${i})">
+        <div class="week-dot">${isWeekDone(w.id)?'✓':(i+1)}</div>
+        <div class="week-info">
+          <div class="week-item-name">${w.title}</div>
+          <div class="week-item-sub">Días ${w.days[0].n}–${w.days[w.days.length-1].n}</div>
+        </div>
       </div>
-    </div>
-  `).join('');
+    </div>`).join('');
 }
 
-// ── PROGRESS ──
-function updateProgress() {
-  const count = getCompletedCount();
-  const total = LESSONS.length;
-  const pct = (count / total) * 100;
-  document.getElementById('progress-fill').style.width = pct + '%';
-  document.getElementById('progress-label').textContent = `${count} of ${total} completado`;
-  document.getElementById('gift-progress-fill').style.width = pct + '%';
-  document.getElementById('gift-progress-label').textContent = `${count} of ${total}`;
+/* ── PROGRESS ── */
+function updateProgress(){
+  const count=getDoneCount(), total=WEEKS.length, pct=(count/total)*100;
+  document.getElementById('prog-fill').style.width=pct+'%';
+  document.getElementById('prog-label').textContent=`${count} de ${total} completado`;
+  document.getElementById('banner-fill').style.width=pct+'%';
+  document.getElementById('banner-label').textContent=`${count} de ${total}`;
 }
 
-// ── MARK COMPLETE ──
-function markComplete() {
-  const lesson = LESSONS[currentLesson];
-  if (isCompleted(lesson.id)) return;
-  const done = safeParse(localStorage.getItem('completado_lessons_' + MODULE_ID), []);
-  done.push(lesson.id);
-  localStorage.setItem('completado_lessons_' + MODULE_ID, JSON.stringify(done));
-  saveModuleProgress(MODULE_ID, currentLesson, done);
-  document.getElementById('completado-icon').textContent = '✓';
-  document.getElementById('completado-text').textContent = 'Completed';
-  document.getElementById('btn-completado').className = 'btn-completado done';
-  updateProgress();
-  renderSidebar();
-
-  if (getCompletedCount() === LESSONS.length) {
-    const gifts = safeParse(localStorage.getItem('abundance_gifts'), []);
-    if (!gifts.includes(MODULE_ID)) {
-      gifts.push(MODULE_ID);
-      localStorage.setItem('abundance_gifts', JSON.stringify(gifts));
-      saveGift(MODULE_ID);
-    }
-    setTimeout(() => document.getElementById('gift-modal').classList.add('show'), 800);
+/* ── MARK WEEK DONE ── */
+function markWeekDone(){
+  const w=WEEKS[currentWeek];
+  if(isWeekDone(w.id)) return;
+  const done=sp(localStorage.getItem('done_weeks_'+MODULE_ID),[]);
+  done.push(w.id); localStorage.setItem('done_weeks_'+MODULE_ID, JSON.stringify(done));
+  saveModuleProgress(MODULE_ID, currentWeek, done);
+  document.getElementById('done-icon').textContent='✓';
+  document.getElementById('done-text').textContent='Semana Completada';
+  document.getElementById('btn-done').className='btn-done-week done';
+  updateProgress(); renderSidebar();
+  if(getDoneCount()===WEEKS.length){
+    const gifts=sp(localStorage.getItem('abundance_gifts'),[]);
+    if(!gifts.includes(MODULE_ID)){gifts.push(MODULE_ID);localStorage.setItem('abundance_gifts',JSON.stringify(gifts));saveGift(MODULE_ID);}
+    setTimeout(()=>document.getElementById('gift-modal').classList.add('show'),800);
   }
 }
 
-// ── LESSON NAVIGATION ──
-function goLesson(dir) {
-  const next = currentLesson + dir;
-  if (next < 0 || next >= LESSONS.length) return;
-  renderLesson(next);
+function goWeek(dir){ const n=currentWeek+dir; if(n<0||n>=WEEKS.length)return; renderWeek(n); }
+
+function switchTab(id,btn){
+  document.querySelectorAll('.tab-pane').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active'); btn.classList.add('active');
 }
 
-// ── TABS ──
-function switchTab(id, btn) {
-  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
-  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-  document.getElementById('tab-' + id).classList.add('active');
-  btn.classList.add('active');
+function setRating(n){
+  currentRating=n; localStorage.setItem('rating_'+WEEKS[currentWeek].id,n);
+  saveLessonInteraction(WEEKS[currentWeek].id,undefined,n); renderStars();
+}
+function renderStars(){
+  document.querySelectorAll('.star-btn').forEach((s,i)=>s.className='star-btn'+(i<currentRating?' lit':''));
+  const l=['Toca para calificar','No era para mí','Estuvo bien','Buena','Muy buena','Me transformó ✦'];
+  document.getElementById('star-label').textContent=l[currentRating];
 }
 
-// ── RATING ──
-function setRating(n) {
-  currentRating = n;
-  saveLessonInteraction(LESSONS[currentLesson].id, undefined, n);
-  renderStars();
-}
-function renderStars() {
-  document.querySelectorAll('.star-btn').forEach((s, i) => s.className = 'star-btn' + (i < currentRating ? ' active' : ''));
-  const labels = ['Toca para calificar', 'Not for me', 'It was ok', 'Good', 'Very good', 'Life-changing ✦'];
-  document.getElementById('rating-label').textContent = labels[currentRating];
-}
-
-// ── COMMENTS ──
-function submitComment() {
-  const text = document.getElementById('comment-input').value.trim();
-  if (!text) return;
-  const name = savedName ? savedName.split(' ')[0] : 'Member';
-  const newC = { name, text, rating: currentRating, date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) };
-  document.getElementById('comment-input').value = '';
-  // Optimistic: prepend immediately
-  const list = document.getElementById('comments-list');
-  const el = document.createElement('div');
-  el.className = 'comment-card';
-  el.innerHTML = `<div class="comment-top"><div class="comment-avatar">${escHtml(safeInitial(name))}</div><div class="comment-name">${escHtml(name)} · ${newC.date}</div>${safeRating(newC.rating) ? `<div class="comment-stars">${'★'.repeat(safeRating(newC.rating))}</div>` : ''}</div><div class="comment-text">${escHtml(text)}</div>`;
-  list.prepend(el);
-  // Save to Supabase, then refresh from Supabase
-  saveComment(LESSONS[currentLesson].id, text, currentRating, name).then(function() { renderComments(); }).catch(console.error);
+function submitComment(){
+  const text=document.getElementById('comment-input').value.trim(); if(!text)return;
+  const name=savedName?savedName.split(' ')[0]:'Miembro';
+  const date=new Date().toLocaleDateString('es-ES',{month:'short',day:'numeric'});
+  document.getElementById('comment-input').value='';
+  const el=document.createElement('div'); el.className='comment-card';
+  el.innerHTML=`<div class="comment-top"><div class="comment-av">${esc(ini(name))}</div><div class="comment-who">${esc(name)} · ${date}</div>${safeR(currentRating)?`<div class="comment-stars">${'★'.repeat(safeR(currentRating))}</div>`:''}</div><div class="comment-text">${esc(text)}</div>`;
+  document.getElementById('comments-list').prepend(el);
+  saveComment(WEEKS[currentWeek].id,text,currentRating,name).then(()=>renderComments()).catch(console.error);
 }
 
-function renderComments() {
-  const demo = [
-    { name: 'Grace', text: 'Opening my heart in that first lesson felt like finally exhaling after years of holding my breath. Something shifted permanently. I am not the same.', rating: 5, date: 'Apr 3' },
-    { name: 'Daniel', text: 'The daily prayer activation gave me a structure I had been searching for. My mornings are now sacred. My faith is no longer passive — it acts.', rating: 5, date: 'Mar 31' },
+function renderComments(){
+  const demo=[
+    {name:'Isabella',text:'El día 3 de silencio me rompió. Nunca había estado quieta de verdad. En esos 10 minutos escuché una frase que llevaba años necesitando: "ya tienes lo que necesitas para empezar". No fue mi mente — fue algo más profundo.',rating:5,date:'16 may'},
+    {name:'Miguel',text:'El ejercicio de perdonar (semana 4) fue el más difícil y el más poderoso. Llevaba 3 años cargando algo que ni sabía que estaba bloqueando mi fe. Después de escribir esa carta me sentí 10 kilos más liviano.',rating:5,date:'12 may'},
+    {name:'Lucía',text:'El día 30 — el contrato conmigo misma — lo imprimí y lo pegué en mi espejo. Me recuerda cada mañana quién decidí ser. Este desafío no termina en el día 30, empieza ahí.',rating:5,date:'8 may'},
   ];
-  getLessonComments(LESSONS[currentLesson].id).then(function(sbComments) {
-    const all = [...sbComments, ...demo];
-    const list = document.getElementById('comments-list');
-    list.innerHTML = all.map(c => `
-    <div class="comment-card">
-      <div class="comment-top">
-        <div class="comment-avatar">${escHtml(safeInitial(c.name))}</div>
-        <div class="comment-name">${escHtml(c.name||'')} · ${c.date}</div>
-        ${safeRating(c.rating) ? `<div class="comment-stars">${'★'.repeat(safeRating(c.rating))}</div>` : ''}
-      </div>
-      <div class="comment-text">${escHtml(c.text||'')}</div>
-    </div>
-  `).join('');
+  getLessonComments(WEEKS[currentWeek].id).then(function(sb){
+    const all=[...sb,...demo];
+    document.getElementById('comments-list').innerHTML=all.map(c=>`
+      <div class="comment-card">
+        <div class="comment-top">
+          <div class="comment-av">${esc(ini(c.name))}</div>
+          <div class="comment-who">${esc(c.name||'')} · ${c.date}</div>
+          ${safeR(c.rating)?`<div class="comment-stars">${'★'.repeat(safeR(c.rating))}</div>`:''}
+        </div>
+        <div class="comment-text">${esc(c.text||'')}</div>
+      </div>`).join('');
   }).catch(console.error);
 }
 
-// ── NOTES ──
-function saveNotes() {
-  saveLessonInteraction(LESSONS[currentLesson].id, document.getElementById('notes-input').value, undefined);
-  const btn = document.querySelector('.btn-save-notes');
-  btn.textContent = '❆ Saved';
-  setTimeout(() => btn.textContent = '❆ Save Notes', 1800);
+function saveNotes(){
+  localStorage.setItem('notes_'+WEEKS[currentWeek].id, document.getElementById('notes-input').value);
+  saveLessonInteraction(WEEKS[currentWeek].id, document.getElementById('notes-input').value, undefined);
+  const btn=document.querySelector('.btn-save');
+  btn.textContent='✦ Guardado'; setTimeout(()=>btn.textContent='✦ Guardar Notas',1800);
 }
 
-function closeGiftModal() {
-  document.getElementById('gift-modal').classList.remove('show');
-}
+window.addEventListener('pageshow',function(ev){if(ev.persisted){document.body.classList.remove('fade-out');document.body.style.opacity='';}});
+function navFade(e,url){e.preventDefault();document.body.classList.add('fade-out');setTimeout(()=>window.location.href=url,350);}
 
-window.addEventListener('pageshow', function(ev) {
-  if (ev.persisted) { document.body.classList.remove('page-fade-out'); document.body.style.opacity = ''; }
-});
+/* ── INIT ── */
+renderWeek(currentWeek);
 
-function fadeOut(e, url) {
-  e.preventDefault();
-  document.body.classList.add('page-fade-out');
-  setTimeout(() => window.location.href = url, 350);
-}
-
-function toggleSidebar() {
-  document.getElementById('sidebar').classList.toggle('open');
-}
-
-// ── INIT ──
-renderLesson(currentLesson);
-// ── SUPABASE HYDRATE ──
-onSupabaseReady(function() {
-  var lid = LESSONS[currentLesson].id;
-  getLessonInteraction(lid).then(function(data) {
-    if (data.notes) document.getElementById('notes-input').value = data.notes;
-    if (data.rating) { currentRating = data.rating; renderStars(); }
+onSupabaseReady(function(){
+  var wid=WEEKS[currentWeek].id;
+  getLessonInteraction(wid).then(function(data){
+    if(data.notes)document.getElementById('notes-input').value=data.notes;
+    if(data.rating){currentRating=data.rating;renderStars();}
   });
   renderComments();
-  getModuleProgress(MODULE_ID).then(function(p) {
-    renderSidebar();
-    updateProgress();
-    var done = (p.completadoLessons || []).includes(LESSONS[currentLesson].id);
-    document.getElementById('completado-icon').textContent = done ? '\u2713' : '\u25ef';
-    document.getElementById('completado-text').textContent = done ? 'Completed' : 'Marcar como Completo';
-    document.getElementById('btn-completado').className = 'btn-completado' + (done ? ' done' : '');
+  getModuleProgress(MODULE_ID).then(function(p){
+    renderSidebar(); updateProgress();
+    var done=(p.completadoLessons||[]).includes(WEEKS[currentWeek].id);
+    document.getElementById('done-icon').textContent=done?'✓':'◯';
+    document.getElementById('done-text').textContent=done?'Semana Completada':'Marcar Semana como Completa';
+    document.getElementById('btn-done').className='btn-done-week'+(done?' done':'');
   });
 });
 </script>
