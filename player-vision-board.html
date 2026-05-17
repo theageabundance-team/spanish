@@ -14,407 +14,562 @@
   <link rel="manifest" href="manifest.json">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="Age of Abundance">
   <link rel="apple-touch-icon" href="images/Copy of Whisk_566d7d5bf10336b9f184205567b5715eeg.png">
-  <meta name="theme-color" content="#0d0d12">
-  <title>Academia del Tablero de Visión — Abundance Time</title>
+  <meta name="theme-color" content="#f0ece4">
+  <title>Tablero de Visión — Abundance Time</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --gold:        #c9a84c;
-      --gold-light:  #e8c96a;
-      --gold-pale:   #f5e6b8;
-      --gold-dim:    #7a5f28;
-      --bg:          #0a0a0f;
-      --bg2:         #0f0f18;
-      --bg3:         #13131f;
-      --bg4:         #1a1a28;
-      --text:        #f0e8d8;
-      --text-mid:    #c8b898;
-      --text-dim:    #7a6a50;
-      --border:      rgba(201,168,76,0.12);
-      --border-strong: rgba(201,168,76,0.25);
-      --radius:      12px;
-      --sidebar-w:   300px;
+      --gold:          #b8860b;
+      --gold-light:    #d4a520;
+      --gold-pale:     #f0d080;
+      --gold-warm:     #c9a84c;
+      --gold-dim:      #7a5a08;
+      --gold-bg:       rgba(184,134,11,0.08);
+      --gold-border:   rgba(184,134,11,0.25);
+      --gold-border-s: rgba(184,134,11,0.45);
+
+      --bg:            #f0ece4;
+      --bg2:           #e8e2d8;
+      --bg3:           #ddd6c8;
+      --bg-white:      #faf8f4;
+      --bg-card:       #ffffff;
+
+      --text:          #111008;
+      --text-mid:      #2c2618;
+      --text-dim:      #6b6050;
+      --text-dimmer:   #a89880;
+
+      --gray-line:     rgba(0,0,0,0.1);
+      --gray-line-s:   rgba(0,0,0,0.18);
+
+      --radius:        14px;
+      --sidebar-w:     300px;
     }
 
     html { scroll-behavior: smooth; }
+
     body {
-      font-family: 'Crimson Pro', Georgia, serif;
+      font-family: 'Inter', sans-serif;
       background: var(--bg);
       color: var(--text);
       min-height: 100vh;
       overflow-x: hidden;
-      font-size: 17px;
+      font-size: 19px;
       animation: pageFadeIn 0.5s ease forwards;
     }
-    @keyframes pageFadeIn { from { opacity:0; } to { opacity:1; } }
+    @keyframes pageFadeIn { from { opacity: 0; } to { opacity: 1; } }
     .page-fade-out { animation: pageFadeOut 0.35s ease forwards; }
-    @keyframes pageFadeOut { to { opacity:0; transform: translateY(-8px); } }
+    @keyframes pageFadeOut { to { opacity: 0; transform: translateY(-8px); } }
+
+    /* Subtle texture */
     body::before {
       content: '';
       position: fixed; inset: 0; z-index: 0; pointer-events: none;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-      opacity: 0.4;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
     }
 
     /* ── GIFT BANNER ── */
     .gift-banner {
       position: fixed; top: 0; left: 0; right: 0; z-index: 300;
-      background: linear-gradient(90deg, rgba(10,10,15,0.98), rgba(20,15,5,0.98));
-      padding: 10px 1.5rem;
-      height: auto; min-height: 72px;
+      background: var(--text);
+      padding: 10px 1.5rem; min-height: 68px;
       display: flex; align-items: center; justify-content: center;
       flex-direction: column; gap: 8px;
     }
     .gift-banner-text {
-      font-family: 'Cinzel', serif;
-      font-size: 0.9rem; letter-spacing: 0.06em;
-      color: var(--text-mid);
+      font-family: 'Inter', sans-serif; font-size: 0.72rem;
+      font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
       display: flex; align-items: center; gap: 10px;
-      flex-wrap: wrap; justify-content: center;
-      text-align: center;
+      flex-wrap: wrap; justify-content: center; text-align: center;
     }
     .gift-pill {
-      background: rgba(201,168,76,0.12);
-      border: 1px solid rgba(201,168,76,0.3);
-      border-radius: 999px; padding: 5px 14px;
-      color: var(--gold); font-size: 0.88rem; letter-spacing: 0.06em;
+      background: rgba(184,134,11,0.25); border: 1px solid rgba(184,134,11,0.5);
+      border-radius: 999px; padding: 4px 14px; color: var(--gold-pale);
+      font-size: 0.7rem; letter-spacing: 0.08em;
       display: flex; align-items: center; gap: 6px;
     }
-    .gift-progress-wrap {
-      width: 100%; max-width: 340px;
-      display: flex; align-items: center; gap: 10px;
-    }
-    .gift-progress-bar {
-      flex: 1; height: 5px; border-radius: 999px;
-      background: rgba(255,255,255,0.08); overflow: hidden;
-    }
+    .gift-progress-wrap { width: 100%; max-width: 320px; display: flex; align-items: center; gap: 10px; }
+    .gift-progress-bar { flex: 1; height: 3px; border-radius: 999px; background: rgba(255,255,255,0.12); overflow: hidden; }
     .gift-progress-fill {
       height: 100%;
-      background: linear-gradient(90deg, var(--gold-dim), var(--gold));
+      background: linear-gradient(90deg, var(--gold-dim), var(--gold-warm), var(--gold-pale));
       border-radius: 999px; transition: width 0.8s ease; width: 0%;
     }
     .gift-progress-label {
-      font-family: 'Cinzel', serif;
-      font-size: 0.78rem; letter-spacing: 0.08em;
-      color: var(--text-dim); white-space: nowrap;
+      font-family: 'Inter', sans-serif; font-size: 0.65rem; font-weight: 500;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: rgba(255,255,255,0.4); white-space: nowrap;
     }
 
     /* ── NAV ── */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 200;
-      height: 48px; display: flex; align-items: center;
-      padding: 0 1.5rem;
-      background: rgba(10,10,15,0.95);
+      height: 52px; display: flex; align-items: center; justify-content: space-between;
+      padding: 0 1.8rem;
+      background: rgba(240,236,228,0.97);
       backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--gray-line);
     }
     .nav-back {
-      display: flex; align-items: center; gap: 8px;
-      text-decoration: none; color: var(--text-dim);
-      font-family: 'Cinzel', serif;
-      font-size: 0.7rem; letter-spacing: 0.1em;
+      display: flex; align-items: center; gap: 8px; text-decoration: none;
+      color: var(--text-dim); font-family: 'Inter', sans-serif;
+      font-size: 0.72rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
       transition: color 0.2s;
     }
     .nav-back:hover { color: var(--gold); }
+    .nav-logo {
+      font-family: 'Playfair Display', serif; font-size: 0.95rem;
+      font-weight: 700; color: var(--text-dim); letter-spacing: 0.04em;
+    }
 
     /* ── LAYOUT ── */
-    .layout {
-      display: flex; padding-top: 116px;
-      min-height: 100vh; position: relative; z-index: 1;
-    }
+    .layout { display: flex; padding-top: 120px; min-height: 100vh; position: relative; z-index: 1; }
 
     /* ── SIDEBAR ── */
     .sidebar {
       width: var(--sidebar-w); flex-shrink: 0;
-      position: fixed; top: 116px; left: 0; bottom: 0;
-      background: var(--bg2); border-right: 1px solid var(--border);
+      position: fixed; top: 120px; left: 0; bottom: 0;
+      background: var(--bg2); border-right: 1px solid var(--gray-line);
       overflow-y: auto; z-index: 100; transition: transform 0.3s ease;
     }
-    .sidebar::-webkit-scrollbar { width: 4px; }
-    .sidebar::-webkit-scrollbar-thumb { background: rgba(201,168,76,0.2); border-radius: 2px; }
+    .sidebar::-webkit-scrollbar { width: 3px; }
+    .sidebar::-webkit-scrollbar-thumb { background: var(--gold-border); border-radius: 2px; }
+
     .sidebar-header {
-      padding: 20px 20px 14px; border-bottom: 1px solid var(--border);
+      padding: 24px 22px 16px; border-bottom: 1px solid var(--gray-line);
       position: sticky; top: 0; background: var(--bg2); z-index: 1;
     }
     .sidebar-eyebrow {
-      font-family: 'Cinzel', serif;
-      font-size: 0.6rem; letter-spacing: 0.16em; text-transform: uppercase;
-      color: var(--gold); opacity: 0.7; margin-bottom: 6px;
+      font-family: 'Inter', sans-serif; font-size: 0.6rem; font-weight: 600;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 6px;
     }
     .sidebar-course-title {
-      font-family: 'Cinzel', serif;
-      font-size: 0.85rem; font-weight: 600; color: var(--text); line-height: 1.3;
+      font-family: 'Playfair Display', serif; font-size: 1rem;
+      font-weight: 700; color: var(--text); line-height: 1.3;
     }
-    .sidebar-progress { padding: 14px 20px; border-bottom: 1px solid var(--border); }
+
+    .sidebar-progress { padding: 14px 22px; border-bottom: 1px solid var(--gray-line); }
     .progress-row {
       display: flex; justify-content: space-between;
-      font-family: 'Cinzel', serif;
-      font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase;
-      color: var(--text-dim); margin-bottom: 8px;
+      font-family: 'Inter', sans-serif; font-size: 0.6rem; font-weight: 500;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--text-dimmer); margin-bottom: 8px;
     }
-    .progress-bar-wrap { background: rgba(255,255,255,0.06); border-radius: 999px; height: 5px; }
+    .progress-bar-wrap { background: rgba(0,0,0,0.08); border-radius: 999px; height: 4px; }
     .progress-bar-fill {
       height: 100%;
-      background: linear-gradient(90deg, var(--gold-dim), var(--gold));
+      background: linear-gradient(90deg, var(--gold-dim), var(--gold-warm));
       border-radius: 999px; transition: width 0.8s ease;
     }
+
     .module-list { padding: 8px 0; }
     .module-item {
-      display: flex; align-items: center; gap: 14px;
-      padding: 13px 20px; cursor: pointer;
-      transition: background 0.18s; border-left: 3px solid transparent;
+      display: flex; align-items: flex-start; gap: 14px; padding: 14px 22px;
+      cursor: pointer; transition: background 0.18s; border-left: 3px solid transparent;
     }
-    .module-item:hover { background: rgba(201,168,76,0.05); }
-    .module-item.active { background: rgba(201,168,76,0.08); border-left-color: var(--gold); }
+    .module-item:hover { background: rgba(0,0,0,0.04); }
+    .module-item.active { background: var(--gold-bg); border-left-color: var(--gold); }
     .module-num {
       flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%;
-      background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1);
+      background: var(--bg3); border: 1px solid var(--gray-line);
       display: flex; align-items: center; justify-content: center;
-      font-family: 'Cinzel', serif; font-size: 0.65rem; color: var(--text-dim);
+      font-family: 'Inter', sans-serif; font-size: 0.65rem; font-weight: 600;
+      color: var(--text-dim); margin-top: 2px;
     }
-    .module-item.active .module-num { background: rgba(201,168,76,0.2); border-color: var(--gold); color: var(--gold); }
-    .module-item.completado .module-num { background: rgba(46,180,100,0.15); border-color: rgba(46,180,100,0.4); color: #4ecb80; }
+    .module-item.active .module-num { background: var(--gold-bg); border-color: var(--gold-border-s); color: var(--gold); }
+    .module-item.completado .module-num { background: rgba(40,160,80,0.1); border-color: rgba(40,160,80,0.35); color: #28a050; }
     .module-info { flex: 1; min-width: 0; }
     .module-name {
-      font-family: 'Cinzel', serif;
-      font-size: 0.72rem; font-weight: 600; color: var(--text-mid); line-height: 1.35;
+      font-family: 'Inter', sans-serif; font-size: 0.78rem; font-weight: 600;
+      color: var(--text-mid); line-height: 1.4; letter-spacing: 0.01em;
     }
-    .module-item.active .module-name { color: var(--gold-pale); }
+    .module-item.active .module-name { color: var(--gold-dim); }
+    .module-sub {
+      font-family: 'Inter', sans-serif; font-size: 0.68rem; color: var(--text-dimmer);
+      margin-top: 3px; font-weight: 400;
+    }
 
     /* ── MAIN ── */
     .main-content { margin-left: var(--sidebar-w); flex: 1; min-width: 0; }
 
-    .video-wrap { background: #000; width: 100%; }
-    .yt-wrap { position: relative; padding: 56.25% 0 0 0; width: 100%; }
-    .yt-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+    /* Lesson banner (replaces video) */
+    .lesson-banner {
+      width: 100%; padding: 64px 50px;
+      background: var(--text);
+      display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end;
+      gap: 10px; min-height: 240px; position: relative; overflow: hidden;
+    }
+    .lesson-banner::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg,
+        rgba(184,134,11,0.18) 0%,
+        transparent 60%,
+        rgba(184,134,11,0.08) 100%);
+    }
+    .lesson-banner-num {
+      font-family: 'Inter', sans-serif; font-size: 0.65rem; font-weight: 600;
+      letter-spacing: 0.22em; text-transform: uppercase;
+      color: rgba(201,168,76,0.7); position: relative; z-index: 1;
+    }
+    .lesson-banner-title {
+      font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 900; color: #fff; line-height: 1.15;
+      max-width: 640px; position: relative; z-index: 1;
+    }
+    .lesson-banner-icon {
+      position: absolute; right: 50px; top: 50%; transform: translateY(-50%);
+      font-size: 5rem; opacity: 0.12; z-index: 0; line-height: 1;
+    }
 
-    .content-area { padding: 30px 40px 80px; max-width: 860px; }
-    .module-header { margin-bottom: 26px; }
+    .content-area { padding: 40px 50px 90px; max-width: 880px; }
+
+    /* ── MODULE HEADER ── */
+    .module-header { margin-bottom: 30px; }
     .module-eyebrow {
-      font-family: 'Cinzel', serif;
-      font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase;
-      color: var(--gold); opacity: 0.7; margin-bottom: 10px;
+      font-family: 'Inter', sans-serif; font-size: 0.65rem; font-weight: 600;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 10px;
     }
     .module-title {
-      font-family: 'Cinzel', serif;
-      font-size: clamp(1.3rem, 2.5vw, 1.9rem);
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 2.8vw, 2.2rem);
       font-weight: 700; color: var(--text);
-      letter-spacing: 0.02em; line-height: 1.2; margin-bottom: 16px;
+      letter-spacing: 0.01em; line-height: 1.2; margin-bottom: 18px;
     }
+
     .btn-completado {
-      display: inline-flex; align-items: center; gap: 9px;
-      padding: 11px 22px; border-radius: 8px;
-      background: rgba(201,168,76,0.1); border: 1px solid var(--border-strong);
-      color: var(--gold); font-family: 'Cinzel', serif;
-      font-size: 0.76rem; font-weight: 600; letter-spacing: 0.08em;
+      display: inline-flex; align-items: center; gap: 9px; padding: 12px 24px;
+      border-radius: 8px; background: var(--gold-bg); border: 1px solid var(--gold-border-s);
+      color: var(--gold); font-family: 'Inter', sans-serif;
+      font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
       cursor: pointer; transition: all 0.2s;
     }
-    .btn-completado:hover { background: rgba(201,168,76,0.18); border-color: var(--gold); }
-    .btn-completado.done { background: rgba(46,180,100,0.12); border-color: rgba(46,180,100,0.35); color: #4ecb80; }
+    .btn-completado:hover { background: rgba(184,134,11,0.15); border-color: var(--gold); }
+    .btn-completado.done { background: rgba(40,160,80,0.08); border-color: rgba(40,160,80,0.35); color: #28a050; }
 
-    .deco-divider { display: flex; align-items: center; gap: 12px; margin: 28px 0; }
-    .deco-divider-line { flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--border-strong), transparent); }
-    .deco-divider-sym { font-family: 'Cinzel', serif; font-size: 0.7rem; color: var(--gold); opacity: 0.4; letter-spacing: 0.2em; }
+    .deco-divider { display: flex; align-items: center; gap: 14px; margin: 30px 0; }
+    .deco-divider-line { flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--gray-line-s), transparent); }
+    .deco-divider-sym {
+      font-family: 'Playfair Display', serif; font-size: 1rem;
+      color: var(--gold); opacity: 0.5; letter-spacing: 0.3em;
+    }
 
-    .tabs { display: flex; gap: 4px; margin-bottom: 24px; }
+    /* ── TABS ── */
+    .tabs {
+      display: flex; gap: 0; margin-bottom: 28px;
+      border-bottom: 2px solid var(--gray-line);
+    }
     .tab-btn {
-      padding: 9px 20px; border-radius: 8px;
-      background: transparent; border: 1px solid transparent;
-      color: var(--text-dim); font-family: 'Cinzel', serif;
-      font-size: 0.7rem; letter-spacing: 0.08em; cursor: pointer; transition: all 0.18s;
+      padding: 11px 22px; background: transparent; border: none;
+      color: var(--text-dimmer); font-family: 'Inter', sans-serif;
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+      cursor: pointer; transition: all 0.18s; position: relative; bottom: -2px;
+      border-bottom: 2px solid transparent;
     }
     .tab-btn:hover { color: var(--text-mid); }
-    .tab-btn.active { background: rgba(201,168,76,0.1); border-color: var(--border-strong); color: var(--gold); }
+    .tab-btn.active { color: var(--gold); border-bottom-color: var(--gold); }
     .tab-content { display: none; }
     .tab-content.active { display: block; }
 
+    /* ── ABOUT TAB ── */
     .about-label {
-      font-family: 'Cinzel', serif;
-      font-size: 0.65rem; letter-spacing: 0.16em; text-transform: uppercase;
-      color: var(--gold); opacity: 0.65; margin-bottom: 12px;
+      font-family: 'Inter', sans-serif; font-size: 0.62rem; font-weight: 600;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 16px;
     }
-    .about-text { font-size: 1.1rem; color: var(--text-mid); line-height: 1.8; }
+    .about-text {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.15rem; color: var(--text-mid); line-height: 1.85;
+      font-weight: 400;
+    }
 
-    .download-section { margin-top: 28px; }
-    .download-card {
-      display: flex; align-items: center; gap: 16px;
-      background: rgba(201,168,76,0.06); border: 1px solid var(--border-strong);
-      border-radius: 12px; padding: 18px 20px;
-      text-decoration: none; transition: all 0.2s;
+    /* ── STEP CARDS ── */
+    .steps-grid { display: flex; flex-direction: column; gap: 18px; margin-top: 26px; }
+    .step-card {
+      background: var(--bg-card); border: 1px solid var(--gray-line);
+      border-radius: var(--radius); padding: 24px 26px;
+      display: flex; gap: 18px; align-items: flex-start;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+      transition: border-color 0.2s, box-shadow 0.2s;
     }
-    .download-card:hover { background: rgba(201,168,76,0.12); border-color: var(--gold); }
-    .download-icon { font-size: 1.8rem; flex-shrink: 0; }
-    .download-info { flex: 1; }
-    .download-title {
-      font-family: 'Cinzel', serif; font-size: 0.8rem; font-weight: 600;
-      color: var(--gold-pale); letter-spacing: 0.03em; margin-bottom: 4px;
+    .step-card:hover { border-color: var(--gold-border); box-shadow: 0 4px 16px rgba(184,134,11,0.08); }
+    .step-num {
+      flex-shrink: 0; width: 36px; height: 36px; border-radius: 50%;
+      background: var(--gold-bg); border: 1px solid var(--gold-border-s);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 700;
+      color: var(--gold); letter-spacing: 0.02em;
     }
-    .download-meta { font-size: 0.85rem; color: var(--text-dim); }
-    .download-btn {
-      padding: 8px 18px; border-radius: 7px;
-      background: rgba(201,168,76,0.15); border: 1px solid var(--border-strong);
-      color: var(--gold); font-family: 'Cinzel', serif;
-      font-size: 0.68rem; letter-spacing: 0.08em;
-      cursor: pointer; white-space: nowrap; transition: all 0.2s;
+    .step-title {
+      font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 700;
+      color: var(--text); margin-bottom: 8px;
     }
-    .download-card:hover .download-btn { background: rgba(201,168,76,0.25); }
+    .step-text {
+      font-family: 'Inter', sans-serif; font-size: 1.05rem;
+      color: var(--text-mid); line-height: 1.75;
+    }
 
-    .lesson-nav { display: flex; gap: 12px; margin-top: 24px; }
+    /* ── QUOTE BLOCK ── */
+    .quote-block {
+      border-left: 3px solid var(--gold-border-s); padding: 18px 24px;
+      margin: 26px 0; background: var(--gold-bg); border-radius: 0 12px 12px 0;
+    }
+    .quote-text {
+      font-family: 'Playfair Display', serif; font-size: 1.2rem;
+      color: var(--text-mid); font-style: italic; line-height: 1.7;
+    }
+    .quote-ref {
+      font-family: 'Inter', sans-serif; font-size: 0.68rem; font-weight: 500;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--gold-dim); margin-top: 10px;
+    }
+
+    /* ── AREAS GRID ── */
+    .areas-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 14px; margin-top: 24px;
+    }
+    .area-card {
+      background: var(--bg-card); border: 1px solid var(--gray-line);
+      border-radius: 12px; padding: 20px 22px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .area-card:hover { border-color: var(--gold-border); box-shadow: 0 4px 16px rgba(184,134,11,0.07); }
+    .area-icon { font-size: 1.6rem; display: block; margin-bottom: 10px; }
+    .area-title {
+      font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 700;
+      color: var(--text); margin-bottom: 6px;
+    }
+    .area-text {
+      font-family: 'Inter', sans-serif; font-size: 0.9rem;
+      color: var(--text-dim); line-height: 1.65;
+    }
+
+    /* ── TIP BOX ── */
+    .tip-box {
+      background: var(--text); border-radius: 14px; padding: 28px 30px;
+      margin-top: 26px; position: relative; overflow: hidden;
+    }
+    .tip-box::before {
+      content: '';
+      position: absolute; top: -40px; right: -40px;
+      width: 160px; height: 160px; border-radius: 50%;
+      background: rgba(184,134,11,0.12);
+    }
+    .tip-label {
+      font-family: 'Inter', sans-serif; font-size: 0.6rem; font-weight: 600;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--gold-warm); margin-bottom: 12px;
+    }
+    .tip-text {
+      font-family: 'Inter', sans-serif; font-size: 1.05rem;
+      color: rgba(255,255,255,0.82); line-height: 1.8;
+      position: relative; z-index: 1;
+    }
+    .tip-text strong { color: #fff; }
+
+    /* ── RITUAL LIST ── */
+    .ritual-list { display: flex; flex-direction: column; gap: 16px; margin-top: 24px; }
+    .ritual-item {
+      display: flex; align-items: flex-start; gap: 18px;
+      background: var(--bg-card); border: 1px solid var(--gray-line);
+      border-radius: 12px; padding: 20px 24px;
+      transition: border-color 0.2s;
+    }
+    .ritual-item:hover { border-color: var(--gold-border); }
+    .ritual-time {
+      flex-shrink: 0; font-family: 'Playfair Display', serif;
+      font-size: 1.1rem; font-weight: 700; color: var(--gold);
+      min-width: 70px; line-height: 1.3;
+    }
+    .ritual-body {}
+    .ritual-title {
+      font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 700;
+      color: var(--text); margin-bottom: 6px;
+    }
+    .ritual-text {
+      font-family: 'Inter', sans-serif; font-size: 0.95rem;
+      color: var(--text-mid); line-height: 1.7;
+    }
+
+    /* ── LESSON NAV ── */
+    .lesson-nav { display: flex; gap: 12px; margin-top: 32px; }
     .btn-lesson-nav {
-      display: flex; align-items: center; gap: 8px;
-      padding: 11px 20px; border-radius: 8px;
-      background: rgba(255,255,255,0.04); border: 1px solid var(--border);
-      color: var(--text-mid); font-family: 'Cinzel', serif;
-      font-size: 0.72rem; letter-spacing: 0.06em; cursor: pointer; transition: all 0.2s;
+      display: flex; align-items: center; gap: 8px; padding: 13px 22px;
+      border-radius: 8px; background: var(--bg-white); border: 1px solid var(--gray-line);
+      color: var(--text-dim); font-family: 'Inter', sans-serif;
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+      cursor: pointer; transition: all 0.2s;
     }
-    .btn-lesson-nav:hover { background: rgba(255,255,255,0.08); border-color: var(--border-strong); }
-    .btn-lesson-nav.next { background: rgba(201,168,76,0.1); border-color: var(--border-strong); color: var(--gold); }
-    .btn-lesson-nav.next:hover { background: rgba(201,168,76,0.18); }
+    .btn-lesson-nav:hover { background: var(--bg3); border-color: var(--gray-line-s); }
+    .btn-lesson-nav.next {
+      background: var(--text); border-color: var(--text); color: #fff;
+    }
+    .btn-lesson-nav.next:hover { background: #2a2418; }
     .btn-lesson-nav.disabled { opacity: 0.3; pointer-events: none; }
 
-    .rating-section { margin-top: 32px; }
-    .stars-row { display: flex; align-items: center; gap: 8px; margin-bottom: 20px; }
+    /* ── NOTES TAB ── */
+    .notes-textarea {
+      width: 100%; min-height: 180px;
+      background: var(--bg-card); border: 1px solid var(--gray-line);
+      border-radius: 12px; padding: 18px 20px; color: var(--text);
+      font-family: 'Inter', Georgia, sans-serif;
+      font-size: 1.05rem; line-height: 1.75; resize: vertical; outline: none;
+      transition: border-color 0.2s; box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    }
+    .notes-textarea:focus { border-color: var(--gold-border-s); }
+    .notes-textarea::placeholder { color: var(--text-dimmer); }
+    .btn-save-notes {
+      margin-top: 12px; padding: 12px 24px; border-radius: 8px;
+      background: var(--gold-bg); border: 1px solid var(--gold-border-s);
+      color: var(--gold); font-family: 'Inter', sans-serif;
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+      cursor: pointer; transition: all 0.2s;
+    }
+    .btn-save-notes:hover { background: rgba(184,134,11,0.16); }
+
+    /* ── COMMENTS TAB ── */
+    .rating-section { margin-bottom: 22px; }
+    .stars-row { display: flex; align-items: center; gap: 8px; margin-bottom: 18px; }
     .star-btn {
-      font-size: 1.8rem; background: none; border: none;
-      cursor: pointer; color: rgba(255,255,255,0.15); transition: all 0.15s; line-height: 1;
+      font-size: 1.8rem; background: none; border: none; cursor: pointer;
+      color: rgba(0,0,0,0.12); transition: all 0.15s; line-height: 1;
     }
     .star-btn.active { color: var(--gold); }
     .star-btn:hover { transform: scale(1.15); }
     .rating-label {
-      font-family: 'Cinzel', serif; font-size: 0.7rem;
-      color: var(--text-dim); letter-spacing: 0.08em; margin-left: 6px;
+      font-family: 'Inter', sans-serif; font-size: 0.68rem; font-weight: 500;
+      color: var(--text-dimmer); letter-spacing: 0.08em; text-transform: uppercase;
+      margin-left: 6px;
     }
     .comment-box {
-      background: rgba(255,255,255,0.03); border: 1px solid var(--border);
+      background: var(--bg-card); border: 1px solid var(--gray-line);
       border-radius: 12px; overflow: hidden;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
     }
     .comment-input {
       width: 100%; min-height: 90px; background: transparent; border: none;
-      padding: 16px 18px; color: var(--text);
-      font-family: 'Crimson Pro', Georgia, serif;
+      padding: 16px 20px; color: var(--text); font-family: 'Inter', sans-serif;
       font-size: 1.05rem; line-height: 1.65; resize: none; outline: none;
     }
-    .comment-input::placeholder { color: var(--text-dim); font-style: italic; }
+    .comment-input::placeholder { color: var(--text-dimmer); }
     .comment-footer {
-      padding: 10px 16px; border-top: 1px solid var(--border);
+      padding: 10px 16px; border-top: 1px solid var(--gray-line);
       display: flex; justify-content: flex-end;
     }
     .btn-comment {
-      padding: 8px 20px; border-radius: 7px;
-      background: rgba(201,168,76,0.12); border: 1px solid var(--border-strong);
-      color: var(--gold); font-family: 'Cinzel', serif;
-      font-size: 0.7rem; letter-spacing: 0.08em; cursor: pointer; transition: all 0.2s;
+      padding: 9px 22px; border-radius: 7px;
+      background: var(--gold-bg); border: 1px solid var(--gold-border-s);
+      color: var(--gold); font-family: 'Inter', sans-serif;
+      font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+      cursor: pointer; transition: all 0.2s;
     }
-    .btn-comment:hover { background: rgba(201,168,76,0.22); }
-    .comments-list { margin-top: 24px; display: flex; flex-direction: column; gap: 14px; }
+    .btn-comment:hover { background: rgba(184,134,11,0.16); }
+    .comments-list { margin-top: 22px; display: flex; flex-direction: column; gap: 14px; }
     .comment-card {
-      background: var(--bg3); border: 1px solid var(--border);
-      border-radius: 12px; padding: 16px 18px;
+      background: var(--bg-card); border: 1px solid var(--gray-line);
+      border-radius: 12px; padding: 18px 20px;
     }
-    .comment-top { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+    .comment-top { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
     .comment-avatar {
-      width: 30px; height: 30px; border-radius: 50%;
-      background: linear-gradient(135deg, var(--gold), var(--gold-dim));
-      display: flex; align-items: center; justify-content: center;
-      font-family: 'Cinzel', serif; font-size: 0.75rem; font-weight: 700; color: #fff;
+      width: 32px; height: 32px; border-radius: 50%;
+      background: var(--text); display: flex; align-items: center; justify-content: center;
+      font-family: 'Playfair Display', serif; font-size: 0.8rem; font-weight: 700; color: var(--gold-warm);
     }
-    .comment-name { font-family: 'Cinzel', serif; font-size: 0.7rem; color: var(--text-dim); letter-spacing: 0.05em; }
+    .comment-name {
+      font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 600;
+      color: var(--text-dim); letter-spacing: 0.05em; text-transform: uppercase;
+    }
     .comment-stars { margin-left: auto; color: var(--gold); font-size: 0.75rem; }
-    .comment-text { font-size: 1rem; color: var(--text-mid); line-height: 1.65; }
-
-    .notes-textarea {
-      width: 100%; min-height: 160px;
-      background: rgba(255,255,255,0.03); border: 1px solid var(--border);
-      border-radius: 12px; padding: 16px 18px; color: var(--text);
-      font-family: 'Crimson Pro', Georgia, serif;
-      font-size: 1.05rem; line-height: 1.7; resize: vertical; outline: none; transition: border-color 0.2s;
+    .comment-text {
+      font-family: 'Inter', sans-serif; font-size: 1rem;
+      color: var(--text-mid); line-height: 1.7;
     }
-    .notes-textarea:focus { border-color: var(--border-strong); }
-    .notes-textarea::placeholder { color: var(--text-dim); font-style: italic; }
-    .btn-save-notes {
-      margin-top: 12px; padding: 10px 22px; border-radius: 8px;
-      background: rgba(201,168,76,0.1); border: 1px solid var(--border-strong);
-      color: var(--gold); font-family: 'Cinzel', serif;
-      font-size: 0.72rem; letter-spacing: 0.08em; cursor: pointer; transition: all 0.2s;
-    }
-    .btn-save-notes:hover { background: rgba(201,168,76,0.2); }
 
     /* ── GIFT MODAL ── */
     .gift-modal-overlay {
       position: fixed; inset: 0; z-index: 500;
-      background: rgba(0,0,0,0.85); backdrop-filter: blur(12px);
+      background: rgba(17,16,8,0.7); backdrop-filter: blur(10px);
       display: flex; align-items: center; justify-content: center;
       opacity: 0; pointer-events: none; transition: opacity 0.4s ease; padding: 20px;
     }
     .gift-modal-overlay.show { opacity: 1; pointer-events: auto; }
     .gift-modal {
-      background: linear-gradient(160deg, var(--bg2), var(--bg4));
-      border: 1px solid rgba(201,168,76,0.3); border-radius: 20px;
-      padding: 48px 40px; max-width: 480px; width: 100%; text-align: center;
-      box-shadow: 0 40px 80px rgba(0,0,0,0.6), 0 0 60px rgba(201,168,76,0.08);
+      background: var(--bg-card); border: 1px solid var(--gray-line-s);
+      border-radius: 22px; padding: 52px 44px; max-width: 480px; width: 100%; text-align: center;
+      box-shadow: 0 40px 80px rgba(0,0,0,0.2), 0 0 0 1px rgba(184,134,11,0.1);
       animation: modalIn 0.5s ease;
     }
     @keyframes modalIn { from { transform: translateY(30px) scale(0.95); } to { transform: translateY(0) scale(1); } }
-    .gift-modal-emoji { font-size: 4rem; display: block; margin-bottom: 20px; }
+    .gift-modal-emoji { font-size: 3.5rem; display: block; margin-bottom: 20px; }
     .gift-modal-eyebrow {
-      font-family: 'Cinzel', serif; font-size: 0.65rem;
+      font-family: 'Inter', sans-serif; font-size: 0.6rem; font-weight: 600;
       letter-spacing: 0.22em; text-transform: uppercase;
-      color: var(--gold); opacity: 0.7; margin-bottom: 12px;
+      color: var(--gold); margin-bottom: 12px;
     }
     .gift-modal-title {
-      font-family: 'Cinzel', serif; font-size: 1.6rem; font-weight: 700;
-      color: var(--text); margin-bottom: 18px; line-height: 1.2;
+      font-family: 'Playfair Display', serif; font-size: 1.7rem; font-weight: 900;
+      color: var(--text); margin-bottom: 16px; line-height: 1.2;
     }
-    .gift-modal-text { font-size: 1.05rem; color: var(--text-mid); line-height: 1.8; margin-bottom: 20px; }
+    .gift-modal-text {
+      font-family: 'Inter', sans-serif; font-size: 1.05rem;
+      color: var(--text-mid); line-height: 1.85; margin-bottom: 20px;
+    }
     .gift-modal-verse {
-      font-size: 0.92rem; color: var(--text-dim); font-style: italic;
-      line-height: 1.7; margin-bottom: 32px; padding: 14px 18px;
-      border-left: 2px solid rgba(201,168,76,0.3); text-align: left;
+      font-family: 'Playfair Display', serif; font-size: 0.95rem;
+      color: var(--text-dim); font-style: italic;
+      line-height: 1.75; margin-bottom: 32px; padding: 16px 20px;
+      border-left: 3px solid var(--gold-border-s); text-align: left;
+      background: var(--gold-bg); border-radius: 0 10px 10px 0;
     }
     .gift-modal-btns { display: flex; flex-direction: column; gap: 10px; }
     .btn-gift-journey {
-      padding: 14px 28px; border-radius: 10px;
-      background: linear-gradient(135deg, var(--gold-dim), var(--gold));
-      color: #fff; font-family: 'Cinzel', serif;
-      font-size: 0.78rem; letter-spacing: 0.1em; font-weight: 600;
+      padding: 15px 28px; border-radius: 10px; background: var(--text);
+      color: #fff; font-family: 'Inter', sans-serif;
+      font-size: 0.78rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
       text-decoration: none; cursor: pointer; transition: all 0.2s;
       border: none; display: block; text-align: center;
     }
-    .btn-gift-journey:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(201,168,76,0.3); }
+    .btn-gift-journey:hover { background: #2a2418; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.15); }
     .btn-gift-stay {
-      padding: 12px 28px; border-radius: 10px;
-      background: transparent; border: 1px solid var(--border-strong);
-      color: var(--text-dim); font-family: 'Cinzel', serif;
-      font-size: 0.72rem; letter-spacing: 0.08em; cursor: pointer; transition: all 0.2s;
+      padding: 12px 28px; border-radius: 10px; background: transparent;
+      border: 1px solid var(--gray-line-s); color: var(--text-dim);
+      font-family: 'Inter', sans-serif; font-size: 0.72rem; font-weight: 500;
+      letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; transition: all 0.2s;
     }
-    .btn-gift-stay:hover { color: var(--text); border-color: var(--gold); }
+    .btn-gift-stay:hover { color: var(--text); border-color: var(--gray-line-s); }
 
+    /* ── MOBILE ── */
     .sidebar-toggle {
       display: none; position: fixed; bottom: 24px; right: 20px; z-index: 150;
-      width: 48px; height: 48px; border-radius: 50%;
-      background: var(--gold); border: none; color: #000; font-size: 1.3rem;
+      width: 50px; height: 50px; border-radius: 50%;
+      background: var(--text); border: none; color: var(--gold-warm); font-size: 1.2rem;
       align-items: center; justify-content: center;
-      cursor: pointer; box-shadow: 0 4px 20px rgba(201,168,76,0.4);
+      cursor: pointer; box-shadow: 0 4px 20px rgba(0,0,0,0.2);
     }
 
     @media (max-width: 768px) {
       .sidebar { transform: translateX(-100%); top: 0; z-index: 250; }
       .sidebar.open { transform: translateX(0); }
       .main-content { margin-left: 0; }
-      .content-area { padding: 20px 16px 100px; }
+      .content-area { padding: 24px 20px 100px; }
+      .lesson-banner { padding: 44px 24px; min-height: 200px; }
+      .lesson-banner-icon { display: none; }
       .sidebar-toggle { display: flex; }
       nav { padding: 0 1rem; }
       .lesson-nav { flex-direction: column; }
       .btn-lesson-nav { width: 100%; justify-content: center; }
-      .gift-progress-wrap { max-width: 100%; }
-      .download-card { flex-wrap: wrap; }
-      .download-btn { width: 100%; text-align: center; }
+      .areas-grid { grid-template-columns: 1fr; }
     }
   </style>
   <script src="sw-register.js"></script>
@@ -424,20 +579,21 @@
 <!-- GIFT BANNER -->
 <div class="gift-banner" id="gift-banner">
   <div class="gift-banner-text">
-    Completa todas las lecciones para recibir tu regalo espiritual
-    <span class="gift-pill">🎯 Regalo de Visión Divina</span>
+    Completa todas las lecciones para desbloquear tu regalo
+    <span class="gift-pill">🎯 La Visión Es el Primer Paso</span>
   </div>
   <div class="gift-progress-wrap">
     <div class="gift-progress-bar">
       <div class="gift-progress-fill" id="gift-progress-fill"></div>
     </div>
-    <div class="gift-progress-label" id="gift-progress-label">0 de 1</div>
+    <div class="gift-progress-label" id="gift-progress-label">0 de 4</div>
   </div>
 </div>
 
 <!-- NAV -->
 <nav>
   <a href="index.html" class="nav-back" onclick="fadeOut(event, 'index.html')">← Volver al Inicio</a>
+  <span class="nav-logo">Abundance Time</span>
 </nav>
 
 <!-- LAYOUT -->
@@ -446,13 +602,13 @@
   <!-- SIDEBAR -->
   <aside class="sidebar" id="sidebar">
     <div class="sidebar-header">
-      <div class="sidebar-eyebrow">Contenido del Curso</div>
-      <div class="sidebar-course-title">Academia del Tablero de Visión</div>
+      <div class="sidebar-eyebrow">Módulo Completo</div>
+      <div class="sidebar-course-title">Tablero de Visión</div>
     </div>
     <div class="sidebar-progress">
       <div class="progress-row">
         <span>Progreso</span>
-        <span id="progress-label">0 de 1 completado</span>
+        <span id="progress-label">0 de 4 completado</span>
       </div>
       <div class="progress-bar-wrap">
         <div class="progress-bar-fill" id="progress-fill" style="width:0%"></div>
@@ -464,12 +620,9 @@
   <!-- MAIN -->
   <main class="main-content">
 
-    <div class="video-wrap">
-      <div id="video-container"></div>
-    </div>
+    <div id="banner-container"></div>
 
     <div class="content-area">
-
       <div class="module-header">
         <div class="module-eyebrow" id="lesson-eyebrow"></div>
         <h1 class="module-title" id="lesson-title"></h1>
@@ -481,30 +634,25 @@
 
       <div class="deco-divider">
         <div class="deco-divider-line"></div>
-        <div class="deco-divider-sym">✦ ✦ ✦</div>
+        <div class="deco-divider-sym">✦</div>
         <div class="deco-divider-line"></div>
       </div>
 
       <div class="tabs">
-        <button class="tab-btn active" onclick="switchTab('about', this)">Acerca de</button>
+        <button class="tab-btn active" onclick="switchTab('about', this)">Lección</button>
         <button class="tab-btn" onclick="switchTab('notes', this)">Mis Notas</button>
-        <button class="tab-btn" onclick="switchTab('comments', this)">Community</button>
+        <button class="tab-btn" onclick="switchTab('comments', this)">Comunidad</button>
       </div>
 
       <!-- TAB: ABOUT -->
       <div class="tab-content active" id="tab-about">
-        <div class="about-label">Acerca de Esta Lección</div>
-        <p class="about-text" id="lesson-desc"></p>
-        <div class="download-section" id="download-section" style="display:none;">
-          <div class="about-label" style="margin-top:28px;">Material del Curso</div>
-          <div id="download-content"></div>
-        </div>
+        <div id="lesson-body"></div>
       </div>
 
       <!-- TAB: NOTES -->
       <div class="tab-content" id="tab-notes">
         <div class="about-label">Tus Notas Personales</div>
-        <textarea class="notes-textarea" id="notes-input" placeholder="Write your reflections, revelations, and insights here..."></textarea>
+        <textarea class="notes-textarea" id="notes-input" placeholder="Escribe tus reflexiones, ideas y revelaciones aquí…"></textarea>
         <button class="btn-save-notes" onclick="saveNotes()">✦ Guardar Notas</button>
       </div>
 
@@ -522,7 +670,7 @@
           </div>
         </div>
         <div class="comment-box">
-          <textarea class="comment-input" id="comment-input" placeholder="Share what this teaching revealed to you..."></textarea>
+          <textarea class="comment-input" id="comment-input" placeholder="Comparte lo que esta lección despertó en ti…"></textarea>
           <div class="comment-footer">
             <button class="btn-comment" onclick="submitComment()">✦ Compartir</button>
           </div>
@@ -530,12 +678,11 @@
         <div class="comments-list" id="comments-list"></div>
       </div>
 
-      <!-- LESSON NAVIGATION -->
+      <!-- LESSON NAV -->
       <div class="lesson-nav">
         <button class="btn-lesson-nav" id="btn-prev" onclick="goLesson(-1)">← Anterior</button>
         <button class="btn-lesson-nav next" id="btn-next" onclick="goLesson(1)">Siguiente →</button>
       </div>
-
     </div>
   </main>
 </div>
@@ -547,38 +694,227 @@
   <div class="gift-modal">
     <span class="gift-modal-emoji">🎯</span>
     <div class="gift-modal-eyebrow">Tu Regalo Ha Sido Desbloqueado</div>
-    <div class="gift-modal-title">Regalo de Visión Divina</div>
+    <div class="gift-modal-title">La Visión Es Real</div>
     <p class="gift-modal-text">
-      Has aprendido a ver con los ojos de la fe. Tu tablero de visión no es solo un collage — es una declaración de lo que Dios ya ha preparado. Escríbelo, hazlo claro, y observa cómo se cumple.
+      Has aprendido a ver con los ojos de la fe y a diseñar tu futuro con intención. Tu tablero ya no es un sueño — es un mapa. Ahora es momento de vivirlo.
     </p>
     <div class="gift-modal-verse">"Escribe la visión y grábala en tablas, para que pueda leerse de corrido." — Habacuc 2:2</div>
     <div class="gift-modal-btns">
       <a href="journey.html" class="btn-gift-journey" onclick="fadeOut(event,'journey.html')">✦ Ver Mi Regalo en la Jornada</a>
-      <button class="btn-gift-stay" onclick="closeGiftModal()">Keep Exploring</button>
+      <button class="btn-gift-stay" onclick="closeGiftModal()">Seguir Explorando</button>
     </div>
   </div>
 </div>
 
 <script src="supabase-client.js"></script>
 <script>
+
+/* ────────────────────────────────────────────
+   LECCIONES — Tablero de Visión
+   ──────────────────────────────────────────── */
 const LESSONS = [
   {
-    id: 'vision-board-1',
-    title: 'Bienvenida a Academia del Tablero de Visión',
-    eyebrow: 'Lección 1 de 1 · Mentalidad',
-    desc: 'Aprende a crear tableros de visión poderosos que aceleran tu camino de manifestación y alinean tus deseos con el propósito divino.',
-    hasDownload: true,
-    downloadType: 'pdf',
-    downloadHref: 'pdfs/Visionboard.pdf',
-    downloadTitle: 'Guía de Academia del Tablero de Visión',
-    downloadMeta: 'PDF · Tu cuaderno de trabajo del tablero de visión',
-    videoHTML: `<div class="yt-wrap"><iframe src="https://www.youtube.com/embed/TOTX2BQnggU?rel=0&modestbranding=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`
+    id: 'vb-1',
+    title: '¿Qué Es un Tablero de Visión y Por Qué Funciona?',
+    eyebrow: 'Lección 1 de 4  ·  Fundamentos',
+    icon: '🎯',
+    body: `
+      <div class="about-label">Acerca de Esta Lección</div>
+      <p class="about-text">
+        Un tablero de visión es una herramienta visual que representa la vida que quieres construir. Pero más que un collage bonito, es un <em>acto deliberado de fe</em>: el momento en que decides qué quieres ver manifestado y lo colocas frente a tus ojos todos los días.
+      </p>
+      <div class="quote-block">
+        <div class="quote-text">"Donde no hay visión, el pueblo perece."</div>
+        <div class="quote-ref">— Proverbios 29:18</div>
+      </div>
+      <p class="about-text">La neurociencia confirma lo que la fe ya sabía: el cerebro no distingue con claridad entre una imagen real y una imagen vívida e imaginada. Cuando ves tu tablero cada día, activas el <strong>sistema de activación reticular</strong> — la parte de tu cerebro que empieza a notar oportunidades, personas y situaciones alineadas con lo que visualizas.</p>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-num">01</div>
+          <div class="step-body">
+            <div class="step-title">Claridad de Dirección</div>
+            <div class="step-text">Sin visión, avanzas sin rumbo. El tablero te obliga a decidir qué quieres — y esa decisión es el primer paso de toda manifestación.</div>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-num">02</div>
+          <div class="step-body">
+            <div class="step-title">Activación Emocional</div>
+            <div class="step-text">Las imágenes conectan con tus emociones de forma directa. Y son las emociones — no los pensamientos solos — las que aceleran la manifestación.</div>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-num">03</div>
+          <div class="step-body">
+            <div class="step-title">Recordatorio Diario</div>
+            <div class="step-text">Cada vez que ves tu tablero, refuerzas el compromiso con tu visión. No dejas que el día a día borre lo que importa de verdad.</div>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-num">04</div>
+          <div class="step-body">
+            <div class="step-title">Declaración de Fe</div>
+            <div class="step-text">Crear un tablero es una oración en imágenes. Es decirle al universo y a ti mismo: "Creo que esto es posible para mí. Me preparo para recibirlo."</div>
+          </div>
+        </div>
+      </div>
+    `
+  },
+  {
+    id: 'vb-2',
+    title: 'Cómo Construir Tu Tablero Paso a Paso',
+    eyebrow: 'Lección 2 de 4  ·  Construcción',
+    icon: '🛠️',
+    body: `
+      <div class="about-label">Acerca de Esta Lección</div>
+      <p class="about-text">
+        No hay una sola forma de crear un tablero de visión — hay la forma que funciona <em>para ti</em>. En esta lección, te guiamos por el proceso completo: desde la preparación mental hasta colocar la última imagen.
+      </p>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-num">01</div>
+          <div class="step-body">
+            <div class="step-title">Elige el Formato</div>
+            <div class="step-text"><strong>Físico:</strong> cartulina, fotos impresas, recortes de revistas, pegamento. Hay algo poderoso en tocar y construir con las manos.<br><br><strong>Digital:</strong> Canva, Pinterest, o una carpeta de imágenes en tu teléfono. Fácil de actualizar y siempre contigo.</div>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-num">02</div>
+          <div class="step-body">
+            <div class="step-title">Prepárate Antes de Empezar</div>
+            <div class="step-text">Antes de buscar imágenes, cierra los ojos 5 minutos y hazte esta pregunta: <em>"Si supiera que no puedo fallar, ¿cómo sería mi vida en 3 años?"</em> Deja que las respuestas lleguen libremente.</div>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-num">03</div>
+          <div class="step-body">
+            <div class="step-title">Elige Imágenes con Emoción</div>
+            <div class="step-text">No elijas una imagen porque "debería estar ahí". Elige solo las que generan algo en tu pecho cuando las miras — emoción, deseo, paz, entusiasmo. Esa sensación es la señal correcta.</div>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-num">04</div>
+          <div class="step-body">
+            <div class="step-title">Añade Palabras y Afirmaciones</div>
+            <div class="step-text">Incluye palabras clave o frases cortas que refuercen tu visión. Pueden ser valores ("libertad", "abundancia", "paz"), metas específicas o declaraciones de fe escritas en tiempo presente.</div>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-num">05</div>
+          <div class="step-body">
+            <div class="step-title">Colócalo Donde Lo Veas Cada Día</div>
+            <div class="step-text">Un tablero que no ves no activa nada. Ponlo en tu cuarto, en tu escritorio, como fondo de pantalla, o en el espejo del baño. El objetivo es ver tu visión antes de que el mundo llene tu mente.</div>
+          </div>
+        </div>
+      </div>
+      <div class="tip-box">
+        <div class="tip-label">✦ Consejo de Oro</div>
+        <div class="tip-text">Incluye siempre <strong>una imagen tuya</strong> — o algo que te represente — en el centro del tablero. No eres solo el espectador de tu visión: eres el protagonista.</div>
+      </div>
+    `
+  },
+  {
+    id: 'vb-3',
+    title: 'Las 7 Áreas de Tu Vida Soñada',
+    eyebrow: 'Lección 3 de 4  ·  Áreas de Vida',
+    icon: '✨',
+    body: `
+      <div class="about-label">Acerca de Esta Lección</div>
+      <p class="about-text">
+        Un tablero poderoso no enfoca en una sola área de la vida — abarca tu ser completo. Estas son las 7 dimensiones que, en equilibrio, crean una vida verdaderamente soñada.
+      </p>
+      <div class="areas-grid">
+        <div class="area-card">
+          <span class="area-icon">💰</span>
+          <div class="area-title">Abundancia Financiera</div>
+          <div class="area-text">¿Cuánto quieres ganar? ¿Dónde vives? ¿Cómo se siente la libertad financiera para ti? Sé específico.</div>
+        </div>
+        <div class="area-card">
+          <span class="area-icon">🏋️</span>
+          <div class="area-title">Salud y Cuerpo</div>
+          <div class="area-text">Tu cuerpo es tu instrumento. ¿Cómo quieres sentirte físicamente? ¿Qué hábitos tiene esa versión de ti?</div>
+        </div>
+        <div class="area-card">
+          <span class="area-icon">❤️</span>
+          <div class="area-title">Amor y Relaciones</div>
+          <div class="area-text">Pareja, familia, amistades. ¿Cómo son las relaciones de tu vida soñada? ¿Qué tipo de amor das y recibes?</div>
+        </div>
+        <div class="area-card">
+          <span class="area-icon">🌍</span>
+          <div class="area-title">Propósito e Impacto</div>
+          <div class="area-text">¿A quién sirves con tu trabajo o misión? ¿Qué huella quieres dejar en el mundo?</div>
+        </div>
+        <div class="area-card">
+          <span class="area-icon">🏡</span>
+          <div class="area-title">Hogar y Entorno</div>
+          <div class="area-text">¿Dónde vives? ¿Cómo se ve y se siente tu espacio ideal? El entorno moldea quien eres.</div>
+        </div>
+        <div class="area-card">
+          <span class="area-icon">✈️</span>
+          <div class="area-title">Experiencias y Viajes</div>
+          <div class="area-text">¿Qué quieres vivir? ¿A dónde quieres ir? Las experiencias dan color y profundidad a la vida.</div>
+        </div>
+        <div class="area-card" style="grid-column: 1 / -1;">
+          <span class="area-icon">🧠</span>
+          <div class="area-title">Identidad y Crecimiento</div>
+          <div class="area-text">¿En qué persona quieres convertirte? ¿Qué aprenderás, qué leerás, cómo pensarás? La versión soñada de tu vida empieza por la versión soñada de ti mismo.</div>
+        </div>
+      </div>
+      <div class="quote-block" style="margin-top:28px;">
+        <div class="quote-text">No tienes que incluir todas las áreas en el mismo tablero. Puedes hacer un tablero general o uno enfocado solo en el área que más necesita visión ahora mismo.</div>
+        <div class="quote-ref">— Consejo del módulo</div>
+      </div>
+    `
+  },
+  {
+    id: 'vb-4',
+    title: 'Cómo Activar Tu Tablero Cada Día',
+    eyebrow: 'Lección 4 de 4  ·  Práctica Diaria',
+    icon: '🔑',
+    body: `
+      <div class="about-label">Acerca de Esta Lección</div>
+      <p class="about-text">
+        El tablero no hace el trabajo por ti — tú lo activas. La diferencia entre un tablero que transforma y uno que solo decora está en cómo lo usas cada día. Aquí está el ritual que lo hace poderoso.
+      </p>
+      <div class="ritual-list">
+        <div class="ritual-item">
+          <div class="ritual-time">Mañana</div>
+          <div class="ritual-body">
+            <div class="ritual-title">Los Primeros 3 Minutos del Día</div>
+            <div class="ritual-text">Antes de abrir el teléfono, siéntate frente a tu tablero. Míralo despacio. Para en cada imagen y <em>siente</em> como si ya fuera real. No pienses en "cuándo" — solo vívelo en tu mente por 3 minutos.</div>
+          </div>
+        </div>
+        <div class="ritual-item">
+          <div class="ritual-time">Mediodía</div>
+          <div class="ritual-body">
+            <div class="ritual-title">El Chequeo de Intención</div>
+            <div class="ritual-text">Una sola pregunta: <em>"¿Lo que estoy haciendo hoy me acerca a mi visión?"</em> No para juzgarte — sino para reorientarte. Una micro-decisión al día suma más que un gran esfuerzo esporádico.</div>
+          </div>
+        </div>
+        <div class="ritual-item">
+          <div class="ritual-time">Noche</div>
+          <div class="ritual-body">
+            <div class="ritual-title">El Agradecimiento Anticipado</div>
+            <div class="ritual-text">Antes de dormir, escribe o di en voz alta: <em>"Gracias porque [describe algo de tu visión] ya está en camino."</em> Esto programa tu mente subconsciente mientras duermes — que es cuando el cerebro consolida patrones.</div>
+          </div>
+        </div>
+        <div class="ritual-item">
+          <div class="ritual-time">Mensual</div>
+          <div class="ritual-body">
+            <div class="ritual-title">Revisión y Evolución</div>
+            <div class="ritual-text">Una vez al mes, revisa tu tablero con ojos frescos. ¿Sigue resonando? ¿Hay algo que ya se cumplió — y merece celebración? ¿Hay áreas que necesitas expandir? El tablero vive y evoluciona contigo.</div>
+          </div>
+        </div>
+      </div>
+      <div class="tip-box" style="margin-top:28px;">
+        <div class="tip-label">✦ El Secreto que Cambia Todo</div>
+        <div class="tip-text">La visualización sin acción es solo fantasía. La acción sin visualización es solo esfuerzo. <strong>Los dos juntos — visión + movimiento — son imparables.</strong> Tu tablero te muestra hacia dónde ir. Tú das los pasos.</div>
+      </div>
+    `
   }
 ];
 
 const MODULE_ID = 'vision-board';
-const GIFT_NAME = 'Regalo de Visión Divina';
-
 let currentLesson = parseInt(localStorage.getItem('current_lesson_' + MODULE_ID) || '0');
 let currentRating = 0;
 
@@ -589,7 +925,7 @@ function positionNav() {
   const sidebar = document.getElementById('sidebar');
   const bannerH = banner.offsetHeight;
   nav.style.top = bannerH + 'px';
-  const totalTop = bannerH + 48;
+  const totalTop = bannerH + 52;
   layout.style.paddingTop = totalTop + 'px';
   sidebar.style.top = totalTop + 'px';
 }
@@ -602,208 +938,161 @@ function escHtml(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/<
 function safeParse(s,d){try{return s!=null?JSON.parse(s):d;}catch(e){return d;}}
 function safeRating(r){var n=parseInt(r)||0;return n>0&&n<=5?n:0;}
 function safeInitial(name){var s=String(name==null?'':name).trim();return s?s[0]:'?';}
-function isCompleted(id) {
-  return safeParse(localStorage.getItem('completado_lessons_' + MODULE_ID), []).includes(id);
-}
-function getCompletedCount() {
-  const done = safeParse(localStorage.getItem('completado_lessons_' + MODULE_ID), []);
-  return LESSONS.filter(l => done.includes(l.id)).length;
+function isCompleted(id){ return safeParse(localStorage.getItem('completado_lessons_'+MODULE_ID),[]).includes(id); }
+function getCompletedCount(){
+  const done = safeParse(localStorage.getItem('completado_lessons_'+MODULE_ID),[]);
+  return LESSONS.filter(l=>done.includes(l.id)).length;
 }
 
 function renderLesson(idx) {
   currentLesson = idx;
   localStorage.setItem('current_lesson_' + MODULE_ID, idx);
-  const completadoSoFar = safeParse(localStorage.getItem('completado_lessons_' + MODULE_ID), []);
+  const completadoSoFar = safeParse(localStorage.getItem('completado_lessons_'+MODULE_ID),[]);
   saveModuleProgress(MODULE_ID, idx, completadoSoFar);
   const lesson = LESSONS[idx];
 
-  document.getElementById('video-container').innerHTML = lesson.videoHTML;
+  document.getElementById('banner-container').innerHTML = `
+    <div class="lesson-banner">
+      <div class="lesson-banner-icon">${lesson.icon}</div>
+      <div class="lesson-banner-num">${lesson.eyebrow}</div>
+      <div class="lesson-banner-title">${lesson.title}</div>
+    </div>`;
+
   document.getElementById('lesson-eyebrow').textContent = lesson.eyebrow;
   document.getElementById('lesson-title').textContent = lesson.title;
-  document.getElementById('lesson-desc').textContent = lesson.desc;
-
-  const dlSection = document.getElementById('download-section');
-  const dlContent = document.getElementById('download-content');
-  if (lesson.hasDownload) {
-    dlSection.style.display = 'block';
-    dlContent.innerHTML = `
-      <a href="${lesson.downloadHref}" class="download-card" download target="_blank" rel="noopener">
-        <div class="download-icon">📄</div>
-        <div class="download-info">
-          <div class="download-title">${lesson.downloadTitle}</div>
-          <div class="download-meta">${lesson.downloadMeta}</div>
-        </div>
-        <div class="download-btn">↓ Download PDF</div>
-      </a>`;
-  } else {
-    dlSection.style.display = 'none';
-  }
+  document.getElementById('lesson-body').innerHTML = lesson.body;
 
   const done = isCompleted(lesson.id);
   document.getElementById('completado-icon').textContent = done ? '✓' : '◯';
-  document.getElementById('completado-text').textContent = done ? 'Completed' : 'Marcar como Completo';
+  document.getElementById('completado-text').textContent = done ? 'Completado' : 'Marcar como Completo';
   document.getElementById('btn-completado').className = 'btn-completado' + (done ? ' done' : '');
 
   document.getElementById('btn-prev').className = 'btn-lesson-nav' + (idx === 0 ? ' disabled' : '');
-  document.getElementById('btn-next').className = 'btn-lesson-nav next' + (idx === LESSONS.length - 1 ? ' disabled' : '');
-  document.getElementById('btn-next').textContent = idx === LESSONS.length - 1 ? '✓ Last Lesson' : 'Siguiente →';
+  document.getElementById('btn-next').className = 'btn-lesson-nav next' + (idx === LESSONS.length-1 ? ' disabled' : '');
+  document.getElementById('btn-next').textContent = idx === LESSONS.length-1 ? '✓ Última Lección' : 'Siguiente →';
 
-  document.getElementById('notes-input').value = localStorage.getItem('notes_' + lesson.id) || '';
-  currentRating = parseInt(localStorage.getItem('rating_' + lesson.id) || '0');
-  renderStars();
-  renderComments();
-  renderSidebar();
-  updateProgress();
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  document.getElementById('notes-input').value = localStorage.getItem('notes_'+lesson.id) || '';
+  currentRating = parseInt(localStorage.getItem('rating_'+lesson.id) || '0');
+  renderStars(); renderComments(); renderSidebar(); updateProgress();
+  window.scrollTo({top:0, behavior:'smooth'});
   document.getElementById('sidebar').classList.remove('open');
 }
 
 function renderSidebar() {
-  document.getElementById('module-list').innerHTML = LESSONS.map((l, i) => `
-    <div class="module-item ${i === currentLesson ? 'active' : ''} ${isCompleted(l.id) ? 'completado' : ''}"
+  document.getElementById('module-list').innerHTML = LESSONS.map((l,i) => `
+    <div class="module-item ${i===currentLesson?'active':''} ${isCompleted(l.id)?'completado':''}"
       onclick="renderLesson(${i})">
-      <div class="module-num">${isCompleted(l.id) ? '✓' : (i + 1)}</div>
-      <div class="module-info"><div class="module-name">${l.title}</div></div>
-    </div>
-  `).join('');
+      <div class="module-num">${isCompleted(l.id)?'✓':(i+1)}</div>
+      <div class="module-info">
+        <div class="module-name">${l.title}</div>
+        <div class="module-sub">${l.eyebrow.split('·')[1]?l.eyebrow.split('·')[1].trim():''}</div>
+      </div>
+    </div>`).join('');
 }
 
 function updateProgress() {
-  const count = getCompletedCount();
-  const total = LESSONS.length;
-  const pct = (count / total) * 100;
-  document.getElementById('progress-fill').style.width = pct + '%';
-  document.getElementById('progress-label').textContent = `${count} of ${total} completado`;
-  document.getElementById('gift-progress-fill').style.width = pct + '%';
-  document.getElementById('gift-progress-label').textContent = `${count} of ${total}`;
+  const count = getCompletedCount(), total = LESSONS.length, pct = (count/total)*100;
+  document.getElementById('progress-fill').style.width = pct+'%';
+  document.getElementById('progress-label').textContent = `${count} de ${total} completado`;
+  document.getElementById('gift-progress-fill').style.width = pct+'%';
+  document.getElementById('gift-progress-label').textContent = `${count} de ${total}`;
 }
 
 function markComplete() {
   const lesson = LESSONS[currentLesson];
   if (isCompleted(lesson.id)) return;
-  const done = safeParse(localStorage.getItem('completado_lessons_' + MODULE_ID), []);
+  const done = safeParse(localStorage.getItem('completado_lessons_'+MODULE_ID),[]);
   done.push(lesson.id);
-  localStorage.setItem('completado_lessons_' + MODULE_ID, JSON.stringify(done));
+  localStorage.setItem('completado_lessons_'+MODULE_ID, JSON.stringify(done));
   saveModuleProgress(MODULE_ID, currentLesson, done);
   document.getElementById('completado-icon').textContent = '✓';
-  document.getElementById('completado-text').textContent = 'Completed';
+  document.getElementById('completado-text').textContent = 'Completado';
   document.getElementById('btn-completado').className = 'btn-completado done';
-  updateProgress();
-  renderSidebar();
-
+  updateProgress(); renderSidebar();
   if (getCompletedCount() === LESSONS.length) {
-    const gifts = safeParse(localStorage.getItem('abundance_gifts'), []);
-    if (!gifts.includes(MODULE_ID)) {
-      gifts.push(MODULE_ID);
-      localStorage.setItem('abundance_gifts', JSON.stringify(gifts));
-      saveGift(MODULE_ID);
-    }
+    const gifts = safeParse(localStorage.getItem('abundance_gifts'),[]);
+    if (!gifts.includes(MODULE_ID)) { gifts.push(MODULE_ID); localStorage.setItem('abundance_gifts',JSON.stringify(gifts)); saveGift(MODULE_ID); }
     setTimeout(() => document.getElementById('gift-modal').classList.add('show'), 800);
   }
 }
 
-function goLesson(dir) {
-  const next = currentLesson + dir;
-  if (next < 0 || next >= LESSONS.length) return;
-  renderLesson(next);
-}
+function goLesson(dir) { const n=currentLesson+dir; if(n<0||n>=LESSONS.length)return; renderLesson(n); }
 
 function switchTab(id, btn) {
-  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
-  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-  document.getElementById('tab-' + id).classList.add('active');
-  btn.classList.add('active');
+  document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active'); btn.classList.add('active');
 }
 
 function setRating(n) {
-  currentRating = n;
-  saveLessonInteraction(LESSONS[currentLesson].id, undefined, n);
-  renderStars();
+  currentRating = n; localStorage.setItem('rating_'+LESSONS[currentLesson].id, n);
+  saveLessonInteraction(LESSONS[currentLesson].id, undefined, n); renderStars();
 }
 function renderStars() {
-  document.querySelectorAll('.star-btn').forEach((s, i) => s.className = 'star-btn' + (i < currentRating ? ' active' : ''));
-  const labels = ['Toca para calificar', 'Not for me', 'It was ok', 'Good', 'Very good', 'Life-changing ✦'];
+  document.querySelectorAll('.star-btn').forEach((s,i)=>s.className='star-btn'+(i<currentRating?' active':''));
+  const labels=['Toca para calificar','No era para mí','Estuvo bien','Buena','Muy buena','Cambió mi vida ✦'];
   document.getElementById('rating-label').textContent = labels[currentRating];
 }
 
 function submitComment() {
-  const text = document.getElementById('comment-input').value.trim();
-  if (!text) return;
-  const name = savedName ? savedName.split(' ')[0] : 'Member';
-  const newC = { name, text, rating: currentRating, date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) };
+  const text = document.getElementById('comment-input').value.trim(); if(!text) return;
+  const name = savedName ? savedName.split(' ')[0] : 'Miembro';
+  const newC = { name, text, rating: currentRating, date: new Date().toLocaleDateString('es-ES',{month:'short',day:'numeric'}) };
   document.getElementById('comment-input').value = '';
-  // Optimistic: prepend immediately
   const list = document.getElementById('comments-list');
-  const el = document.createElement('div');
-  el.className = 'comment-card';
-  el.innerHTML = `<div class="comment-top"><div class="comment-avatar">${escHtml(safeInitial(name))}</div><div class="comment-name">${escHtml(name)} · ${newC.date}</div>${safeRating(newC.rating) ? `<div class="comment-stars">${'★'.repeat(safeRating(newC.rating))}</div>` : ''}</div><div class="comment-text">${escHtml(text)}</div>`;
+  const el = document.createElement('div'); el.className = 'comment-card';
+  el.innerHTML = `<div class="comment-top"><div class="comment-avatar">${escHtml(safeInitial(name))}</div><div class="comment-name">${escHtml(name)} · ${newC.date}</div>${safeRating(newC.rating)?`<div class="comment-stars">${'★'.repeat(safeRating(newC.rating))}</div>`:''}</div><div class="comment-text">${escHtml(text)}</div>`;
   list.prepend(el);
-  // Save to Supabase, then refresh from Supabase
-  saveComment(LESSONS[currentLesson].id, text, currentRating, name).then(function() { renderComments(); }).catch(console.error);
+  saveComment(LESSONS[currentLesson].id, text, currentRating, name).then(()=>renderComments()).catch(console.error);
 }
 
 function renderComments() {
   const demo = [
-    { name: 'Sarah', text: 'I created my vision board the same night I watched this. For the first time in years, I could see my future clearly. Something in me woke up.', rating: 5, date: 'Apr 4' },
-    { name: 'James', text: 'I always thought vision boards were just pretty pictures. This lesson changed everything. Now I understand it is an act of faith, not just creativity.', rating: 5, date: 'Apr 1' },
+    { name: 'Sofía', text: 'Nunca entendí para qué servía un tablero de visión hasta esta lección. La parte de las 7 áreas me abrió los ojos — tenía todo el foco en el dinero y ninguno en mi salud ni mis relaciones.', rating: 5, date: '14 may' },
+    { name: 'Rodrigo', text: 'El ritual de los 3 minutos en la mañana ya lo llevo 2 semanas. La diferencia en cómo empiezo el día es brutal. Recomiendo esta lección a cualquiera que quiera empezar.', rating: 5, date: '10 may' },
+    { name: 'Camila', text: 'Me encantó que explicaran la parte de la neurociencia. No solo es fe — tiene base real. Eso me ayudó a tomarlo más en serio y no sentir que era "solo algo positivo".', rating: 5, date: '5 may' },
   ];
   getLessonComments(LESSONS[currentLesson].id).then(function(sbComments) {
     const all = [...sbComments, ...demo];
-    const list = document.getElementById('comments-list');
-    list.innerHTML = all.map(c => `
-    <div class="comment-card">
-      <div class="comment-top">
-        <div class="comment-avatar">${escHtml(safeInitial(c.name))}</div>
-        <div class="comment-name">${escHtml(c.name||'')} · ${c.date}</div>
-        ${safeRating(c.rating) ? `<div class="comment-stars">${'★'.repeat(safeRating(c.rating))}</div>` : ''}
-      </div>
-      <div class="comment-text">${escHtml(c.text||'')}</div>
-    </div>
-  `).join('');
+    document.getElementById('comments-list').innerHTML = all.map(c=>`
+      <div class="comment-card">
+        <div class="comment-top">
+          <div class="comment-avatar">${escHtml(safeInitial(c.name))}</div>
+          <div class="comment-name">${escHtml(c.name||'')} · ${c.date}</div>
+          ${safeRating(c.rating)?`<div class="comment-stars">${'★'.repeat(safeRating(c.rating))}</div>`:''}
+        </div>
+        <div class="comment-text">${escHtml(c.text||'')}</div>
+      </div>`).join('');
   }).catch(console.error);
 }
 
 function saveNotes() {
+  localStorage.setItem('notes_'+LESSONS[currentLesson].id, document.getElementById('notes-input').value);
   saveLessonInteraction(LESSONS[currentLesson].id, document.getElementById('notes-input').value, undefined);
   const btn = document.querySelector('.btn-save-notes');
-  btn.textContent = '❆ Saved';
-  setTimeout(() => btn.textContent = '❆ Save Notes', 1800);
+  btn.textContent = '✦ Guardado'; setTimeout(()=>btn.textContent='✦ Guardar Notas', 1800);
 }
 
-function closeGiftModal() {
-  document.getElementById('gift-modal').classList.remove('show');
-}
-
-window.addEventListener('pageshow', function(ev) {
-  if (ev.persisted) { document.body.classList.remove('page-fade-out'); document.body.style.opacity = ''; }
-});
-
-function fadeOut(e, url) {
-  e.preventDefault();
-  document.body.classList.add('page-fade-out');
-  setTimeout(() => window.location.href = url, 350);
-}
-
-function toggleSidebar() {
-  document.getElementById('sidebar').classList.toggle('open');
-}
+function closeGiftModal() { document.getElementById('gift-modal').classList.remove('show'); }
+window.addEventListener('pageshow', function(ev){ if(ev.persisted){document.body.classList.remove('page-fade-out');document.body.style.opacity='';} });
+function fadeOut(e,url){ e.preventDefault(); document.body.classList.add('page-fade-out'); setTimeout(()=>window.location.href=url,350); }
+function toggleSidebar() { document.getElementById('sidebar').classList.toggle('open'); }
 
 renderLesson(currentLesson);
-// ── SUPABASE HYDRATE ──
+
 onSupabaseReady(function() {
   var lid = LESSONS[currentLesson].id;
-  getLessonInteraction(lid).then(function(data) {
-    if (data.notes) document.getElementById('notes-input').value = data.notes;
-    if (data.rating) { currentRating = data.rating; renderStars(); }
+  getLessonInteraction(lid).then(function(data){
+    if(data.notes) document.getElementById('notes-input').value=data.notes;
+    if(data.rating){currentRating=data.rating;renderStars();}
   });
   renderComments();
-  getModuleProgress(MODULE_ID).then(function(p) {
-    renderSidebar();
-    updateProgress();
-    var done = (p.completadoLessons || []).includes(LESSONS[currentLesson].id);
-    document.getElementById('completado-icon').textContent = done ? '\u2713' : '\u25ef';
-    document.getElementById('completado-text').textContent = done ? 'Completed' : 'Marcar como Completo';
-    document.getElementById('btn-completado').className = 'btn-completado' + (done ? ' done' : '');
+  getModuleProgress(MODULE_ID).then(function(p){
+    renderSidebar(); updateProgress();
+    var done=(p.completadoLessons||[]).includes(LESSONS[currentLesson].id);
+    document.getElementById('completado-icon').textContent=done?'✓':'◯';
+    document.getElementById('completado-text').textContent=done?'Completado':'Marcar como Completo';
+    document.getElementById('btn-completado').className='btn-completado'+(done?' done':'');
   });
 });
 </script>
