@@ -17,93 +17,143 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="Age of Abundance">
   <link rel="apple-touch-icon" href="images/Copy of Whisk_566d7d5bf10336b9f184205567b5715eeg.png">
-  <meta name="theme-color" content="#0d0d12">
+  <meta name="theme-color" content="#07071a">
   <title>Diario de la Vida Soñada — Abundance Time</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Josefin+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --gold:        #c9a84c;
-      --gold-light:  #e8c96a;
-      --gold-pale:   #f5e6b8;
-      --gold-dim:    #7a5f28;
-      --bg:          #0a0a0f;
-      --bg2:         #0f0f18;
-      --bg3:         #13131f;
-      --bg4:         #1a1a28;
-      --text:        #f0e8d8;
-      --text-mid:    #c8b898;
-      --text-dim:    #7a6a50;
-      --border:      rgba(201,168,76,0.12);
-      --border-strong: rgba(201,168,76,0.25);
-      --radius:      12px;
-      --sidebar-w:   300px;
+      --indigo:       #6c63ff;
+      --indigo-light: #a89cff;
+      --indigo-pale:  #d4cfff;
+      --indigo-dim:   #3d3880;
+      --rose:         #e8a87c;
+      --rose-light:   #f5c9a7;
+      --rose-dim:     #b07248;
+      --violet:       #9d7fff;
+      --violet-dim:   #5c46c4;
+
+      --bg:           #07071a;
+      --bg2:          #0c0c22;
+      --bg3:          #10102c;
+      --bg4:          #15153a;
+
+      --text:         #f0edf8;
+      --text-mid:     #c4b8e8;
+      --text-dim:     #6a6090;
+      --text-dimmer:  #3e385c;
+
+      --border:       rgba(108,99,255,0.15);
+      --border-strong:rgba(108,99,255,0.3);
+      --radius:       14px;
+      --sidebar-w:    300px;
     }
 
     html { scroll-behavior: smooth; }
+
     body {
-      font-family: 'Crimson Pro', Georgia, serif;
+      font-family: 'Cormorant Garamond', Georgia, serif;
       background: var(--bg);
       color: var(--text);
       min-height: 100vh;
       overflow-x: hidden;
       font-size: 17px;
-      animation: pageFadeIn 0.5s ease forwards;
+      animation: pageFadeIn 0.6s ease forwards;
     }
+
     @keyframes pageFadeIn { from { opacity:0; } to { opacity:1; } }
     .page-fade-out { animation: pageFadeOut 0.35s ease forwards; }
     @keyframes pageFadeOut { to { opacity:0; transform: translateY(-8px); } }
+
+    /* ── STAR FIELD ── */
     body::before {
       content: '';
       position: fixed; inset: 0; z-index: 0; pointer-events: none;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-      opacity: 0.4;
+      background-image:
+        radial-gradient(1px 1px at 15% 20%, rgba(255,255,255,0.55) 0%, transparent 100%),
+        radial-gradient(1px 1px at 72% 8%,  rgba(255,255,255,0.4)  0%, transparent 100%),
+        radial-gradient(1px 1px at 38% 55%, rgba(255,255,255,0.35) 0%, transparent 100%),
+        radial-gradient(1px 1px at 90% 35%, rgba(255,255,255,0.5)  0%, transparent 100%),
+        radial-gradient(1px 1px at 55% 78%, rgba(255,255,255,0.3)  0%, transparent 100%),
+        radial-gradient(1px 1px at 5%  60%, rgba(255,255,255,0.45) 0%, transparent 100%),
+        radial-gradient(1px 1px at 82% 70%, rgba(255,255,255,0.38) 0%, transparent 100%),
+        radial-gradient(1px 1px at 27% 88%, rgba(255,255,255,0.3)  0%, transparent 100%),
+        radial-gradient(1px 1px at 63% 42%, rgba(255,255,255,0.5)  0%, transparent 100%),
+        radial-gradient(1px 1px at 47% 15%, rgba(255,255,255,0.42) 0%, transparent 100%),
+        radial-gradient(1.5px 1.5px at 93% 90%, rgba(168,156,255,0.6) 0%, transparent 100%),
+        radial-gradient(1.5px 1.5px at 22% 42%, rgba(168,156,255,0.5) 0%, transparent 100%),
+        radial-gradient(2px 2px at 70% 62%,  rgba(232,168,124,0.45) 0%, transparent 100%),
+        radial-gradient(2px 2px at 10% 82%,  rgba(232,168,124,0.35) 0%, transparent 100%);
+    }
+
+    /* Nebula glow */
+    body::after {
+      content: '';
+      position: fixed; top: -30vh; left: 50%; transform: translateX(-50%);
+      width: 140vw; height: 80vh;
+      background: radial-gradient(ellipse at 50% 0%,
+        rgba(108,99,255,0.12) 0%,
+        rgba(157,127,255,0.06) 40%,
+        transparent 70%);
+      pointer-events: none; z-index: 0;
     }
 
     /* ── GIFT BANNER ── */
     .gift-banner {
       position: fixed; top: 0; left: 0; right: 0; z-index: 300;
-      background: linear-gradient(90deg, rgba(10,10,15,0.98), rgba(20,15,5,0.98));
-      padding: 10px 1.5rem; height: auto; min-height: 72px;
+      background: linear-gradient(90deg, rgba(7,7,26,0.98), rgba(12,10,30,0.98));
+      border-bottom: 1px solid var(--border);
+      padding: 10px 1.5rem; min-height: 70px;
       display: flex; align-items: center; justify-content: center;
       flex-direction: column; gap: 8px;
     }
     .gift-banner-text {
-      font-family: 'Cinzel', serif; font-size: 0.9rem; letter-spacing: 0.06em;
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase;
       color: var(--text-mid); display: flex; align-items: center; gap: 10px;
       flex-wrap: wrap; justify-content: center; text-align: center;
     }
     .gift-pill {
-      background: rgba(201,168,76,0.12); border: 1px solid rgba(201,168,76,0.3);
-      border-radius: 999px; padding: 5px 14px; color: var(--gold);
-      font-size: 0.88rem; letter-spacing: 0.06em; display: flex; align-items: center; gap: 6px;
+      background: rgba(108,99,255,0.15); border: 1px solid rgba(108,99,255,0.35);
+      border-radius: 999px; padding: 5px 14px; color: var(--indigo-light);
+      font-size: 0.78rem; letter-spacing: 0.08em; display: flex; align-items: center; gap: 6px;
     }
     .gift-progress-wrap { width: 100%; max-width: 340px; display: flex; align-items: center; gap: 10px; }
-    .gift-progress-bar { flex: 1; height: 5px; border-radius: 999px; background: rgba(255,255,255,0.08); overflow: hidden; }
+    .gift-progress-bar { flex: 1; height: 4px; border-radius: 999px; background: rgba(255,255,255,0.06); overflow: hidden; }
     .gift-progress-fill {
-      height: 100%; background: linear-gradient(90deg, var(--gold-dim), var(--gold));
+      height: 100%;
+      background: linear-gradient(90deg, var(--indigo-dim), var(--indigo), var(--violet));
       border-radius: 999px; transition: width 0.8s ease; width: 0%;
     }
     .gift-progress-label {
-      font-family: 'Cinzel', serif; font-size: 0.78rem; letter-spacing: 0.08em;
-      color: var(--text-dim); white-space: nowrap;
+      font-family: 'Josefin Sans', sans-serif; font-size: 0.72rem; letter-spacing: 0.1em;
+      color: var(--text-dim); white-space: nowrap; text-transform: uppercase;
     }
 
     /* ── NAV ── */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 200;
       height: 48px; display: flex; align-items: center;
-      padding: 0 1.5rem; background: rgba(10,10,15,0.95); backdrop-filter: blur(20px);
+      padding: 0 1.5rem;
+      background: rgba(7,7,26,0.92);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
     }
     .nav-back {
       display: flex; align-items: center; gap: 8px; text-decoration: none;
-      color: var(--text-dim); font-family: 'Cinzel', serif;
-      font-size: 0.7rem; letter-spacing: 0.1em; transition: color 0.2s;
+      color: var(--text-dim); font-family: 'Josefin Sans', sans-serif;
+      font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase;
+      transition: color 0.2s;
     }
-    .nav-back:hover { color: var(--gold); }
+    .nav-back:hover { color: var(--indigo-light); }
+    .nav-logo {
+      margin-left: auto; font-family: 'Josefin Sans', sans-serif;
+      font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--text-dimmer);
+    }
 
     /* ── LAYOUT ── */
     .layout { display: flex; padding-top: 116px; min-height: 100vh; position: relative; z-index: 1; }
@@ -115,52 +165,65 @@
       background: var(--bg2); border-right: 1px solid var(--border);
       overflow-y: auto; z-index: 100; transition: transform 0.3s ease;
     }
-    .sidebar::-webkit-scrollbar { width: 4px; }
-    .sidebar::-webkit-scrollbar-thumb { background: rgba(201,168,76,0.2); border-radius: 2px; }
+    .sidebar::-webkit-scrollbar { width: 3px; }
+    .sidebar::-webkit-scrollbar-thumb { background: rgba(108,99,255,0.25); border-radius: 2px; }
+
     .sidebar-header {
-      padding: 20px 20px 14px; border-bottom: 1px solid var(--border);
+      padding: 22px 20px 16px;
+      border-bottom: 1px solid var(--border);
       position: sticky; top: 0; background: var(--bg2); z-index: 1;
     }
     .sidebar-eyebrow {
-      font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.16em;
-      text-transform: uppercase; color: var(--gold); opacity: 0.7; margin-bottom: 6px;
+      font-family: 'Josefin Sans', sans-serif; font-size: 0.58rem; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--indigo-light); opacity: 0.7; margin-bottom: 6px;
     }
     .sidebar-course-title {
-      font-family: 'Cinzel', serif; font-size: 0.85rem; font-weight: 600;
-      color: var(--text); line-height: 1.3;
+      font-family: 'Josefin Sans', sans-serif; font-size: 0.82rem; font-weight: 600;
+      color: var(--text); line-height: 1.4; letter-spacing: 0.04em;
     }
+    .sidebar-moon {
+      display: block; font-size: 1.3rem; margin-bottom: 8px;
+    }
+
     .sidebar-progress { padding: 14px 20px; border-bottom: 1px solid var(--border); }
     .progress-row {
-      display: flex; justify-content: space-between; font-family: 'Cinzel', serif;
-      font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase;
-      color: var(--text-dim); margin-bottom: 8px;
+      display: flex; justify-content: space-between;
+      font-family: 'Josefin Sans', sans-serif; font-size: 0.58rem; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--text-dim); margin-bottom: 8px;
     }
-    .progress-bar-wrap { background: rgba(255,255,255,0.06); border-radius: 999px; height: 5px; }
+    .progress-bar-wrap { background: rgba(255,255,255,0.05); border-radius: 999px; height: 4px; }
     .progress-bar-fill {
-      height: 100%; background: linear-gradient(90deg, var(--gold-dim), var(--gold));
+      height: 100%;
+      background: linear-gradient(90deg, var(--indigo-dim), var(--indigo), var(--violet));
       border-radius: 999px; transition: width 0.8s ease;
     }
+
     .module-list { padding: 8px 0; }
     .module-item {
-      display: flex; align-items: center; gap: 14px; padding: 13px 20px;
+      display: flex; align-items: flex-start; gap: 14px; padding: 14px 20px;
       cursor: pointer; transition: background 0.18s; border-left: 3px solid transparent;
     }
-    .module-item:hover { background: rgba(201,168,76,0.05); }
-    .module-item.active { background: rgba(201,168,76,0.08); border-left-color: var(--gold); }
+    .module-item:hover { background: rgba(108,99,255,0.06); }
+    .module-item.active { background: rgba(108,99,255,0.1); border-left-color: var(--indigo); }
     .module-num {
-      flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%;
+      flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%;
       background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1);
       display: flex; align-items: center; justify-content: center;
-      font-family: 'Cinzel', serif; font-size: 0.65rem; color: var(--text-dim);
+      font-family: 'Josefin Sans', sans-serif; font-size: 0.62rem; color: var(--text-dim);
+      margin-top: 2px;
     }
-    .module-item.active .module-num { background: rgba(201,168,76,0.2); border-color: var(--gold); color: var(--gold); }
-    .module-item.completado .module-num { background: rgba(46,180,100,0.15); border-color: rgba(46,180,100,0.4); color: #4ecb80; }
+    .module-item.active .module-num { background: rgba(108,99,255,0.22); border-color: var(--indigo); color: var(--indigo-light); }
+    .module-item.completado .module-num { background: rgba(100,200,130,0.15); border-color: rgba(100,200,130,0.4); color: #6ecb90; }
     .module-info { flex: 1; min-width: 0; }
     .module-name {
-      font-family: 'Cinzel', serif; font-size: 0.72rem; font-weight: 600;
-      color: var(--text-mid); line-height: 1.35;
+      font-family: 'Josefin Sans', sans-serif; font-size: 0.7rem; font-weight: 600;
+      color: var(--text-mid); line-height: 1.4; letter-spacing: 0.03em;
     }
-    .module-item.active .module-name { color: var(--gold-pale); }
+    .module-item.active .module-name { color: var(--indigo-pale); }
+    .module-sub {
+      font-size: 0.78rem; color: var(--text-dimmer); margin-top: 3px;
+      font-family: 'Cormorant Garamond', serif; font-style: italic;
+    }
 
     /* ── MAIN ── */
     .main-content { margin-left: var(--sidebar-w); flex: 1; min-width: 0; }
@@ -168,92 +231,182 @@
     .yt-wrap { position: relative; padding: 56.25% 0 0 0; width: 100%; }
     .yt-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
 
-    .content-area { padding: 30px 40px 80px; max-width: 860px; }
-    .module-header { margin-bottom: 26px; }
+    /* No-video placeholder */
+    .lesson-visual {
+      width: 100%; padding: 60px 40px;
+      background: linear-gradient(160deg, var(--bg3), var(--bg4));
+      border-bottom: 1px solid var(--border);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center; gap: 16px; min-height: 220px;
+    }
+    .lesson-visual-icon { font-size: 3.5rem; line-height: 1; }
+    .lesson-visual-num {
+      font-family: 'Josefin Sans', sans-serif; font-size: 0.65rem; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--indigo-light); opacity: 0.8;
+    }
+    .lesson-visual-title {
+      font-family: 'Josefin Sans', sans-serif; font-size: 1.15rem; font-weight: 600;
+      color: var(--text); letter-spacing: 0.05em; max-width: 500px; line-height: 1.4;
+    }
+
+    .content-area { padding: 32px 44px 90px; max-width: 860px; }
+
+    /* ── MODULE HEADER ── */
+    .module-header { margin-bottom: 28px; }
     .module-eyebrow {
-      font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.18em;
-      text-transform: uppercase; color: var(--gold); opacity: 0.7; margin-bottom: 10px;
+      font-family: 'Josefin Sans', sans-serif; font-size: 0.6rem; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--indigo-light); opacity: 0.75; margin-bottom: 10px;
     }
     .module-title {
-      font-family: 'Cinzel', serif; font-size: clamp(1.3rem, 2.5vw, 1.9rem);
-      font-weight: 700; color: var(--text); letter-spacing: 0.02em; line-height: 1.2; margin-bottom: 16px;
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: clamp(1.3rem, 2.5vw, 1.85rem);
+      font-weight: 700; color: var(--text); letter-spacing: 0.03em;
+      line-height: 1.2; margin-bottom: 18px;
     }
+
     .btn-completado {
-      display: inline-flex; align-items: center; gap: 9px; padding: 11px 22px;
-      border-radius: 8px; background: rgba(201,168,76,0.1); border: 1px solid var(--border-strong);
-      color: var(--gold); font-family: 'Cinzel', serif; font-size: 0.76rem;
-      font-weight: 600; letter-spacing: 0.08em; cursor: pointer; transition: all 0.2s;
+      display: inline-flex; align-items: center; gap: 9px; padding: 10px 22px;
+      border-radius: 8px; background: rgba(108,99,255,0.1); border: 1px solid var(--border-strong);
+      color: var(--indigo-light); font-family: 'Josefin Sans', sans-serif; font-size: 0.7rem;
+      font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; transition: all 0.2s;
     }
-    .btn-completado:hover { background: rgba(201,168,76,0.18); border-color: var(--gold); }
-    .btn-completado.done { background: rgba(46,180,100,0.12); border-color: rgba(46,180,100,0.35); color: #4ecb80; }
+    .btn-completado:hover { background: rgba(108,99,255,0.2); border-color: var(--indigo); }
+    .btn-completado.done { background: rgba(100,200,130,0.1); border-color: rgba(100,200,130,0.35); color: #6ecb90; }
 
-    .deco-divider { display: flex; align-items: center; gap: 12px; margin: 28px 0; }
+    .deco-divider { display: flex; align-items: center; gap: 14px; margin: 28px 0; }
     .deco-divider-line { flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--border-strong), transparent); }
-    .deco-divider-sym { font-family: 'Cinzel', serif; font-size: 0.7rem; color: var(--gold); opacity: 0.4; letter-spacing: 0.2em; }
+    .deco-divider-sym { font-size: 0.65rem; color: var(--indigo); opacity: 0.5; letter-spacing: 0.3em; font-family: 'Josefin Sans', sans-serif; }
 
-    .tabs { display: flex; gap: 4px; margin-bottom: 24px; }
+    /* ── TABS ── */
+    .tabs { display: flex; gap: 4px; margin-bottom: 26px; border-bottom: 1px solid var(--border); padding-bottom: 0; }
     .tab-btn {
-      padding: 9px 20px; border-radius: 8px; background: transparent;
-      border: 1px solid transparent; color: var(--text-dim);
-      font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.08em;
-      cursor: pointer; transition: all 0.18s;
+      padding: 10px 20px; border-radius: 8px 8px 0 0; background: transparent;
+      border: 1px solid transparent; border-bottom: none;
+      color: var(--text-dim); font-family: 'Josefin Sans', sans-serif;
+      font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase;
+      cursor: pointer; transition: all 0.18s; position: relative; bottom: -1px;
     }
     .tab-btn:hover { color: var(--text-mid); }
-    .tab-btn.active { background: rgba(201,168,76,0.1); border-color: var(--border-strong); color: var(--gold); }
+    .tab-btn.active {
+      background: rgba(108,99,255,0.08); border-color: var(--border-strong);
+      color: var(--indigo-light); border-bottom-color: var(--bg);
+    }
     .tab-content { display: none; }
     .tab-content.active { display: block; }
 
+    /* ── ABOUT TAB ── */
     .about-label {
-      font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.16em;
-      text-transform: uppercase; color: var(--gold); opacity: 0.65; margin-bottom: 12px;
+      font-family: 'Josefin Sans', sans-serif; font-size: 0.6rem; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--indigo-light); opacity: 0.7; margin-bottom: 14px;
     }
-    .about-text { font-size: 1.1rem; color: var(--text-mid); line-height: 1.8; }
+    .about-text { font-size: 1.12rem; color: var(--text-mid); line-height: 1.9; }
 
+    /* Step cards inside about */
+    .steps-grid { display: flex; flex-direction: column; gap: 16px; margin-top: 24px; }
+    .step-card {
+      background: rgba(108,99,255,0.05); border: 1px solid var(--border);
+      border-radius: 12px; padding: 20px 22px;
+      display: flex; gap: 16px; align-items: flex-start;
+      transition: border-color 0.2s;
+    }
+    .step-card:hover { border-color: var(--border-strong); }
+    .step-num {
+      flex-shrink: 0; width: 32px; height: 32px; border-radius: 50%;
+      background: rgba(108,99,255,0.15); border: 1px solid var(--border-strong);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Josefin Sans', sans-serif; font-size: 0.72rem;
+      font-weight: 700; color: var(--indigo-light); letter-spacing: 0.05em;
+    }
+    .step-body {}
+    .step-title {
+      font-family: 'Josefin Sans', sans-serif; font-size: 0.82rem; font-weight: 700;
+      color: var(--text); letter-spacing: 0.05em; margin-bottom: 6px; text-transform: uppercase;
+    }
+    .step-text { font-size: 1.05rem; color: var(--text-mid); line-height: 1.75; }
+
+    /* Quote block */
+    .quote-block {
+      border-left: 2px solid rgba(108,99,255,0.4); padding: 14px 20px;
+      margin: 22px 0; background: rgba(108,99,255,0.04); border-radius: 0 10px 10px 0;
+    }
+    .quote-text { font-size: 1.1rem; color: var(--text-mid); font-style: italic; line-height: 1.75; }
+    .quote-ref { font-family: 'Josefin Sans', sans-serif; font-size: 0.62rem; letter-spacing: 0.12em; color: var(--text-dimmer); margin-top: 8px; text-transform: uppercase; }
+
+    /* Prompt cards */
+    .prompts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 20px; }
+    .prompt-card {
+      background: rgba(232,168,124,0.06); border: 1px solid rgba(232,168,124,0.18);
+      border-radius: 10px; padding: 16px 18px;
+    }
+    .prompt-icon { font-size: 1.3rem; margin-bottom: 8px; display: block; }
+    .prompt-q { font-size: 1rem; color: var(--rose-light); line-height: 1.65; font-style: italic; }
+
+    /* Download */
     .download-section { margin-top: 28px; }
     .download-card {
       display: flex; align-items: center; gap: 16px;
-      background: rgba(201,168,76,0.06); border: 1px solid var(--border-strong);
-      border-radius: 12px; padding: 18px 20px; text-decoration: none; transition: all 0.2s;
+      background: rgba(108,99,255,0.07); border: 1px solid var(--border-strong);
+      border-radius: 12px; padding: 18px 22px; text-decoration: none; transition: all 0.2s;
     }
-    .download-card:hover { background: rgba(201,168,76,0.12); border-color: var(--gold); }
+    .download-card:hover { background: rgba(108,99,255,0.14); border-color: var(--indigo); }
     .download-icon { font-size: 1.8rem; flex-shrink: 0; }
     .download-info { flex: 1; }
     .download-title {
-      font-family: 'Cinzel', serif; font-size: 0.8rem; font-weight: 600;
-      color: var(--gold-pale); letter-spacing: 0.03em; margin-bottom: 4px;
+      font-family: 'Josefin Sans', sans-serif; font-size: 0.78rem; font-weight: 700;
+      color: var(--indigo-pale); letter-spacing: 0.04em; margin-bottom: 4px; text-transform: uppercase;
     }
-    .download-meta { font-size: 0.85rem; color: var(--text-dim); }
+    .download-meta { font-size: 0.88rem; color: var(--text-dim); }
     .download-btn {
-      padding: 8px 18px; border-radius: 7px; background: rgba(201,168,76,0.15);
-      border: 1px solid var(--border-strong); color: var(--gold);
-      font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.08em;
-      cursor: pointer; white-space: nowrap; transition: all 0.2s;
+      padding: 8px 18px; border-radius: 7px; background: rgba(108,99,255,0.15);
+      border: 1px solid var(--border-strong); color: var(--indigo-light);
+      font-family: 'Josefin Sans', sans-serif; font-size: 0.65rem; letter-spacing: 0.1em;
+      text-transform: uppercase; cursor: pointer; white-space: nowrap; transition: all 0.2s;
     }
-    .download-card:hover .download-btn { background: rgba(201,168,76,0.25); }
+    .download-card:hover .download-btn { background: rgba(108,99,255,0.28); }
 
-    .lesson-nav { display: flex; gap: 12px; margin-top: 24px; }
+    /* ── LESSON NAV ── */
+    .lesson-nav { display: flex; gap: 12px; margin-top: 28px; }
     .btn-lesson-nav {
-      display: flex; align-items: center; gap: 8px; padding: 11px 20px;
+      display: flex; align-items: center; gap: 8px; padding: 11px 22px;
       border-radius: 8px; background: rgba(255,255,255,0.04); border: 1px solid var(--border);
-      color: var(--text-mid); font-family: 'Cinzel', serif; font-size: 0.72rem;
-      letter-spacing: 0.06em; cursor: pointer; transition: all 0.2s;
+      color: var(--text-mid); font-family: 'Josefin Sans', sans-serif; font-size: 0.7rem;
+      letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; transition: all 0.2s;
     }
     .btn-lesson-nav:hover { background: rgba(255,255,255,0.08); border-color: var(--border-strong); }
-    .btn-lesson-nav.next { background: rgba(201,168,76,0.1); border-color: var(--border-strong); color: var(--gold); }
-    .btn-lesson-nav.next:hover { background: rgba(201,168,76,0.18); }
-    .btn-lesson-nav.disabled { opacity: 0.3; pointer-events: none; }
+    .btn-lesson-nav.next { background: rgba(108,99,255,0.1); border-color: var(--border-strong); color: var(--indigo-light); }
+    .btn-lesson-nav.next:hover { background: rgba(108,99,255,0.2); border-color: var(--indigo); }
+    .btn-lesson-nav.disabled { opacity: 0.25; pointer-events: none; }
 
-    .rating-section { margin-top: 32px; }
-    .stars-row { display: flex; align-items: center; gap: 8px; margin-bottom: 20px; }
-    .star-btn {
-      font-size: 1.8rem; background: none; border: none; cursor: pointer;
-      color: rgba(255,255,255,0.15); transition: all 0.15s; line-height: 1;
+    /* ── NOTES TAB ── */
+    .notes-textarea {
+      width: 100%; min-height: 160px; background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border); border-radius: 12px; padding: 16px 18px;
+      color: var(--text); font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.1rem; line-height: 1.75; resize: vertical; outline: none; transition: border-color 0.2s;
     }
-    .star-btn.active { color: var(--gold); }
+    .notes-textarea:focus { border-color: var(--indigo); }
+    .notes-textarea::placeholder { color: var(--text-dimmer); font-style: italic; }
+    .btn-save-notes {
+      margin-top: 12px; padding: 10px 24px; border-radius: 8px;
+      background: rgba(108,99,255,0.1); border: 1px solid var(--border-strong);
+      color: var(--indigo-light); font-family: 'Josefin Sans', sans-serif;
+      font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase;
+      cursor: pointer; transition: all 0.2s;
+    }
+    .btn-save-notes:hover { background: rgba(108,99,255,0.22); }
+
+    /* ── COMMENTS TAB ── */
+    .rating-section { margin-bottom: 20px; }
+    .stars-row { display: flex; align-items: center; gap: 8px; margin-bottom: 18px; }
+    .star-btn {
+      font-size: 1.7rem; background: none; border: none; cursor: pointer;
+      color: rgba(255,255,255,0.1); transition: all 0.15s; line-height: 1;
+    }
+    .star-btn.active { color: var(--rose); }
     .star-btn:hover { transform: scale(1.15); }
     .rating-label {
-      font-family: 'Cinzel', serif; font-size: 0.7rem; color: var(--text-dim);
-      letter-spacing: 0.08em; margin-left: 6px;
+      font-family: 'Josefin Sans', sans-serif; font-size: 0.68rem; color: var(--text-dim);
+      letter-spacing: 0.08em; text-transform: uppercase; margin-left: 6px;
     }
     .comment-box {
       background: rgba(255,255,255,0.03); border: 1px solid var(--border);
@@ -261,115 +414,104 @@
     }
     .comment-input {
       width: 100%; min-height: 90px; background: transparent; border: none;
-      padding: 16px 18px; color: var(--text); font-family: 'Crimson Pro', Georgia, serif;
+      padding: 16px 18px; color: var(--text); font-family: 'Cormorant Garamond', Georgia, serif;
       font-size: 1.05rem; line-height: 1.65; resize: none; outline: none;
     }
-    .comment-input::placeholder { color: var(--text-dim); font-style: italic; }
+    .comment-input::placeholder { color: var(--text-dimmer); font-style: italic; }
     .comment-footer { padding: 10px 16px; border-top: 1px solid var(--border); display: flex; justify-content: flex-end; }
     .btn-comment {
-      padding: 8px 20px; border-radius: 7px; background: rgba(201,168,76,0.12);
-      border: 1px solid var(--border-strong); color: var(--gold);
-      font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.08em;
-      cursor: pointer; transition: all 0.2s;
+      padding: 8px 20px; border-radius: 7px; background: rgba(108,99,255,0.12);
+      border: 1px solid var(--border-strong); color: var(--indigo-light);
+      font-family: 'Josefin Sans', sans-serif; font-size: 0.68rem;
+      letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; transition: all 0.2s;
     }
-    .btn-comment:hover { background: rgba(201,168,76,0.22); }
-    .comments-list { margin-top: 24px; display: flex; flex-direction: column; gap: 14px; }
+    .btn-comment:hover { background: rgba(108,99,255,0.24); }
+    .comments-list { margin-top: 22px; display: flex; flex-direction: column; gap: 14px; }
     .comment-card { background: var(--bg3); border: 1px solid var(--border); border-radius: 12px; padding: 16px 18px; }
     .comment-top { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
     .comment-avatar {
-      width: 30px; height: 30px; border-radius: 50%;
-      background: linear-gradient(135deg, var(--gold), var(--gold-dim));
+      width: 28px; height: 28px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--indigo), var(--violet-dim));
       display: flex; align-items: center; justify-content: center;
-      font-family: 'Cinzel', serif; font-size: 0.75rem; font-weight: 700; color: #fff;
+      font-family: 'Josefin Sans', sans-serif; font-size: 0.72rem; font-weight: 700; color: #fff;
     }
-    .comment-name { font-family: 'Cinzel', serif; font-size: 0.7rem; color: var(--text-dim); letter-spacing: 0.05em; }
-    .comment-stars { margin-left: auto; color: var(--gold); font-size: 0.75rem; }
+    .comment-name { font-family: 'Josefin Sans', sans-serif; font-size: 0.65rem; color: var(--text-dim); letter-spacing: 0.06em; text-transform: uppercase; }
+    .comment-stars { margin-left: auto; color: var(--rose); font-size: 0.7rem; }
     .comment-text { font-size: 1rem; color: var(--text-mid); line-height: 1.65; }
-
-    .notes-textarea {
-      width: 100%; min-height: 160px; background: rgba(255,255,255,0.03);
-      border: 1px solid var(--border); border-radius: 12px; padding: 16px 18px;
-      color: var(--text); font-family: 'Crimson Pro', Georgia, serif;
-      font-size: 1.05rem; line-height: 1.7; resize: vertical; outline: none; transition: border-color 0.2s;
-    }
-    .notes-textarea:focus { border-color: var(--border-strong); }
-    .notes-textarea::placeholder { color: var(--text-dim); font-style: italic; }
-    .btn-save-notes {
-      margin-top: 12px; padding: 10px 22px; border-radius: 8px;
-      background: rgba(201,168,76,0.1); border: 1px solid var(--border-strong);
-      color: var(--gold); font-family: 'Cinzel', serif; font-size: 0.72rem;
-      letter-spacing: 0.08em; cursor: pointer; transition: all 0.2s;
-    }
-    .btn-save-notes:hover { background: rgba(201,168,76,0.2); }
 
     /* ── GIFT MODAL ── */
     .gift-modal-overlay {
       position: fixed; inset: 0; z-index: 500;
-      background: rgba(0,0,0,0.85); backdrop-filter: blur(12px);
+      background: rgba(0,0,0,0.88); backdrop-filter: blur(14px);
       display: flex; align-items: center; justify-content: center;
       opacity: 0; pointer-events: none; transition: opacity 0.4s ease; padding: 20px;
     }
     .gift-modal-overlay.show { opacity: 1; pointer-events: auto; }
     .gift-modal {
       background: linear-gradient(160deg, var(--bg2), var(--bg4));
-      border: 1px solid rgba(201,168,76,0.3); border-radius: 20px;
-      padding: 48px 40px; max-width: 480px; width: 100%; text-align: center;
-      box-shadow: 0 40px 80px rgba(0,0,0,0.6), 0 0 60px rgba(201,168,76,0.08);
+      border: 1px solid rgba(108,99,255,0.3); border-radius: 22px;
+      padding: 50px 40px; max-width: 460px; width: 100%; text-align: center;
+      box-shadow: 0 40px 80px rgba(0,0,0,0.6), 0 0 80px rgba(108,99,255,0.1);
       animation: modalIn 0.5s ease;
     }
     @keyframes modalIn { from { transform: translateY(30px) scale(0.95); } to { transform: translateY(0) scale(1); } }
-    .gift-modal-emoji { font-size: 4rem; display: block; margin-bottom: 20px; }
+    .gift-modal-emoji { font-size: 3.5rem; display: block; margin-bottom: 20px; }
     .gift-modal-eyebrow {
-      font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.22em;
-      text-transform: uppercase; color: var(--gold); opacity: 0.7; margin-bottom: 12px;
+      font-family: 'Josefin Sans', sans-serif; font-size: 0.6rem; letter-spacing: 0.24em;
+      text-transform: uppercase; color: var(--indigo-light); opacity: 0.75; margin-bottom: 12px;
     }
     .gift-modal-title {
-      font-family: 'Cinzel', serif; font-size: 1.6rem; font-weight: 700;
-      color: var(--text); margin-bottom: 18px; line-height: 1.2;
+      font-family: 'Josefin Sans', sans-serif; font-size: 1.5rem; font-weight: 700;
+      color: var(--text); margin-bottom: 16px; line-height: 1.2; letter-spacing: 0.04em;
     }
-    .gift-modal-text { font-size: 1.05rem; color: var(--text-mid); line-height: 1.8; margin-bottom: 20px; }
+    .gift-modal-text { font-size: 1.05rem; color: var(--text-mid); line-height: 1.85; margin-bottom: 18px; }
     .gift-modal-verse {
       font-size: 0.92rem; color: var(--text-dim); font-style: italic;
-      line-height: 1.7; margin-bottom: 32px; padding: 14px 18px;
-      border-left: 2px solid rgba(201,168,76,0.3); text-align: left;
+      line-height: 1.75; margin-bottom: 32px; padding: 14px 18px;
+      border-left: 2px solid rgba(108,99,255,0.3); text-align: left;
     }
     .gift-modal-btns { display: flex; flex-direction: column; gap: 10px; }
     .btn-gift-journey {
       padding: 14px 28px; border-radius: 10px;
-      background: linear-gradient(135deg, var(--gold-dim), var(--gold));
-      color: #fff; font-family: 'Cinzel', serif; font-size: 0.78rem;
-      letter-spacing: 0.1em; font-weight: 600; text-decoration: none;
-      cursor: pointer; transition: all 0.2s; border: none; display: block; text-align: center;
+      background: linear-gradient(135deg, var(--indigo-dim), var(--indigo), var(--violet));
+      color: #fff; font-family: 'Josefin Sans', sans-serif; font-size: 0.75rem;
+      letter-spacing: 0.12em; font-weight: 700; text-transform: uppercase;
+      text-decoration: none; cursor: pointer; transition: all 0.2s; border: none;
+      display: block; text-align: center;
     }
-    .btn-gift-journey:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(201,168,76,0.3); }
+    .btn-gift-journey:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(108,99,255,0.35); }
     .btn-gift-stay {
       padding: 12px 28px; border-radius: 10px; background: transparent;
       border: 1px solid var(--border-strong); color: var(--text-dim);
-      font-family: 'Cinzel', serif; font-size: 0.72rem; letter-spacing: 0.08em;
-      cursor: pointer; transition: all 0.2s;
+      font-family: 'Josefin Sans', sans-serif; font-size: 0.7rem;
+      letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; transition: all 0.2s;
     }
-    .btn-gift-stay:hover { color: var(--text); border-color: var(--gold); }
+    .btn-gift-stay:hover { color: var(--text); border-color: var(--indigo); }
 
+    /* ── MOBILE ── */
     .sidebar-toggle {
       display: none; position: fixed; bottom: 24px; right: 20px; z-index: 150;
-      width: 48px; height: 48px; border-radius: 50%;
-      background: var(--gold); border: none; color: #000; font-size: 1.3rem;
+      width: 50px; height: 50px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--indigo-dim), var(--indigo));
+      border: none; color: #fff; font-size: 1.2rem;
       align-items: center; justify-content: center;
-      cursor: pointer; box-shadow: 0 4px 20px rgba(201,168,76,0.4);
+      cursor: pointer;
+      box-shadow: 0 4px 24px rgba(108,99,255,0.45);
     }
 
     @media (max-width: 768px) {
       .sidebar { transform: translateX(-100%); top: 0; z-index: 250; }
       .sidebar.open { transform: translateX(0); }
       .main-content { margin-left: 0; }
-      .content-area { padding: 20px 16px 100px; }
+      .content-area { padding: 22px 18px 100px; }
       .sidebar-toggle { display: flex; }
       nav { padding: 0 1rem; }
       .lesson-nav { flex-direction: column; }
       .btn-lesson-nav { width: 100%; justify-content: center; }
-      .gift-progress-wrap { max-width: 100%; }
+      .prompts-grid { grid-template-columns: 1fr; }
       .download-card { flex-wrap: wrap; }
-      .download-btn { width: 100%; text-align: center; }
+      .download-btn { width: 100%; text-align: center; margin-top: 4px; }
+      .gift-modal { padding: 36px 24px; }
     }
   </style>
   <script src="sw-register.js"></script>
@@ -379,20 +521,21 @@
 <!-- GIFT BANNER -->
 <div class="gift-banner" id="gift-banner">
   <div class="gift-banner-text">
-    Completa todas las lecciones para recibir tu regalo espiritual
-    <span class="gift-pill">📖 Regalo del Sueño Escrito</span>
+    Completa todas las lecciones para desbloquear tu regalo
+    <span class="gift-pill">✨ El Sueño Escrito es el Sueño Activado</span>
   </div>
   <div class="gift-progress-wrap">
     <div class="gift-progress-bar">
       <div class="gift-progress-fill" id="gift-progress-fill"></div>
     </div>
-    <div class="gift-progress-label" id="gift-progress-label">0 de 1</div>
+    <div class="gift-progress-label" id="gift-progress-label">0 de 4</div>
   </div>
 </div>
 
 <!-- NAV -->
 <nav>
   <a href="index.html" class="nav-back" onclick="fadeOut(event, 'index.html')">← Volver al Inicio</a>
+  <span class="nav-logo">Abundance Time</span>
 </nav>
 
 <!-- LAYOUT -->
@@ -401,13 +544,14 @@
   <!-- SIDEBAR -->
   <aside class="sidebar" id="sidebar">
     <div class="sidebar-header">
-      <div class="sidebar-eyebrow">Contenido del Curso</div>
+      <span class="sidebar-moon">🌙</span>
+      <div class="sidebar-eyebrow">Módulo Completo</div>
       <div class="sidebar-course-title">Diario de la Vida Soñada</div>
     </div>
     <div class="sidebar-progress">
       <div class="progress-row">
         <span>Progreso</span>
-        <span id="progress-label">0 de 1 completado</span>
+        <span id="progress-label">0 de 4 completado</span>
       </div>
       <div class="progress-bar-wrap">
         <div class="progress-bar-fill" id="progress-fill" style="width:0%"></div>
@@ -435,22 +579,22 @@
 
       <div class="deco-divider">
         <div class="deco-divider-line"></div>
-        <div class="deco-divider-sym">✦ ✦ ✦</div>
+        <div class="deco-divider-sym">· · ·</div>
         <div class="deco-divider-line"></div>
       </div>
 
       <div class="tabs">
-        <button class="tab-btn active" onclick="switchTab('about', this)">Acerca de</button>
+        <button class="tab-btn active" onclick="switchTab('about', this)">Lección</button>
         <button class="tab-btn" onclick="switchTab('notes', this)">Mis Notas</button>
-        <button class="tab-btn" onclick="switchTab('comments', this)">Community</button>
+        <button class="tab-btn" onclick="switchTab('comments', this)">Comunidad</button>
       </div>
 
       <!-- TAB: ABOUT -->
       <div class="tab-content active" id="tab-about">
         <div class="about-label">Acerca de Esta Lección</div>
-        <p class="about-text" id="lesson-desc"></p>
+        <div id="lesson-body"></div>
         <div class="download-section" id="download-section" style="display:none;">
-          <div class="about-label" style="margin-top:28px;">Material del Curso</div>
+          <div class="about-label" style="margin-top:32px;">Material Descargable</div>
           <div id="download-content"></div>
         </div>
       </div>
@@ -458,7 +602,7 @@
       <!-- TAB: NOTES -->
       <div class="tab-content" id="tab-notes">
         <div class="about-label">Tus Notas Personales</div>
-        <textarea class="notes-textarea" id="notes-input" placeholder="Write your reflections, revelations, and insights here..."></textarea>
+        <textarea class="notes-textarea" id="notes-input" placeholder="Escribe tus reflexiones, revelaciones e ideas aquí…"></textarea>
         <button class="btn-save-notes" onclick="saveNotes()">✦ Guardar Notas</button>
       </div>
 
@@ -476,7 +620,7 @@
           </div>
         </div>
         <div class="comment-box">
-          <textarea class="comment-input" id="comment-input" placeholder="Share what this teaching revealed to you..."></textarea>
+          <textarea class="comment-input" id="comment-input" placeholder="Comparte lo que esta enseñanza despertó en ti…"></textarea>
           <div class="comment-footer">
             <button class="btn-comment" onclick="submitComment()">✦ Compartir</button>
           </div>
@@ -484,7 +628,7 @@
         <div class="comments-list" id="comments-list"></div>
       </div>
 
-      <!-- LESSON NAVIGATION -->
+      <!-- LESSON NAV -->
       <div class="lesson-nav">
         <button class="btn-lesson-nav" id="btn-prev" onclick="goLesson(-1)">← Anterior</button>
         <button class="btn-lesson-nav next" id="btn-next" onclick="goLesson(1)">Siguiente →</button>
@@ -498,41 +642,225 @@
 <!-- GIFT MODAL -->
 <div class="gift-modal-overlay" id="gift-modal">
   <div class="gift-modal">
-    <span class="gift-modal-emoji">📖</span>
+    <span class="gift-modal-emoji">🌙</span>
     <div class="gift-modal-eyebrow">Tu Regalo Ha Sido Desbloqueado</div>
-    <div class="gift-modal-title">Regalo del Sueño Escrito</div>
+    <div class="gift-modal-title">El Sueño Escrito Es Real</div>
     <p class="gift-modal-text">
-      Has puesto pluma sobre papel y declarado lo que Dios ha puesto en tu corazón. El sueño ya no es solo un sentimiento — está escrito, es real, y está en camino hacia ti.
+      Has completado el Diario de la Vida Soñada. Lo que antes era solo una sensación ahora tiene nombre, forma y dirección. Escrito es activado.
     </p>
-    <div class="gift-modal-verse">"Porque yo sé los pensamientos que tengo acerca de vosotros, dice el Señor, pensamientos de paz y no de mal, para daros el fin que esperáis." — Jeremías 29:11</div>
+    <div class="gift-modal-verse">"Escribe la visión, y declárala en tablas, para que corra el que leyere en ella." — Habacuc 2:2</div>
     <div class="gift-modal-btns">
       <a href="journey.html" class="btn-gift-journey" onclick="fadeOut(event,'journey.html')">✦ Ver Mi Regalo en la Jornada</a>
-      <button class="btn-gift-stay" onclick="closeGiftModal()">Keep Exploring</button>
+      <button class="btn-gift-stay" onclick="closeGiftModal()">Seguir Explorando</button>
     </div>
   </div>
 </div>
 
 <script src="supabase-client.js"></script>
 <script>
+
+/* ────────────────────────────────────────────
+   LECCIONES  —  Diario de la Vida Soñada
+   ──────────────────────────────────────────── */
 const LESSONS = [
   {
-    id: 'dream-journal-1',
-    title: 'Diario de la Vida Soñada',
-    eyebrow: 'Lección 1 de 1 · Mentalidad',
-    desc: 'Un viaje guiado para ayudarte a diseñar, declarar y atraer la vida que Dios ha preparado para ti. Escribe tu visión, activa tu fe y da el paso hacia tu destino divino.',
+    id: 'dvs-1',
+    title: '¿Qué Es el Diario de la Vida Soñada?',
+    eyebrow: 'Lección 1 de 4  ·  Fundamentos',
+    icon: '🌙',
     hasDownload: true,
     downloadHref: 'pdfs/Dream-Life-Journall.pdf',
     downloadTitle: 'Diario de la Vida Soñada',
-    downloadMeta: 'PDF · Tu diario guiado',
-    videoHTML: `<div class="yt-wrap"><iframe src="https://www.youtube.com/embed/hQwhRfcU3jg?rel=0&modestbranding=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`
+    downloadMeta: 'PDF · Tu diario guiado completo',
+    videoHTML: `<div class="yt-wrap"><iframe src="https://www.youtube.com/embed/hQwhRfcU3jg?rel=0&modestbranding=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`,
+    body: `
+      <p class="about-text">
+        El Diario de la Vida Soñada es mucho más que un cuaderno. Es un <em>acto de fe</em>: el momento en que dejas de guardar tu visión solo en la mente y la trasladas al papel, dándole cuerpo, nombre y poder.
+      </p>
+      <div class="quote-block">
+        <div class="quote-text">"Escribe la visión, y declárala en tablas, para que corra el que leyere en ella."</div>
+        <div class="quote-ref">— Habacuc 2:2</div>
+      </div>
+      <p class="about-text">
+        Escribir tu visión activa algo en tu mente y en el mundo espiritual al mismo tiempo. La ciencia confirma que quienes escriben sus metas con detalle tienen hasta un <strong>42% más de probabilidades</strong> de alcanzarlas. La fe añade lo que la ciencia aún no puede medir.
+      </p>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-num">01</div>
+          <div class="step-body">
+            <div class="step-title">Claridad</div>
+            <div class="step-text">Escribir te obliga a ser específico. Ya no puedes esconderte en lo vago. El sueño toma forma concreta cuando lo pones en palabras.</div>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-num">02</div>
+          <div class="step-body">
+            <div class="step-title">Declaración</div>
+            <div class="step-text">Cada línea que escribes es una declaración. Estás hablando al universo, a tu mente subconsciente y a las fuerzas espirituales que trabajan a tu favor.</div>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-num">03</div>
+          <div class="step-body">
+            <div class="step-title">Testimonio</div>
+            <div class="step-text">Meses después, releerás lo que escribiste hoy — y verás exactamente cómo se manifestó. Eso es tu testimonio viviente.</div>
+          </div>
+        </div>
+      </div>
+    `
+  },
+  {
+    id: 'dvs-2',
+    title: 'Cómo Crear Tu Espacio y Tu Ritual',
+    eyebrow: 'Lección 2 de 4  ·  El Ambiente',
+    icon: '🕯️',
+    hasDownload: false,
+    videoHTML: null,
+    body: `
+      <p class="about-text">
+        El ambiente en el que escribes importa. No porque el diario no funcione en cualquier lugar — sino porque tú mereces un espacio que honre la seriedad de lo que estás haciendo. Estás diseñando tu vida.
+      </p>
+      <p class="about-text" style="margin-top:16px;">
+        Aquí aprenderás a crear un <em>ritual de escritura</em> que convierta cada sesión en un momento de conexión real: con tu visión, con tu fe y contigo mismo.
+      </p>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-num">01</div>
+          <div class="step-body">
+            <div class="step-title">Elige Tu Momento</div>
+            <div class="step-text">La mañana es ideal — antes de que el mundo llene tu mente. Pero lo más importante es la constancia: escoge un horario y protégelo como un compromiso sagrado.</div>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-num">02</div>
+          <div class="step-body">
+            <div class="step-title">Prepara el Espacio</div>
+            <div class="step-text">Una vela, música suave, silencio o el sonido de la naturaleza. Apaga las notificaciones. Dile a tu mente que es tiempo de visión, no de reacción.</div>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-num">03</div>
+          <div class="step-body">
+            <div class="step-title">Empieza con Gratitud</div>
+            <div class="step-text">Antes de escribir lo que quieres, escribe tres cosas que ya tienes y por las que estás agradecido. La gratitud abre la puerta de la abundancia.</div>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-num">04</div>
+          <div class="step-body">
+            <div class="step-title">Sin Juicio, Solo Flujo</div>
+            <div class="step-text">No corrijas, no borres, no juzgues. Escribe como si le estuvieras contando tu sueño a alguien que te ama y que sabe que todo es posible.</div>
+          </div>
+        </div>
+      </div>
+    `
+  },
+  {
+    id: 'dvs-3',
+    title: 'Las 5 Secciones del Diario',
+    eyebrow: 'Lección 3 de 4  ·  Estructura',
+    icon: '✍️',
+    hasDownload: false,
+    videoHTML: null,
+    body: `
+      <p class="about-text">
+        Un diario efectivo no es una lista de deseos — es un mapa estructurado de tu vida soñada. Estas cinco secciones cubren todas las dimensiones de tu ser y te dan la estructura para que nada quede sin visión.
+      </p>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-num">I</div>
+          <div class="step-body">
+            <div class="step-title">Gratitud y Presencia</div>
+            <div class="step-text">¿Qué bien ya existe en mi vida hoy? Escribe al menos tres cosas. Esto ancla tu escritura en la realidad y activa una mentalidad de abundancia.</div>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-num">II</div>
+          <div class="step-body">
+            <div class="step-title">Mi Visión de Vida</div>
+            <div class="step-text">¿Cómo es tu vida en 1, 3 y 5 años? Describe con detalle: ¿dónde vives, con quién, qué trabajo haces, cómo se siente tu cuerpo, qué impacto tienes en el mundo?</div>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-num">III</div>
+          <div class="step-body">
+            <div class="step-title">Declaraciones de Fe</div>
+            <div class="step-text">Escribe entre 5 y 10 afirmaciones en tiempo presente. No "quiero ser", sino "soy", "tengo", "vivo". Tu mente no distingue entre memoria y imaginación vívida — úsalo a tu favor.</div>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-num">IV</div>
+          <div class="step-body">
+            <div class="step-title">Mis Emociones Guía</div>
+            <div class="step-text">¿Cómo quieres sentirte cuando tu sueño se haya cumplido? Escribe esas emociones y luego descríbelas como si ya las estuvieras viviendo. La emoción es el lenguaje del universo.</div>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-num">V</div>
+          <div class="step-body">
+            <div class="step-title">Un Paso de Hoy</div>
+            <div class="step-text">¿Cuál es la única acción que, si la hago hoy, me acerca al sueño? Solo una. Específica, realizable, significativa. El sueño se construye día a día.</div>
+          </div>
+        </div>
+      </div>
+    `
+  },
+  {
+    id: 'dvs-4',
+    title: 'Activar el Sueño con la Escritura',
+    eyebrow: 'Lección 4 de 4  ·  Práctica Diaria',
+    icon: '⭐',
+    hasDownload: true,
+    downloadHref: 'pdfs/Dream-Life-Journall.pdf',
+    downloadTitle: 'Diario de la Vida Soñada — PDF Completo',
+    downloadMeta: 'PDF · Todas las páginas guiadas',
+    videoHTML: null,
+    body: `
+      <p class="about-text">
+        El diario no es un ejercicio que haces una vez — es una práctica viva. Aquí te damos los prompts que activan el sueño incluso en los días en que no sabes por dónde empezar.
+      </p>
+      <div class="quote-block">
+        <div class="quote-text">"La fe sin obras está muerta." El diario es donde la fe se convierte en obra.</div>
+        <div class="quote-ref">— Santiago 2:17, reinterpretado</div>
+      </div>
+      <p class="about-text" style="margin-top:16px;">
+        Usa estas preguntas como punto de partida. Elige una, respóndela en profundidad, y deja que la pluma (o el teclado) te lleve adonde tu mente sola no llegaría.
+      </p>
+      <div class="prompts-grid">
+        <div class="prompt-card">
+          <span class="prompt-icon">🌱</span>
+          <div class="prompt-q">"Si supiera que no puedo fracasar, ¿qué intentaría mañana mismo?"</div>
+        </div>
+        <div class="prompt-card">
+          <span class="prompt-icon">💫</span>
+          <div class="prompt-q">"¿Cómo es un día ordinario en mi vida soñada? Descríbelo desde que despiertas hasta que cierras los ojos."</div>
+        </div>
+        <div class="prompt-card">
+          <span class="prompt-icon">🔥</span>
+          <div class="prompt-q">"¿Qué miedo estoy listo para dejar ir hoy para que el sueño tenga espacio?"</div>
+        </div>
+        <div class="prompt-card">
+          <span class="prompt-icon">🌊</span>
+          <div class="prompt-q">"¿Qué versión de mí mismo necesita morir para que la versión soñada pueda nacer?"</div>
+        </div>
+        <div class="prompt-card">
+          <span class="prompt-icon">🎯</span>
+          <div class="prompt-q">"Dentro de un año, miro atrás a este momento. ¿Qué decisión tomé hoy que lo cambió todo?"</div>
+        </div>
+        <div class="prompt-card">
+          <span class="prompt-icon">✨</span>
+          <div class="prompt-q">"¿A quién quiero convertirme — en carácter, en hábitos, en presencia — para que mi sueño sea sostenible?"</div>
+        </div>
+      </div>
+    `
   }
 ];
 
 const MODULE_ID = 'dream-journal';
-
 let currentLesson = parseInt(localStorage.getItem('current_lesson_' + MODULE_ID) || '0');
 let currentRating = 0;
 
+/* ── POSITIONING ── */
 function positionNav() {
   const banner = document.getElementById('gift-banner');
   const nav = document.querySelector('nav');
@@ -561,6 +889,7 @@ function getCompletedCount() {
   return LESSONS.filter(l => done.includes(l.id)).length;
 }
 
+/* ── RENDER LESSON ── */
 function renderLesson(idx) {
   currentLesson = idx;
   localStorage.setItem('current_lesson_' + MODULE_ID, idx);
@@ -568,10 +897,22 @@ function renderLesson(idx) {
   saveModuleProgress(MODULE_ID, idx, completadoSoFar);
   const lesson = LESSONS[idx];
 
-  document.getElementById('video-container').innerHTML = lesson.videoHTML;
+  // Video or visual placeholder
+  const vc = document.getElementById('video-container');
+  if (lesson.videoHTML) {
+    vc.innerHTML = lesson.videoHTML;
+  } else {
+    vc.innerHTML = `
+      <div class="lesson-visual">
+        <div class="lesson-visual-icon">${lesson.icon}</div>
+        <div class="lesson-visual-num">${lesson.eyebrow}</div>
+        <div class="lesson-visual-title">${lesson.title}</div>
+      </div>`;
+  }
+
   document.getElementById('lesson-eyebrow').textContent = lesson.eyebrow;
   document.getElementById('lesson-title').textContent = lesson.title;
-  document.getElementById('lesson-desc').textContent = lesson.desc;
+  document.getElementById('lesson-body').innerHTML = lesson.body;
 
   const dlSection = document.getElementById('download-section');
   const dlContent = document.getElementById('download-content');
@@ -584,7 +925,7 @@ function renderLesson(idx) {
           <div class="download-title">${lesson.downloadTitle}</div>
           <div class="download-meta">${lesson.downloadMeta}</div>
         </div>
-        <div class="download-btn">↓ Download PDF</div>
+        <div class="download-btn">↓ Descargar PDF</div>
       </a>`;
   } else {
     dlSection.style.display = 'none';
@@ -592,12 +933,12 @@ function renderLesson(idx) {
 
   const done = isCompleted(lesson.id);
   document.getElementById('completado-icon').textContent = done ? '✓' : '◯';
-  document.getElementById('completado-text').textContent = done ? 'Completed' : 'Marcar como Completo';
+  document.getElementById('completado-text').textContent = done ? 'Completado' : 'Marcar como Completo';
   document.getElementById('btn-completado').className = 'btn-completado' + (done ? ' done' : '');
 
   document.getElementById('btn-prev').className = 'btn-lesson-nav' + (idx === 0 ? ' disabled' : '');
   document.getElementById('btn-next').className = 'btn-lesson-nav next' + (idx === LESSONS.length - 1 ? ' disabled' : '');
-  document.getElementById('btn-next').textContent = idx === LESSONS.length - 1 ? '✓ Last Lesson' : 'Siguiente →';
+  document.getElementById('btn-next').textContent = idx === LESSONS.length - 1 ? '✓ Última Lección' : 'Siguiente →';
 
   document.getElementById('notes-input').value = localStorage.getItem('notes_' + lesson.id) || '';
   currentRating = parseInt(localStorage.getItem('rating_' + lesson.id) || '0');
@@ -609,26 +950,32 @@ function renderLesson(idx) {
   document.getElementById('sidebar').classList.remove('open');
 }
 
+/* ── SIDEBAR ── */
 function renderSidebar() {
   document.getElementById('module-list').innerHTML = LESSONS.map((l, i) => `
     <div class="module-item ${i === currentLesson ? 'active' : ''} ${isCompleted(l.id) ? 'completado' : ''}"
       onclick="renderLesson(${i})">
       <div class="module-num">${isCompleted(l.id) ? '✓' : (i + 1)}</div>
-      <div class="module-info"><div class="module-name">${l.title}</div></div>
+      <div class="module-info">
+        <div class="module-name">${l.title}</div>
+        <div class="module-sub">${l.eyebrow.split('·')[1] ? l.eyebrow.split('·')[1].trim() : ''}</div>
+      </div>
     </div>
   `).join('');
 }
 
+/* ── PROGRESS ── */
 function updateProgress() {
   const count = getCompletedCount();
   const total = LESSONS.length;
   const pct = (count / total) * 100;
   document.getElementById('progress-fill').style.width = pct + '%';
-  document.getElementById('progress-label').textContent = `${count} of ${total} completado`;
+  document.getElementById('progress-label').textContent = `${count} de ${total} completado`;
   document.getElementById('gift-progress-fill').style.width = pct + '%';
-  document.getElementById('gift-progress-label').textContent = `${count} of ${total}`;
+  document.getElementById('gift-progress-label').textContent = `${count} de ${total}`;
 }
 
+/* ── MARK COMPLETE ── */
 function markComplete() {
   const lesson = LESSONS[currentLesson];
   if (isCompleted(lesson.id)) return;
@@ -637,7 +984,7 @@ function markComplete() {
   localStorage.setItem('completado_lessons_' + MODULE_ID, JSON.stringify(done));
   saveModuleProgress(MODULE_ID, currentLesson, done);
   document.getElementById('completado-icon').textContent = '✓';
-  document.getElementById('completado-text').textContent = 'Completed';
+  document.getElementById('completado-text').textContent = 'Completado';
   document.getElementById('btn-completado').className = 'btn-completado done';
   updateProgress();
   renderSidebar();
@@ -668,57 +1015,57 @@ function switchTab(id, btn) {
 
 function setRating(n) {
   currentRating = n;
+  localStorage.setItem('rating_' + LESSONS[currentLesson].id, n);
   saveLessonInteraction(LESSONS[currentLesson].id, undefined, n);
   renderStars();
 }
 function renderStars() {
   document.querySelectorAll('.star-btn').forEach((s, i) => s.className = 'star-btn' + (i < currentRating ? ' active' : ''));
-  const labels = ['Toca para calificar', 'Not for me', 'It was ok', 'Good', 'Very good', 'Life-changing ✦'];
+  const labels = ['Toca para calificar', 'No era para mí', 'Estuvo bien', 'Buena', 'Muy buena', 'Cambió mi vida ✦'];
   document.getElementById('rating-label').textContent = labels[currentRating];
 }
 
 function submitComment() {
   const text = document.getElementById('comment-input').value.trim();
   if (!text) return;
-  const name = savedName ? savedName.split(' ')[0] : 'Member';
-  const newC = { name, text, rating: currentRating, date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) };
+  const name = savedName ? savedName.split(' ')[0] : 'Miembro';
+  const newC = { name, text, rating: currentRating, date: new Date().toLocaleDateString('es-ES', { month: 'short', day: 'numeric' }) };
   document.getElementById('comment-input').value = '';
-  // Optimistic: prepend immediately
   const list = document.getElementById('comments-list');
   const el = document.createElement('div');
   el.className = 'comment-card';
-  el.innerHTML = `<div class="comment-top"><div class="comment-avatar">${escHtml(safeInitial(name))}</div><div class="comment-name">${escHtml(name)} · ${newC.date}</div>${safeRating(newC.rating) ? `<div class="comment-stars">${'★'.repeat(safeRating(newC.rating))}</div>` : ''}</div><div class="comment-text">${escHtml(text)}</div>`;
+  el.innerHTML = `<div class="comment-top"><div class="comment-avatar">${escHtml(safeInitial(name))}</div><div class="comment-name">${escHtml(name)} · ${newC.date}</div>${safeRating(newC.rating)?`<div class="comment-stars">${'★'.repeat(safeRating(newC.rating))}</div>`:''}</div><div class="comment-text">${escHtml(text)}</div>`;
   list.prepend(el);
-  // Save to Supabase, then refresh from Supabase
   saveComment(LESSONS[currentLesson].id, text, currentRating, name).then(function() { renderComments(); }).catch(console.error);
 }
 
 function renderComments() {
   const demo = [
-    { name: 'Angela', text: 'I filled three pages my first night with this journal. Dreams I had buried for years came rushing back. It felt like God was reminding me of who I was made to be.', rating: 5, date: 'Apr 5' },
-    { name: 'Kevin', text: 'Writing it down made it real. I used to think journaling was just for feelings. Now I understand it is an act of faith. My life is already changing.', rating: 5, date: 'Apr 2' },
+    { name: 'Valeria', text: 'La lección de las 5 secciones me abrió los ojos. Nunca había escrito mis emociones guía — ahora las escribo cada mañana y siento que algo se activó en mí.', rating: 5, date: '12 may' },
+    { name: 'Marcos', text: 'Empecé sin creer mucho en esto, pero escribir "un paso de hoy" cambió mi productividad completamente. Lo simple funciona.', rating: 5, date: '8 may' },
+    { name: 'Daniela', text: 'Los prompts de la lección 4 me sacaron cosas que no sabía que tenía guardadas. Lloré escribiendo la respuesta a la primera pregunta. Gracias.', rating: 5, date: '3 may' },
   ];
   getLessonComments(LESSONS[currentLesson].id).then(function(sbComments) {
     const all = [...sbComments, ...demo];
-    const list = document.getElementById('comments-list');
-    list.innerHTML = all.map(c => `
-    <div class="comment-card">
-      <div class="comment-top">
-        <div class="comment-avatar">${escHtml(safeInitial(c.name))}</div>
-        <div class="comment-name">${escHtml(c.name||'')} · ${c.date}</div>
-        ${safeRating(c.rating) ? `<div class="comment-stars">${'★'.repeat(safeRating(c.rating))}</div>` : ''}
+    document.getElementById('comments-list').innerHTML = all.map(c => `
+      <div class="comment-card">
+        <div class="comment-top">
+          <div class="comment-avatar">${escHtml(safeInitial(c.name))}</div>
+          <div class="comment-name">${escHtml(c.name||'')} · ${c.date}</div>
+          ${safeRating(c.rating)?`<div class="comment-stars">${'★'.repeat(safeRating(c.rating))}</div>`:''}
+        </div>
+        <div class="comment-text">${escHtml(c.text||'')}</div>
       </div>
-      <div class="comment-text">${escHtml(c.text||'')}</div>
-    </div>
-  `).join('');
+    `).join('');
   }).catch(console.error);
 }
 
 function saveNotes() {
+  localStorage.setItem('notes_' + LESSONS[currentLesson].id, document.getElementById('notes-input').value);
   saveLessonInteraction(LESSONS[currentLesson].id, document.getElementById('notes-input').value, undefined);
   const btn = document.querySelector('.btn-save-notes');
-  btn.textContent = '❆ Saved';
-  setTimeout(() => btn.textContent = '❆ Save Notes', 1800);
+  btn.textContent = '✦ Guardado';
+  setTimeout(() => btn.textContent = '✦ Guardar Notas', 1800);
 }
 
 function closeGiftModal() {
@@ -728,19 +1075,18 @@ function closeGiftModal() {
 window.addEventListener('pageshow', function(ev) {
   if (ev.persisted) { document.body.classList.remove('page-fade-out'); document.body.style.opacity = ''; }
 });
-
 function fadeOut(e, url) {
   e.preventDefault();
   document.body.classList.add('page-fade-out');
   setTimeout(() => window.location.href = url, 350);
 }
-
 function toggleSidebar() {
   document.getElementById('sidebar').classList.toggle('open');
 }
 
 renderLesson(currentLesson);
-// ── SUPABASE HYDRATE ──
+
+/* ── SUPABASE HYDRATE ── */
 onSupabaseReady(function() {
   var lid = LESSONS[currentLesson].id;
   getLessonInteraction(lid).then(function(data) {
@@ -752,8 +1098,8 @@ onSupabaseReady(function() {
     renderSidebar();
     updateProgress();
     var done = (p.completadoLessons || []).includes(LESSONS[currentLesson].id);
-    document.getElementById('completado-icon').textContent = done ? '\u2713' : '\u25ef';
-    document.getElementById('completado-text').textContent = done ? 'Completed' : 'Marcar como Completo';
+    document.getElementById('completado-icon').textContent = done ? '✓' : '◯';
+    document.getElementById('completado-text').textContent = done ? 'Completado' : 'Marcar como Completo';
     document.getElementById('btn-completado').className = 'btn-completado' + (done ? ' done' : '');
   });
 });
