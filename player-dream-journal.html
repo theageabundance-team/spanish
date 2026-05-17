@@ -593,10 +593,6 @@
       <div class="tab-content active" id="tab-about">
         <div class="about-label">Acerca de Esta Lección</div>
         <div id="lesson-body"></div>
-        <div class="download-section" id="download-section" style="display:none;">
-          <div class="about-label" style="margin-top:32px;">Material Descargable</div>
-          <div id="download-content"></div>
-        </div>
       </div>
 
       <!-- TAB: NOTES -->
@@ -668,11 +664,8 @@ const LESSONS = [
     title: '¿Qué Es el Diario de la Vida Soñada?',
     eyebrow: 'Lección 1 de 4  ·  Fundamentos',
     icon: '🌙',
-    hasDownload: true,
-    downloadHref: 'pdfs/Dream-Life-Journall.pdf',
-    downloadTitle: 'Diario de la Vida Soñada',
-    downloadMeta: 'PDF · Tu diario guiado completo',
-    videoHTML: `<div class="yt-wrap"><iframe src="https://www.youtube.com/embed/hQwhRfcU3jg?rel=0&modestbranding=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`,
+    hasDownload: false,
+    videoHTML: null,
     body: `
       <p class="about-text">
         El Diario de la Vida Soñada es mucho más que un cuaderno. Es un <em>acto de fe</em>: el momento en que dejas de guardar tu visión solo en la mente y la trasladas al papel, dándole cuerpo, nombre y poder.
@@ -810,10 +803,7 @@ const LESSONS = [
     title: 'Activar el Sueño con la Escritura',
     eyebrow: 'Lección 4 de 4  ·  Práctica Diaria',
     icon: '⭐',
-    hasDownload: true,
-    downloadHref: 'pdfs/Dream-Life-Journall.pdf',
-    downloadTitle: 'Diario de la Vida Soñada — PDF Completo',
-    downloadMeta: 'PDF · Todas las páginas guiadas',
+    hasDownload: false,
     videoHTML: null,
     body: `
       <p class="about-text">
@@ -913,23 +903,6 @@ function renderLesson(idx) {
   document.getElementById('lesson-eyebrow').textContent = lesson.eyebrow;
   document.getElementById('lesson-title').textContent = lesson.title;
   document.getElementById('lesson-body').innerHTML = lesson.body;
-
-  const dlSection = document.getElementById('download-section');
-  const dlContent = document.getElementById('download-content');
-  if (lesson.hasDownload) {
-    dlSection.style.display = 'block';
-    dlContent.innerHTML = `
-      <a href="${lesson.downloadHref}" class="download-card" download target="_blank" rel="noopener">
-        <div class="download-icon">📖</div>
-        <div class="download-info">
-          <div class="download-title">${lesson.downloadTitle}</div>
-          <div class="download-meta">${lesson.downloadMeta}</div>
-        </div>
-        <div class="download-btn">↓ Descargar PDF</div>
-      </a>`;
-  } else {
-    dlSection.style.display = 'none';
-  }
 
   const done = isCompleted(lesson.id);
   document.getElementById('completado-icon').textContent = done ? '✓' : '◯';
