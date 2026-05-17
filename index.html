@@ -1023,6 +1023,7 @@ const EXPAND_DATA = [
   {title:"Academia del Tablero de Visión",desc:"Aprende a crear tableros de visión poderosos que aceleren tu jornada de manifestación y alineen tus deseos con el propósito divino.",cat:"Mentalidad",catClass:"cat-mindset",rating:"5.0",count:"312",dur:"1h",img:"images/visionboard.png",player:"player-vision-board.html"},
   {title:"El Susurro de la Fe",desc:"Desbloquea Bendiciones Divinas y Abundancia a través de prácticas sagradas y sabiduría ancestral.",cat:"Mentalidad",catClass:"cat-mindset",rating:"5.0",count:"891",dur:"4h",img:"images/whisperfaith.png",player:"player-whisper-faith.html"},
   {title:"Desafío de Manifestación de 21 Días",desc:"Tu vida será transformada en 21 días a través de la intención divina enfocada y la práctica diaria.",cat:"Mentalidad",catClass:"cat-mindset",rating:"5.0",count:"745",dur:"21d",img:"images/21daysmanifestacion.jpeg",player:"player-21-days.html"},
+  {title:"Solicitud de Reembolso",desc:"¿Deseas solicitar un reembolso? Completa el procedimiento oficial en pocos pasos.",cat:"Soporte",catClass:"cat-mindset",rating:"",count:"",dur:"",img:"",player:"reembolso.html",isRefund:true},
 ];
 
 const DAILY_FOCUS_DATA = [
@@ -1185,6 +1186,22 @@ function navigateTo(url) {
 // Render Expand Your Journey cards
 function expandCardHTML(p,i){
   const hasPlayer = !!p.player;
+
+  // Special card for refund module
+  if (p.isRefund) {
+    return `<div class="expand-card" onclick="navigateTo('reembolso.html')" style="cursor:pointer;">
+      <div class="card-img-wrap" style="background:linear-gradient(135deg,#1a0a0a,#2a0e0e);display:flex;align-items:center;justify-content:center;min-height:140px;">
+        <span style="font-size:3.2rem;">💳</span>
+      </div>
+      <div class="card-body">
+        <span class="cat-pill" style="background:rgba(180,60,60,0.18);color:#e88;border:1px solid rgba(180,60,60,0.3);">Soporte</span>
+        <div class="card-title">${p.title}</div>
+        <div class="card-desc">${p.desc}</div>
+        <button class="card-btn card-btn-access" style="background:linear-gradient(135deg,rgba(180,60,60,0.3),rgba(150,20,20,0.15));border-color:rgba(200,60,60,0.4);color:#ffb3b3;" onclick="event.stopPropagation();navigateTo('reembolso.html')">Solicitar Reembolso</button>
+      </div>
+    </div>`;
+  }
+
   return `<div class="expand-card" ${hasPlayer ? `onclick="navigateTo('${p.player}')" style="cursor:pointer;"` : ''}>
     <div class="card-img-wrap">
       <img src="${p.img}" alt="${p.title}" loading="lazy"/>
