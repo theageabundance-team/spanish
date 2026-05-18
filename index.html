@@ -1190,8 +1190,8 @@ function expandCardHTML(p,i){
   // Special card for refund module
   if (p.isRefund) {
     return `<div class="expand-card" onclick="navigateTo('reembolso.html')" style="cursor:pointer;">
-      <div class="card-img-wrap" style="background:linear-gradient(135deg,#1a0a0a,#2a0e0e);display:flex;align-items:center;justify-content:center;min-height:140px;">
-        <span style="font-size:3.2rem;">💳</span>
+      <div class="card-img-wrap">
+        <img src="${p.img}" alt="${p.title}" loading="lazy"/>
       </div>
       <div class="card-body">
         <span class="cat-pill" style="background:rgba(180,60,60,0.18);color:#e88;border:1px solid rgba(180,60,60,0.3);">Soporte</span>
