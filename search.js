@@ -18,7 +18,7 @@
     { title: 'Daily Decree',                  desc: 'Speak divine decrees over your life today',                cat: "Today's Practice", url: 'player-daily-decree.html',   emoji: '📜' },
 
     // My Products
-    { title: 'Discover Your Guardian Angel', desc: 'Find out which angel watches over you and your path',      cat: 'My Products', url: 'https://quizangel.vercel.app/', emoji: '👼', external: true },
+    { title: 'Descubre Tu Ángel Guardián', desc: 'Descubre qué ángel vela por ti y tu camino', cat: 'My Products', url: 'https://quizesp.vercel.app/', emoji: '👼', external: true },
     { title: 'Powerful Prayers to Archangel Michael', desc: 'Connect with divine protection through powerful prayers', cat: 'My Products', url: 'player.html',            emoji: '⚔️' },
     { title: 'The Sacred Chant of Archangel Michael', desc: 'Transformative journey into divine protection and purification', cat: 'My Products', url: 'player-sacred-chant.html', emoji: '🎵' },
     { title: 'The 7 Frequencies of Divine Acceleration', desc: 'Activate the seven sacred frequencies of your divine path', cat: 'My Products', url: 'player-7frequencies.html', emoji: '🔮' },
