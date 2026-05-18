@@ -679,7 +679,7 @@ const LESSONS = [
     desc: 'Haz clic en el botón de abajo para acceder a tu guión divino.',
     hasDownload: true,
     downloadType: 'link',
-    downloadHref: 'https://abundancemoment.com/script/',
+    downloadHref: 'divine-script.html',
     downloadTitle: 'Accede a Tu Guión Divino',
     downloadMeta: 'Abre el guión sagrado preparado para ti',
     videoHTML: `<div id="ifr_6a08c026c367c95eff7d8f29_wrapper" style="margin:0 auto;width:100%;"><div style="position:relative;padding:56.25% 0 0 0;" id="ifr_6a08c026c367c95eff7d8f29_aspect"><iframe frameborder="0" allowfullscreen src="about:blank" id="ifr_6a08c026c367c95eff7d8f29" style="position:absolute;top:0;left:0;width:100%;height:100%;" referrerpolicy="origin" onload="this.onload=null,this.src='https://scripts.converteai.net/f8e465b5-f483-4d08-be19-bc14de388e59/players/6a08c026c367c95eff7d8f29/v4/embed.html'+(location.search||'?')+'&vl='+encodeURIComponent(location.href)"></iframe></div></div>`
@@ -742,13 +742,13 @@ function renderLesson(idx) {
     dlSection.style.display = 'block';
     if (lesson.downloadType === 'link') {
       dlContent.innerHTML = `
-        <a href="${lesson.downloadHref}" class="download-card" target="_blank" rel="noopener">
+        <a href="${lesson.downloadHref}" class="download-card">
           <div class="download-icon">✨</div>
           <div class="download-info">
             <div class="download-title">${lesson.downloadTitle}</div>
             <div class="download-meta">${lesson.downloadMeta}</div>
           </div>
-          <div class="download-btn">→ Access</div>
+          <div class="download-btn">→ Acceder</div>
         </a>`;
     } else {
       dlContent.innerHTML = `
