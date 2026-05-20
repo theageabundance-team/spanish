@@ -508,6 +508,75 @@
   ::-webkit-scrollbar-track { background: transparent; }
   ::-webkit-scrollbar-thumb { background: rgba(201,168,76,0.2); border-radius: 3px; }
 
+  /* ── PROGRESS BAR ── */
+  #processing-screen {
+    display: none;
+    text-align: center;
+    padding: 60px 20px;
+  }
+  .processing-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.4rem; font-weight: 700;
+    color: var(--gold-pale);
+    margin-bottom: 10px;
+  }
+  .processing-subtitle {
+    font-size: 1.1rem; color: var(--text-dim);
+    margin-bottom: 36px;
+  }
+  .progress-track {
+    width: 100%; height: 10px;
+    background: rgba(255,255,255,0.07);
+    border-radius: 999px;
+    overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%; width: 0%;
+    background: linear-gradient(90deg, #2ecc71, #27ae60);
+    border-radius: 999px;
+    transition: width 2.6s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 0 12px rgba(46,204,113,0.5);
+  }
+  .progress-label {
+    font-size: 0.95rem; color: #2ecc71;
+    margin-top: 14px;
+    font-family: 'Cinzel', serif;
+    letter-spacing: 0.08em;
+  }
+
+  /* ── SUCCESS SCREEN (GREEN) ── */
+  #success-screen .success-ring {
+    border-color: rgba(46,204,113,0.3) !important;
+    animation: ring-expand-green 1.8s ease-out infinite !important;
+  }
+  @keyframes ring-expand-green {
+    0%   { transform: scale(0.6); opacity: 0.8; border-color: rgba(46,204,113,0.5); }
+    100% { transform: scale(1.4); opacity: 0;   border-color: rgba(46,204,113,0); }
+  }
+  #success-screen .success-circle {
+    background: linear-gradient(135deg, rgba(46,204,113,0.35), rgba(39,174,96,0.15)) !important;
+    border-color: rgba(46,204,113,0.6) !important;
+    box-shadow: 0 0 30px rgba(46,204,113,0.25);
+  }
+  #success-screen .success-title {
+    color: #a8f0c6 !important;
+    text-shadow: 0 0 40px rgba(46,204,113,0.3) !important;
+  }
+  #success-screen.card {
+    background: linear-gradient(135deg, rgba(46,204,113,0.08), rgba(39,174,96,0.03)) !important;
+    border-color: rgba(46,204,113,0.25) !important;
+  }
+  #success-screen .success-notice {
+    background: rgba(46,204,113,0.08) !important;
+    border-color: rgba(46,204,113,0.25) !important;
+  }
+  #success-screen .success-notice strong {
+    color: #a8f0c6 !important;
+  }
+  #success-screen .success-subtitle {
+    color: #7de0aa !important;
+  }
+
   /* ── MOBILE ── */
   @media(max-width: 768px) {
     nav:not(.mobile-nav) { display: none !important; }
@@ -660,6 +729,16 @@
 
     </div>
 
+    <!-- ── PROCESSING SCREEN ── -->
+    <div id="processing-screen" class="card">
+      <div class="processing-title">Procesando tu reembolso...</div>
+      <p class="processing-subtitle">Por favor, no cierres esta página.</p>
+      <div class="progress-track">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+      <div class="progress-label" id="progress-label">0%</div>
+    </div>
+
     <!-- ── SUCCESS SCREEN ── -->
     <div id="success-screen" class="card">
       <div class="success-animation">
@@ -780,16 +859,36 @@
   function submitRefund() {
     if (!check1) return;
 
-    // Hide form, show success
+    // Hide form, show processing
     document.getElementById('form-card').style.display = 'none';
     document.getElementById('steps-indicator').style.display = 'none';
-    const successEl = document.getElementById('success-screen');
-    successEl.style.display = 'block';
-
-    // Trigger confetti
-    launchConfetti();
-
+    const processingEl = document.getElementById('processing-screen');
+    processingEl.style.display = 'block';
     window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    // Animate progress bar
+    const fill  = document.getElementById('progress-fill');
+    const label = document.getElementById('progress-label');
+    let pct = 0;
+    const interval = setInterval(() => {
+      pct = Math.min(pct + Math.random() * 4 + 1, 99);
+      fill.style.width  = pct.toFixed(0) + '%';
+      label.textContent = pct.toFixed(0) + '%';
+    }, 80);
+
+    // After ~3s show success
+    setTimeout(() => {
+      clearInterval(interval);
+      fill.style.width  = '100%';
+      label.textContent = '100%';
+      setTimeout(() => {
+        processingEl.style.display = 'none';
+        const successEl = document.getElementById('success-screen');
+        successEl.style.display = 'block';
+        launchConfetti();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }, 400);
+    }, 3000);
   }
 
   // ── CONFETTI ──
