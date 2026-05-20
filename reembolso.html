@@ -855,6 +855,25 @@
     document.getElementById('btn-submit').disabled = !check1;
   }
 
+  // ── SAVE REFUND TO SUPABASE ──
+  async function saveRefundRequest() {
+    try {
+      await initSupabase();
+      if (!isOnline()) return;
+      const email   = getUserEmail() || document.getElementById('email-input').value.trim();
+      const details = document.getElementById('reason-detail').value.trim();
+      await sb().from('refund_requests').insert({
+        email:      email,
+        reason:     selectedReason,
+        details:    details || null,
+        created_at: new Date().toISOString()
+      });
+      console.log('[Supabase] Refund request saved for', email);
+    } catch (e) {
+      console.warn('[Supabase] saveRefundRequest failed', e);
+    }
+  }
+
   // ── SUBMIT ──
   function submitRefund() {
     if (!check1) return;
@@ -865,6 +884,9 @@
     const processingEl = document.getElementById('processing-screen');
     processingEl.style.display = 'block';
     window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    // Save to Supabase (fire and forget)
+    saveRefundRequest();
 
     // Animate progress bar
     const fill  = document.getElementById('progress-fill');
