@@ -657,7 +657,7 @@ function applyName(name) {
   document.querySelectorAll('.nav-avatar').forEach(function(el) { el.textContent = letter; });
   document.querySelectorAll('.nav-username').forEach(function(el) { el.textContent = first; });
   document.getElementById('journey-subtitle').textContent =
-    `${getGreeting()}, ${first}. Every day you return, your connection deepens.`;
+    `${getGreeting()}, ${first}. Cada día que regresas, tu conexión se profundiza.`;
 }
 
 const savedName = localStorage.getItem('abundance_name');
@@ -703,14 +703,14 @@ onSupabaseReady(function() {
       const nextNameEl = document.getElementById('next-name');
       if (nextNameEl) nextNameEl.textContent = 'Día ' + nm.day + ' \u2014 ' + nm.name;
       const ptEl = document.getElementById('progress-text');
-      if (ptEl) ptEl.textContent = days + ' of ' + nm.day + ' days';
+      if (ptEl) ptEl.textContent = days + ' de ' + nm.day + ' días';
     } else {
       const fillEl = document.getElementById('progress-fill');
       if (fillEl) fillEl.style.width = '100%';
       const nextNameEl = document.getElementById('next-name');
-      if (nextNameEl) nextNameEl.textContent = 'All milestones completed 🎉';
+      if (nextNameEl) nextNameEl.textContent = '¡Todos los hitos completados! 🎉';
       const ptEl = document.getElementById('progress-text');
-      if (ptEl) ptEl.textContent = 'Journey complete';
+      if (ptEl) ptEl.textContent = 'Jornada completa';
     }
 
     // Update counter message
@@ -722,7 +722,7 @@ onSupabaseReady(function() {
       if (cm) {
         msgEl.innerHTML = '"' + cm.desc.replace('You ', uName ? uName.split(' ')[0] + ', you ' : 'You ') + '"';
       } else {
-        msgEl.innerHTML = '"Todo camino comienza con un solo paso' + fName + '. Yours has begun."';
+        msgEl.innerHTML = '"Todo camino comienza con un solo paso' + fName + '. El tuyo ha comenzado."';
       }
     }
   });
@@ -739,7 +739,7 @@ onSupabaseReady(function() {
             '<span class="gift-symbol">' + g.symbol + '</span>' +
             '<div class="gift-name">' + g.name + '</div>' +
             '<div class="gift-source">' + g.source + '</div>' +
-            '<span class="gift-status">' + (earned ? '✦ Received' : '🔒 Complete the module to receive') + '</span>' +
+            '<span class="gift-status">' + (earned ? '✦ Recibido' : '🔒 Completa el módulo para recibir') + '</span>' +
           '</div>';
         }).join('');
       }
@@ -756,7 +756,7 @@ const MILESTONES = [
 
     desc: 'Diste tu primer paso. Ahora es tiempo de escribir tu nueva historia en el Reino.',
     giftName: '📜 El Pergamino Dorado — Activación de la Imagen Real',
-    giftDesc: 'Look in the mirror, speak your identity, and write your 3 victories as if already done. Your Scroll begins here.',
+    giftDesc: 'Mírate en el espejo, declara tu identidad y escribe tus 3 victorias como si ya estuvieran hechas. Tu Pergamino comienza aquí.',
     scrollNote: 'Tu Pergamino Dorado nace en este hito. Mantenlo cerca — crecerá contigo.',
     giftUrl: 'gift-golden-scroll.html',
     icon: '🌱'
@@ -764,7 +764,7 @@ const MILESTONES = [
   {
     day: 7,
     name: 'El Mapa de Riqueza de Salomón',
-    desc: 'Seven days of faithfulness. God sees every morning you chose to return. Now receive a tool the wise king used.',
+    desc: 'Siete días de fidelidad. Dios ve cada mañana que elegiste regresar. Ahora recibe una herramienta que el sabio rey utilizó.',
     giftName: '👑 El Mapa de Riqueza de Salomón — 7 Flujos de Proverbios',
     giftDesc: 'Descubre los 7 flujos sagrados de abundancia del libro de Proverbios. Luego abre tu Pergamino Dorado y escribe: ¿qué flujo activarás primero?',
     scrollNote: 'Después de recibir este regalo, abre tu Pergamino Dorado y escribe: "El flujo que estoy activando: ___"',
@@ -774,7 +774,7 @@ const MILESTONES = [
   {
     day: 15,
     name: 'La Clave Oculta del 444',
-    desc: 'You have walked through the middle — the place where most turn back. A hidden key has been waiting for this exact moment.',
+    desc: 'Has caminado por la mitad del camino — el lugar donde la mayoría se da la vuelta. Una clave oculta ha estado esperando este momento exacto.',
     giftName: '🔑 La Clave Oculta del 444 — Ritual Sagrado de Protección',
     giftDesc: 'Una técnica secreta de oración de mando y protección del hogar, no encontrada en ningún módulo. Luego escribe tus 3 amenazas y sus promesas en tu Pergamino Dorado.',
     scrollNote: 'Después de este ritual, abre tu Pergamino Dorado y escribe las 3 amenazas que estás entregando y las 3 promesas divinas que las derrotan.',
@@ -784,7 +784,7 @@ const MILESTONES = [
   {
     day: 21,
     name: 'El Nuevo Nombre',
-    desc: 'Twenty-one days. You are no longer the same person who began this journey. God has been renewing you — and now it is time to receive your new name.',
+    desc: 'Veintiún días. Ya no eres la misma persona que comenzó esta jornada. Dios te ha estado renovando — y ahora es tiempo de recibir tu nuevo nombre.',
     giftName: '🦋 El Nuevo Nombre — Protocolo de Identidad + Guión de 6 Meses',
     giftDesc: 'Vuelve a leer todo lo escrito en tu Pergamino Dorado desde el Día 3. Elige la palabra que representa quien te has convertido. Luego escribe los próximos 6 meses como esta nueva persona.',
     scrollNote: 'Hoy lees todo tu Pergamino Dorado desde el principio, eliges tu nuevo nombre y lo escribes en la parte superior.',
@@ -794,7 +794,7 @@ const MILESTONES = [
   {
     day: 40,
     name: 'La Misión Sagrada',
-    desc: '"Bien hecho, buen y fiel siervo." — Matthew 25:21. Forty days. You have done what few do. Now the preparation ends and the mission begins.',
+    desc: '"Bien hecho, buen y fiel siervo." — Mateo 25:21. Cuarenta días. Has hecho lo que pocos hacen. Ahora la preparación termina y la misión comienza.',
     giftName: '🔥 La Misión Sagrada — Carta a Tu Yo Futuro',
     giftDesc: 'Responde la pregunta que lo cambia todo. Escribe una carta para ser abierta en 1 año. Séllala junto a tu Pergamino Dorado — que ahora es un archivo sagrado completo.',
     scrollNote: 'Tu Pergamino Dorado está ahora completo. Séllalo junto a tu carta. Has construido algo sagrado durante 40 días.',
@@ -805,16 +805,16 @@ const MILESTONES = [
 
 // ── MODULE GIFTS ──
 const MODULE_GIFTS = [
-  { id:'prayers-michael',   symbol:'👼', name:'Bendición del Arcángel',         source:'Powerful Prayers to Archangel Michael'  },
-  { id:'sacred-chant',      symbol:'🛡️', name:'Gift of Spiritual Protection',       source:'El Canto Sagrado del Arcángel Miguel'  },
-  { id:'7-frequencies',     symbol:'⚡', name:'Gift of Divine Acceleration',        source:'Las 7 Frecuencias de la Aceleración Divina'},
-  { id:'king-solomon',      symbol:'📜', name:"Gift of Solomon's Wisdom",            source:"Los Secretos Ocultos del Rey Salomón's Prosperity"},
-  { id:'powerful-numbers',  symbol:'🔢', name:'Gift of Divine Frequency',           source:'Powerful Numbers'                       },
-  { id:'age-of-abundance',  symbol:'☀️', name:'Blessing of Divine Abundance',       source:'La Era de la Abundancia'                   },
-  { id:'mindset-reset',     symbol:'🧠', name:'Bendición de la Mente Renovada',       source:'Mindset Reset Formula'                  },
-  { id:'dream-journal',     symbol:'📖', name:'Regalo del Sueño Escrito',          source:'Dream Life Journal'                     },
-  { id:'vision-board',      symbol:'🎯', name:'Gift of Divine Vision',              source:'Vision Board Academy'                   },
-  { id:'whisper-faith',     symbol:'🕊️', name:'Gift of Living Faith',               source:'El Susurro de la Fe'                   },
+  { id:'prayers-michael',   symbol:'👼', name:'Bendición del Arcángel',               source:'Poderosas Oraciones al Arcángel Miguel'  },
+  { id:'sacred-chant',      symbol:'🛡️', name:'Regalo de Protección Espiritual',      source:'El Canto Sagrado del Arcángel Miguel'    },
+  { id:'7-frequencies',     symbol:'⚡', name:'Regalo de Aceleración Divina',         source:'Las 7 Frecuencias de la Aceleración Divina'},
+  { id:'king-solomon',      symbol:'📜', name:'Regalo de la Sabiduría de Salomón',    source:'Los Secretos Ocultos de la Prosperidad del Rey Salomón'},
+  { id:'powerful-numbers',  symbol:'🔢', name:'Regalo de la Frecuencia Divina',       source:'Números Poderosos'                       },
+  { id:'age-of-abundance',  symbol:'☀️', name:'Bendición de la Abundancia Divina',    source:'La Era de la Abundancia'                 },
+  { id:'mindset-reset',     symbol:'🧠', name:'Bendición de la Mente Renovada',       source:'Fórmula de Reseteo Mental'               },
+  { id:'dream-journal',     symbol:'📖', name:'Regalo del Sueño Escrito',             source:'Diario de la Vida de los Sueños'         },
+  { id:'vision-board',      symbol:'🎯', name:'Regalo de la Visión Divina',           source:'Academia del Tablero de Visión'          },
+  { id:'whisper-faith',     symbol:'🕊️', name:'Regalo de la Fe Viva',                 source:'El Susurro de la Fe'                     },
 ];
 
 // ── RENDER MILESTONES ──
@@ -839,8 +839,8 @@ milestonesList.innerHTML = MILESTONES.map((m, i) => {
   let badgeHtml = '';
   if (s === 'done') {
     badgeHtml = m.giftUrl
-      ? `<a href="${m.giftUrl}" class="btn-claim redeemed" style="text-decoration:none;">✦ Gift Claimed — Open Again</a>`
-      : `<button class="btn-claim redeemed" disabled>✦ Gift Claimed</button>`;
+      ? `<a href="${m.giftUrl}" class="btn-claim redeemed" style="text-decoration:none;">✦ Regalo Reclamado — Abrir de Nuevo</a>`
+      : `<button class="btn-claim redeemed" disabled>✦ Regalo Reclamado</button>`;
   } else if (s === 'current') {
     if (USER.days >= m.day) {
       badgeHtml = m.giftUrl
@@ -883,14 +883,14 @@ giftsGrid.innerHTML = MODULE_GIFTS.map((g) => {
       <span class="gift-symbol">${g.symbol}</span>
       <div class="gift-name">${g.name}</div>
       <div class="gift-source">${g.source}</div>
-      <span class="gift-status">${earned ? '✦ Received' : '🔒 Complete the module to receive'}</span>
+      <span class="gift-status">${earned ? '✦ Recibido' : '🔒 Completa el módulo para recibir'}</span>
     </div>
   `;
 }).join('');
 
 // ── CLAIM MILESTONE GIFT ──
 function claimMilestone(btn) {
-  btn.textContent = '✦ Gift Claimed';
+  btn.textContent = '✦ Regalo Reclamado';
   btn.classList.add('redeemed');
   btn.disabled = true;
 }
@@ -904,11 +904,11 @@ if (nextMilestone) {
     document.getElementById('progress-fill').style.width = pct + '%';
   }, 600);
   document.getElementById('next-name').textContent = `Día ${nextMilestone.day} — ${nextMilestone.name}`;
-  document.getElementById('progress-text').textContent = `${USER.days} of ${nextMilestone.day} days`;
+  document.getElementById('progress-text').textContent = `${USER.days} de ${nextMilestone.day} días`;
 } else {
-  document.getElementById('next-name').textContent = 'All milestones completed 🎉';
+  document.getElementById('next-name').textContent = '¡Todos los hitos completados! 🎉';
   document.getElementById('progress-fill').style.width = '100%';
-  document.getElementById('progress-text').textContent = 'Journey complete';
+  document.getElementById('progress-text').textContent = 'Jornada completa';
 }
 
 // ── COUNTER MESSAGE ──
@@ -918,7 +918,7 @@ const firstName = userName ? ', ' + userName.split(' ')[0] : '';
 if (currentMilestone) {
   document.getElementById('counter-msg').innerHTML = `"${currentMilestone.desc.replace('You ', firstName ? userName.split(' ')[0] + ', you ' : 'You ')}"`;
 } else {
-  document.getElementById('counter-msg').innerHTML = `"Todo camino comienza con un solo paso${firstName}. Yours has begun."`;
+  document.getElementById('counter-msg').innerHTML = `"Todo camino comienza con un solo paso${firstName}. El tuyo ha comenzado."`;
 }
 
 // ── PAGESHOW (back button fix) ──
